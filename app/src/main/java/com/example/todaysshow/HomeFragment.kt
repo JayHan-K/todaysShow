@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_home_fragment.*
 
 class HomeFragment : Fragment() {
@@ -26,9 +27,10 @@ class HomeFragment : Fragment() {
         val layoutManager : LinearLayoutManager = LinearLayoutManager(context)
         layoutManager.orientation = LinearLayoutManager.HORIZONTAL
         journalList = etJournalList()
+        val homeJournalRV = viewGroup.findViewById<RecyclerView>(R.id.home_journal_rv) as RecyclerView
         val journalAdapter = JournalAdapter(journalList, context)
-        home_journal_rv.layoutManager = layoutManager
-        home_journal_rv.adapter = journalAdapter
+        homeJournalRV.layoutManager = layoutManager
+        homeJournalRV.adapter = journalAdapter
 
 
         return viewGroup
@@ -40,7 +42,10 @@ class HomeFragment : Fragment() {
         journals.add(Journal("샤롯데 씨어\n첫! 방문기", R.drawable.empty_circle))
         journals.add(Journal("나는\n도대체 어디...?", R.drawable.empty_circle))
         journals.add(Journal("4대 뮤지컬\n오페라의 유령", R.drawable.empty_circle))
-
+        journals.add(Journal("2020\n공연트렌트", R.drawable.empty_circle))
+        journals.add(Journal("샤롯데 씨어\n첫! 방문기", R.drawable.empty_circle))
+        journals.add(Journal("나는\n도대체 어디...?", R.drawable.empty_circle))
+        journals.add(Journal("4대 뮤지컬\n오페라의 유령", R.drawable.empty_circle))
         return journals
     }
 }

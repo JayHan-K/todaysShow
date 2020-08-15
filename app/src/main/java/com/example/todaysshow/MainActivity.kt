@@ -15,13 +15,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         supportFragmentManager.beginTransaction().replace(R.id.main_frameLayout,
-            HomeFragment_temp()
+            HomeFragment()
         ).commitAllowingStateLoss()
         main_bottomNavigationView.setOnNavigationItemSelectedListener {
             when(it.itemId){
                 R.id.bottom_home -> {
                     supportFragmentManager.beginTransaction().replace(R.id.main_frameLayout,
-                        HomeFragment_temp()
+                        HomeFragment()
                     ).commitAllowingStateLoss()
                 }
                 R.id.bottom_search -> {
