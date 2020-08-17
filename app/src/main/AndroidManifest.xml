@@ -12,7 +12,8 @@
         <activity android:name=".ProfileFragment"></activity>
         <activity android:name=".CommunityFragment" />
         <activity android:name=".CategoryFragment" />
-        <activity android:name=".SearchFragment" />
+        <activity android:name=".SearchFragment"
+            />
         <activity android:name=".HomeFragment" />
         <activity android:name=".LaunchActivity">
             <intent-filter>
@@ -21,7 +22,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity"
+            android:windowSoftInputMode="adjustNothing"
+            />
     </application>
 
 </manifest>
