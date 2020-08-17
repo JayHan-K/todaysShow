@@ -14,19 +14,36 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"></FrameLayout>
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-
+    <RelativeLayout
         android:layout_weight="0.1"
-        android:id="@+id/main_bottomNavigationView"
         android:layout_width="match_parent"
-        app:menu="@menu/menu_bottomnavigationview"
-        android:layout_height="0dp"
-        app:labelVisibilityMode="labeled"
-        app:itemIconTint="@animator/menu_selector_color"
-        app:itemTextColor="@animator/menu_selector_color"
-        app:itemTextAppearanceActive="@style/BottomNavigationView.Active"
-        app:itemTextAppearanceInactive="@style/BottomNavigationView"
-        />
+        android:layout_height="0dp">
+        <LinearLayout
+            android:layout_alignParentTop="true"
+            android:background="#444444"
+            android:layout_width="match_parent"
+            android:layout_height="5sp"/>
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+
+            android:id="@+id/main_bottomNavigationView"
+            android:layout_width="match_parent"
+            app:menu="@menu/menu_bottomnavigationview"
+            android:layout_height="match_parent"
+            app:labelVisibilityMode="labeled"
+            app:itemIconTint="@animator/menu_selector_color"
+            app:itemTextColor="@animator/menu_selector_color"
+            app:itemTextAppearanceActive="@style/BottomNavigationView.Active"
+            app:itemTextAppearanceInactive="@style/BottomNavigationView"
+            />
+
+        <LinearLayout
+            android:background="#444444"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="5sp"/>
+
+    </RelativeLayout>
+
 
 
 </LinearLayout>
