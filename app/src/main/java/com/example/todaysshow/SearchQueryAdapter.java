@@ -74,9 +74,11 @@ public class SearchQueryAdapter extends RecyclerView.Adapter<SearchQueryAdapter.
             protected FilterResults performFiltering(CharSequence constraint) {
                 String charString = constraint.toString();
                 if(charString.isEmpty()){
+                    unFilteredList = TodayShowApplication.Companion.getInstance().getPopularSearchList();
                     filteredList = unFilteredList;
                 }else{
                     ArrayList<String> filteringList = new ArrayList<>();
+                    unFilteredList = TodayShowApplication.Companion.getInstance().getDefaultSearchList();
                     for(String name : unFilteredList){
                         if(name.toLowerCase().contains(charString.toLowerCase())){
                             filteringList.add(name);
