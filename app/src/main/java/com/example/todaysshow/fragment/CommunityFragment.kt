@@ -5,7 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.viewpager.widget.ViewPager
 import com.example.todaysshow.R
+import com.example.todaysshow.adapter.CommunityPagerAdapter
+import com.google.android.material.tabs.TabLayout
 
 class CommunityFragment : Fragment() {
 
@@ -19,6 +22,13 @@ class CommunityFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val viewGroup:ViewGroup = inflater.inflate(R.layout.activity_community_fragment, null) as ViewGroup
+
+        var communityTabLayout = viewGroup.findViewById<TabLayout>(R.id.community_tab_layout)
+        var communityViewPager = viewGroup.findViewById<ViewPager>(R.id.community_view_pager)
+        communityViewPager.adapter = CommunityPagerAdapter(childFragmentManager)
+        communityTabLayout.setupWithViewPager(communityViewPager)
+
+
         return viewGroup
     }
 }
