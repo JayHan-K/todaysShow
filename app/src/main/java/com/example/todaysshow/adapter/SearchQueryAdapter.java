@@ -1,4 +1,4 @@
-package com.example.todaysshow;
+package com.example.todaysshow.adapter;
 
 import android.content.Context;
 import android.util.Log;
@@ -13,6 +13,9 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.todaysshow.R;
+import com.example.todaysshow.TodayShowApplication;
+
 import java.util.ArrayList;
 
 public class SearchQueryAdapter extends RecyclerView.Adapter<SearchQueryAdapter.SearchQueryItemView> implements Filterable {
@@ -20,18 +23,18 @@ public class SearchQueryAdapter extends RecyclerView.Adapter<SearchQueryAdapter.
     public interface OnItemClickListener{
         void onItemClick(View v, int pos);
     }
-    private OnItemClickListener mListener = null;
+    OnItemClickListener mListener = null;
 
     public void setOnItemClickListener(OnItemClickListener listener){
         this.mListener = listener;
     }
 
-    ArrayList<String> searchList;
-    Context context;
-    ArrayList<String> filteredList;
-    ArrayList<String> unFilteredList;
+    public ArrayList<String> searchList;
+    public Context context;
+    public ArrayList<String> filteredList;
+    public ArrayList<String> unFilteredList;
 
-    SearchQueryAdapter(ArrayList<String> searchList, Context context){
+    public SearchQueryAdapter(ArrayList<String> searchList, Context context){
         this.searchList = searchList;
         this.unFilteredList = searchList;
         this.filteredList = searchList;

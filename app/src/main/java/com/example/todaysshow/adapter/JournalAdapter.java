@@ -1,20 +1,25 @@
-package com.example.todaysshow;
+package com.example.todaysshow.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.todaysshow.object.Journal;
+import com.example.todaysshow.R;
+
 import java.util.ArrayList;
 
-public class JournalAdapter extends RecyclerView.Adapter<JournalItemView> {
-    ArrayList<Journal> horizontalList;
-    Context context;
-    JournalAdapter(ArrayList<Journal> horizontalList, Context context){
+public class JournalAdapter extends RecyclerView.Adapter<JournalAdapter.JournalItemView> {
+    public ArrayList<Journal> horizontalList;
+    public Context context;
+    public JournalAdapter(ArrayList<Journal> horizontalList, Context context){
         this.horizontalList = horizontalList;
         this.context = context;
     }
@@ -45,4 +50,19 @@ public class JournalAdapter extends RecyclerView.Adapter<JournalItemView> {
     public int getItemCount() {
         return horizontalList.size();
     }
+
+    public class JournalItemView extends RecyclerView.ViewHolder {
+        TextView journal_tv;
+        ImageView journal_iv;
+
+        public JournalItemView(@NonNull View itemView) {
+            super(itemView);
+            journal_tv = (TextView) itemView.findViewById(R.id.journal_tv);
+            journal_iv = (ImageView) itemView.findViewById(R.id.journal_iv);
+        }
+
+
+    }
+
+
 }

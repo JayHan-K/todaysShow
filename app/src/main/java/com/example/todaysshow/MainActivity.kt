@@ -3,6 +3,7 @@ package com.example.todaysshow
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.todaysshow.fragment.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -25,16 +26,24 @@ class MainActivity : AppCompatActivity() {
                     ).commitAllowingStateLoss()
                 }
                 R.id.bottom_search -> {
-                    supportFragmentManager.beginTransaction().replace(R.id.main_frameLayout, SearchFragment()).commitAllowingStateLoss()
+                    supportFragmentManager.beginTransaction().replace(R.id.main_frameLayout,
+                        SearchFragment()
+                    ).commitAllowingStateLoss()
                 }
                 R.id.bottom_category -> {
-                    supportFragmentManager.beginTransaction().replace(R.id.main_frameLayout, CategoryFragment()).commitAllowingStateLoss()
+                    supportFragmentManager.beginTransaction().replace(R.id.main_frameLayout,
+                        CategoryFragment()
+                    ).commitAllowingStateLoss()
                 }
                 R.id.bottom_community -> {
-                    supportFragmentManager.beginTransaction().replace(R.id.main_frameLayout, CommunityFragment()).commitAllowingStateLoss()
+                    supportFragmentManager.beginTransaction().replace(R.id.main_frameLayout,
+                        CommunityFragment()
+                    ).commitAllowingStateLoss()
                 }
                 R.id.bottom_profile -> {
-                    supportFragmentManager.beginTransaction().replace(R.id.main_frameLayout, ProfileFragment()).commitAllowingStateLoss()
+                    supportFragmentManager.beginTransaction().replace(R.id.main_frameLayout,
+                        ProfileFragment()
+                    ).commitAllowingStateLoss()
                 }
             }
             true

@@ -10,12 +10,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ProfileFragment"></activity>
-        <activity android:name=".CommunityFragment" />
-        <activity android:name=".CategoryFragment" />
-        <activity android:name=".SearchFragment"
+        <activity android:name=".fragment.ProfileFragment"></activity>
+        <activity android:name=".fragment.CommunityFragment" />
+        <activity android:name=".fragment.CategoryFragment" />
+        <activity android:name=".fragment.SearchFragment"
             />
-        <activity android:name=".HomeFragment" />
+        <activity android:name=".fragment.HomeFragment" />
         <activity android:name=".LaunchActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

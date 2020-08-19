@@ -1,13 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
+    android:orientation="vertical"
+    android:weightSum="1"
     android:background="#ffffff"
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:text="result"
-        android:id="@+id/search_result_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+    
+    <LinearLayout
+        android:layout_weight="0.16"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/search_result_journal_rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_weight="0.04"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <TextView
+            android:layout_gravity="center_vertical"
+            android:textSize="15sp"
+            android:paddingLeft="15sp"
+            android:text="정확순 및 인기순"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></TextView>
+    </LinearLayout>
+    <LinearLayout
+        android:paddingRight="15sp"
+        android:paddingLeft="15sp"
+        android:layout_weight="0.65"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
 
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:columnCount="3"
+            android:paddingHorizontal="20sp"
+            >
+            <Button
+
+                android:layout_column="0"
+                android:layout_gravity="fill"
+                android:layout_row="0"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:text="button1"></Button>
+            <Button
+                android:layout_column="0"
+                android:layout_gravity="fill"
+                android:layout_row="1"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:text="button2"></Button>
+            <Button
+                android:layout_column="0"
+                android:layout_gravity="fill"
+                android:layout_row="2"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:text="button2"></Button>
+
+            <Button
+                android:layout_column="1"
+                android:layout_gravity="fill"
+                android:layout_row="0"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:text="button1"></Button>
+            <Button
+                android:layout_column="1"
+                android:layout_gravity="fill"
+                android:layout_row="1"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:text="button2"></Button>
+            <Button
+                android:layout_column="1"
+                android:layout_gravity="fill"
+                android:layout_row="2"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:text="button2"></Button>
+            <Button
+                android:layout_column="2"
+                android:layout_gravity="fill"
+                android:layout_row="0"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:text="button1"></Button>
+            <Button
+                android:layout_column="2"
+                android:layout_gravity="fill"
+                android:layout_row="1"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:text="button2"></Button>
+            <Button
+                android:layout_column="2"
+                android:layout_gravity="fill"
+                android:layout_row="2"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:text="button2"></Button>
+
+
+        </GridLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:paddingLeft="20sp"
+        android:orientation="vertical"
+        android:paddingTop="5sp"
+        android:layout_weight="0.15"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <TextView
+            android:text="다음과 관련된 공연도 살펴보세요"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></TextView>
+        <androidx.recyclerview.widget.RecyclerView
+            android:clipToPadding="false"
+            android:id="@+id/search_result_relation_rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>
+    </LinearLayout>
 </LinearLayout>

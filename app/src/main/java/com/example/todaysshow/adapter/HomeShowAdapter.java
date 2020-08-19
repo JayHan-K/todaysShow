@@ -1,21 +1,25 @@
-package com.example.todaysshow;
+package com.example.todaysshow.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.todaysshow.object.HomeShow;
+import com.example.todaysshow.R;
+
 import java.util.ArrayList;
 
-public class HomeShowAdapter extends RecyclerView.Adapter<HomeShowItemView> {
-    ArrayList<HomeShow> homeShows;
-    Context context;
+public class HomeShowAdapter extends RecyclerView.Adapter<HomeShowAdapter.HomeShowItemView> {
+    public ArrayList<HomeShow> homeShows;
+    public Context context;
 
-    HomeShowAdapter(ArrayList<HomeShow> homeShows, Context context){
+    public HomeShowAdapter(ArrayList<HomeShow> homeShows, Context context){
         this.homeShows = homeShows;
         this.context = context;
     }
@@ -43,5 +47,16 @@ public class HomeShowAdapter extends RecyclerView.Adapter<HomeShowItemView> {
     @Override
     public int getItemCount() {
         return homeShows.size();
+    }
+
+    public class HomeShowItemView extends RecyclerView.ViewHolder {
+
+        ImageView home_show_iv;
+
+        public HomeShowItemView(@NonNull View itemView) {
+            super(itemView);
+            home_show_iv = (ImageView) itemView.findViewById(R.id.home_show_iv);
+
+        }
     }
 }

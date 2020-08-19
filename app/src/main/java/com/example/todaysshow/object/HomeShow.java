@@ -1,10 +1,10 @@
-package com.example.todaysshow;
+package com.example.todaysshow.object;
 
 public class HomeShow {
     private int imageResouce;
     private String showName;
 
-    HomeShow(int imageResouce, String showName){
+    public HomeShow(int imageResouce, String showName){
         this.imageResouce = imageResouce;
         this.showName = showName;
     }

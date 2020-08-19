@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    android:padding="10sp"
+<LinearLayout
+    android:orientation="vertical"
+    android:paddingRight="10sp"
+    android:paddingLeft="10sp"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
+    <ImageView
+        android:layout_marginTop="5sp"
+        android:background="@drawable/empty_circle"
+        android:id="@+id/journal_iv"
+        android:layout_width="60sp"
+        android:layout_height="60sp"/>
     <TextView
+        android:layout_gravity="center_horizontal"
         android:textSize="10sp"
         android:layout_centerHorizontal="true"
         android:gravity="center_horizontal"
@@ -13,11 +22,5 @@
         android:id="@+id/journal_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
-    <ImageView
-        android:layout_marginTop="15sp"
-        android:background="@drawable/empty_circle"
-        android:id="@+id/journal_iv"
-        android:layout_width="70sp"
-        android:layout_height="70sp"/>
 
-</RelativeLayout>
+</LinearLayout>

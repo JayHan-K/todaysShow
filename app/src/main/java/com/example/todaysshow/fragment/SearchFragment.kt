@@ -1,21 +1,21 @@
-package com.example.todaysshow
+package com.example.todaysshow.fragment
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
-import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import android.widget.LinearLayout
-import android.widget.SearchView
-import android.widget.SearchView.OnQueryTextListener
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.activity_search_fragment.*;
+import com.example.todaysshow.R
+import com.example.todaysshow.RecyclerItemClickListener
+import com.example.todaysshow.fragment.search.SearchResultFragment
+import com.example.todaysshow.TodayShowApplication
+import com.example.todaysshow.adapter.SearchQueryAdapter
 
 class SearchFragment : Fragment() {
 
@@ -70,8 +70,11 @@ class SearchFragment : Fragment() {
                 searchFrameLayout!!.visibility = View.VISIBLE
                 searchLinearLayout!!.visibility = View.INVISIBLE
 
-                childFragmentManager.beginTransaction().replace(R.id.search_frame,
-                    SearchResultFragment(query!!)
+                childFragmentManager.beginTransaction().replace(
+                    R.id.search_frame,
+                    SearchResultFragment(
+                        query!!
+                    )
                 ).commitAllowingStateLoss()
                 return false
             }
@@ -95,19 +98,26 @@ class SearchFragment : Fragment() {
     private fun setPopularSearch(){
         val searchList = TodayShowApplication.instance.popularSearchList
 
-        searchQueryAdapter = SearchQueryAdapter(searchList, context)
+        searchQueryAdapter = SearchQueryAdapter(
+            searchList,
+            context
+        )
 
 
         search_result_rv!!.adapter = searchQueryAdapter
         search_result_rv!!.addOnItemTouchListener(
-            RecyclerItemClickListener(requireContext(), search_result_rv!!, object : RecyclerItemClickListener.OnItemClickListener{
-                override fun onItemClick(view: View, position: Int) {
-                    var str = searchQueryAdapter.filteredList.get(position)
-                    searchbar!!.setQuery(str,false)
+            RecyclerItemClickListener(
+                requireContext(),
+                search_result_rv!!,
+                object :
+                    RecyclerItemClickListener.OnItemClickListener {
+                    override fun onItemClick(view: View, position: Int) {
+                        var str = searchQueryAdapter.filteredList.get(position)
+                        searchbar!!.setQuery(str, false)
 
-                }
+                    }
 
-            })
+                })
         )
 
 
