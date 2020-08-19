@@ -7,9 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.todaysshow.`object`.HomeShow
 import com.example.todaysshow.`object`.Journal
 import com.example.todaysshow.R
+import com.example.todaysshow.`object`.HomeShow
 import com.example.todaysshow.adapter.HomeShowAdapter
 import com.example.todaysshow.adapter.JournalAdapter
 
@@ -41,19 +41,19 @@ class HomeFragment : Fragment() {
         personalizedShow = getPersonals()
         recommendedShow = getRecommended()
         val homeJournalRV = viewGroup.findViewById<RecyclerView>(R.id.home_journal_rv) as RecyclerView
-        val journalAdapter = JournalAdapter(journalList, context)
+        val journalAdapter = JournalAdapter(journalList!!, context!!)
         homeJournalRV.layoutManager = journalLayoutManager
         homeJournalRV.adapter = journalAdapter
 
         val homePersonalRV = viewGroup.findViewById<RecyclerView>(R.id.personalizedShowRV)
         val homeRecommendedRV = viewGroup.findViewById<RecyclerView>(R.id.recommendShowRV)
         val personalAdapter = HomeShowAdapter(
-            personalizedShow,
-            context
+            personalizedShow!!,
+            context!!
         )
         val recommandedAdapter = HomeShowAdapter(
-            recommendedShow,
-            context
+            recommendedShow!!,
+            context!!
         )
         homePersonalRV.layoutManager = personalLayoutManger
         homeRecommendedRV.layoutManager = recommendedLayoutManager

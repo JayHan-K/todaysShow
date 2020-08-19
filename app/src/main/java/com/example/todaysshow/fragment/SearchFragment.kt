@@ -99,8 +99,7 @@ class SearchFragment : Fragment() {
         val searchList = TodayShowApplication.instance.popularSearchList
 
         searchQueryAdapter = SearchQueryAdapter(
-            searchList,
-            context
+            context!!
         )
 
 

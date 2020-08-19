@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.todaysshow.`object`.Journal
 import com.example.todaysshow.R
 import com.example.todaysshow.adapter.JournalAdapter
-import com.example.todaysshow.adapter.SearchResultRelationListAdapter
+import com.example.todaysshow.adapter.SearchResultRelationAdapter
 
 class SearchResultFragment(resultStr : String) : Fragment() {
     var searchResultStr = resultStr
@@ -39,16 +39,16 @@ class SearchResultFragment(resultStr : String) : Fragment() {
         journalList = getJournals()
         val searchResultJournalRV = viewGroup.findViewById<RecyclerView>(R.id.search_result_journal_rv) as RecyclerView
         val journalAdapter =
-            JournalAdapter(journalList, context)
+            JournalAdapter(journalList!!, context!!)
         searchResultJournalRV.layoutManager = journalLayoutManager
         searchResultJournalRV.adapter = journalAdapter
 
         relationList = getRelation()
         val relationListRV = viewGroup.findViewById<RecyclerView>(R.id.search_result_relation_rv)
         val relationAdapter =
-            SearchResultRelationListAdapter(
-                relationList,
-                context
+            SearchResultRelationAdapter(
+                relationList!!,
+                context!!
             )
         relationListRV.layoutManager = relationLayoutManager
         relationListRV.adapter = relationAdapter
