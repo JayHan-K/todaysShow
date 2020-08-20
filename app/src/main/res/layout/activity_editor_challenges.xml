@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:weightSum="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:weightSum="1"
+            android:orientation="vertical"
+            android:layout_weight="0.08"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="뒤로가기">
+                </Button>
+
+                <LinearLayout
+                    android:background="#444444"
+                    android:layout_alignParentTop="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="5sp"></LinearLayout>
+                <TextView
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:textSize="17sp"
+                    android:layout_centerInParent="true"
+                    android:text="에디터'S 도전"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <LinearLayout
+                    android:background="#444444"
+                    android:layout_alignParentBottom="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="5sp"></LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_weight="0.92"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/community_editor_challengs_sv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </androidx.core.widget.NestedScrollView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
