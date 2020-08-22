@@ -5,10 +5,9 @@
     android:layout_height="wrap_content">
 
     <ImageView
-        android:layout_marginLeft="15sp"
-        android:layout_marginRight="15sp"
+        android:layout_marginRight="70px"
         android:id="@+id/home_show_iv"
-        android:layout_width="60sp"
-        android:layout_height="80sp"></ImageView>
+        android:layout_width="326px"
+        android:layout_height="440px"></ImageView>
 
 </LinearLayout>

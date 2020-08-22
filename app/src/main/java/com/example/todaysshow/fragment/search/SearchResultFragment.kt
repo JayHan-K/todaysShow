@@ -1,18 +1,23 @@
 package com.example.todaysshow.fragment.search
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.todaysshow.ItemClickListener
 import com.example.todaysshow.`object`.Journal
 import com.example.todaysshow.R
+import com.example.todaysshow.ShowDetailActivity
 import com.example.todaysshow.adapter.JournalAdapter
 import com.example.todaysshow.adapter.SearchResultRelationAdapter
 
-class SearchResultFragment(resultStr : String) : Fragment() {
+class SearchResultFragment(resultStr : String) : Fragment(), View.OnClickListener {
     var searchResultStr = resultStr
     var journalList : ArrayList<Journal>? = null
     var relationList : ArrayList<String>? = null
@@ -35,11 +40,15 @@ class SearchResultFragment(resultStr : String) : Fragment() {
         journalLayoutManager.orientation = LinearLayoutManager.HORIZONTAL
         val relationLayoutManager : LinearLayoutManager = LinearLayoutManager(context)
 
-
+        val listener : ItemClickListener = object : ItemClickListener {
+            override fun onItemClicked(vh: RecyclerView.ViewHolder, item: Any, pos: Int) {
+                Toast.makeText(context, "Search Fragment", Toast.LENGTH_SHORT).show()
+            }
+        }
         journalList = getJournals()
         val searchResultJournalRV = viewGroup.findViewById<RecyclerView>(R.id.search_result_journal_rv) as RecyclerView
         val journalAdapter =
-            JournalAdapter(journalList!!, context!!)
+            JournalAdapter(journalList!!, context!!, listener)
         searchResultJournalRV.layoutManager = journalLayoutManager
         searchResultJournalRV.adapter = journalAdapter
 
@@ -53,6 +62,25 @@ class SearchResultFragment(resultStr : String) : Fragment() {
         relationListRV.layoutManager = relationLayoutManager
         relationListRV.adapter = relationAdapter
 
+        var searchResultBt1 = viewGroup.findViewById<Button>(R.id.search_result_bt1)
+        var searchResultBt2 = viewGroup.findViewById<Button>(R.id.search_result_bt2)
+        var searchResultBt3 = viewGroup.findViewById<Button>(R.id.search_result_bt3)
+        var searchResultBt4 = viewGroup.findViewById<Button>(R.id.search_result_bt4)
+        var searchResultBt5 = viewGroup.findViewById<Button>(R.id.search_result_bt5)
+        var searchResultBt6 = viewGroup.findViewById<Button>(R.id.search_result_bt6)
+        var searchResultBt7 = viewGroup.findViewById<Button>(R.id.search_result_bt7)
+        var searchResultBt8 = viewGroup.findViewById<Button>(R.id.search_result_bt8)
+        var searchResultBt9 = viewGroup.findViewById<Button>(R.id.search_result_bt9)
+
+        searchResultBt1.setOnClickListener(this)
+        searchResultBt2.setOnClickListener(this)
+        searchResultBt3.setOnClickListener(this)
+        searchResultBt4.setOnClickListener(this)
+        searchResultBt5.setOnClickListener(this)
+        searchResultBt6.setOnClickListener(this)
+        searchResultBt7.setOnClickListener(this)
+        searchResultBt8.setOnClickListener(this)
+        searchResultBt9.setOnClickListener(this)
 
 
 
@@ -124,6 +152,11 @@ class SearchResultFragment(resultStr : String) : Fragment() {
 
         return relationList
 
+    }
+
+    override fun onClick(v: View?) {
+        var intent: Intent = Intent(activity, ShowDetailActivity::class.java)
+        startActivity(intent)
     }
 
 }

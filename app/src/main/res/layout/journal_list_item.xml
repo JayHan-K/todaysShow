@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     android:orientation="vertical"
-    android:paddingRight="10sp"
-    android:paddingLeft="10sp"
+    android:layout_marginRight="60px"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_width="265px"
+    android:layout_height="400px">
     <ImageView
-        android:layout_marginTop="5sp"
         android:background="@drawable/empty_circle"
         android:id="@+id/journal_iv"
-        android:layout_width="60sp"
-        android:layout_height="60sp"/>
+        android:layout_width="265px"
+        android:layout_height="265px"/>
     <TextView
+        android:textColor="#ffffff"
         android:layout_gravity="center_horizontal"
         android:textSize="10sp"
         android:layout_centerHorizontal="true"

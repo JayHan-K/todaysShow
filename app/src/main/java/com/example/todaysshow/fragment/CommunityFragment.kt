@@ -9,9 +9,10 @@ import androidx.viewpager.widget.ViewPager
 import com.example.todaysshow.R
 import com.example.todaysshow.adapter.CommunityPagerAdapter
 import com.google.android.material.tabs.TabLayout
+import kotlinx.android.synthetic.main.activity_community_fragment.*
 
-class CommunityFragment : Fragment() {
-
+class CommunityFragment(initIndex: Int) : Fragment() {
+    var initIndex = initIndex
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -27,8 +28,12 @@ class CommunityFragment : Fragment() {
         var communityViewPager = viewGroup.findViewById<ViewPager>(R.id.community_view_pager)
         communityViewPager.adapter = CommunityPagerAdapter(childFragmentManager)
         communityTabLayout.setupWithViewPager(communityViewPager)
+        communityViewPager.currentItem = initIndex
+
+
 
 
         return viewGroup
     }
+
 }

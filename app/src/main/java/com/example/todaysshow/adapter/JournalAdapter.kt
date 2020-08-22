@@ -8,12 +8,16 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.example.todaysshow.ItemClickListener
 import com.example.todaysshow.R
+import com.example.todaysshow.RecyclerItemClickListener
 import com.example.todaysshow.`object`.Journal
+import com.example.todaysshow.fragment.CommunityFragment
 
-class JournalAdapter(journals: ArrayList<Journal>, context: Context) : RecyclerView.Adapter<JournalAdapter.JournalHolder>() {
+class JournalAdapter(journals: ArrayList<Journal>, context: Context, itemClickListener: ItemClickListener) : RecyclerView.Adapter<JournalAdapter.JournalHolder>() {
     var journals : ArrayList<Journal> = journals
     var context : Context = context
+    var itemClickListener = itemClickListener
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): JournalHolder {
         val inflatedView = LayoutInflater.from(parent.context).inflate(R.layout.journal_list_item, parent, false)
@@ -30,6 +34,7 @@ class JournalAdapter(journals: ArrayList<Journal>, context: Context) : RecyclerV
                 journal.getJournalStr() + " ",
                 Toast.LENGTH_SHORT
             ).show()
+            itemClickListener.onItemClicked(holder, journal, position)
         }
     }
 

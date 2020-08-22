@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.bottom_community -> {
                     supportFragmentManager.beginTransaction().replace(R.id.main_frameLayout,
-                        CommunityFragment()
+                        CommunityFragment(0)
                     ).commitAllowingStateLoss()
                 }
                 R.id.bottom_profile -> {

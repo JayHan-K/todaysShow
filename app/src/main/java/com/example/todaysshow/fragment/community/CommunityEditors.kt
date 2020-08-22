@@ -4,9 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.todaysshow.ItemClickListener
 import com.example.todaysshow.R
 import com.example.todaysshow.`object`.Journal
 import com.example.todaysshow.adapter.JournalAdapter
@@ -31,10 +33,15 @@ class CommunityEditors : Fragment() {
         val journalLayoutManager : LinearLayoutManager = LinearLayoutManager(context)
         journalLayoutManager.orientation = LinearLayoutManager.HORIZONTAL
 
+        val listener : ItemClickListener = object : ItemClickListener {
+            override fun onItemClicked(vh: RecyclerView.ViewHolder, item: Any, pos: Int) {
+                Toast.makeText(context, "Community Editors", Toast.LENGTH_SHORT).show()
+            }
+        }
         journalList = getJournals()
         val searchResultJournalRV = viewGroup.findViewById<RecyclerView>(R.id.community_editors_journal_rv) as RecyclerView
         val journalAdapter =
-            JournalAdapter(journalList, context!!)
+            JournalAdapter(journalList, context!!, listener)
         searchResultJournalRV.layoutManager = journalLayoutManager
         searchResultJournalRV.adapter = journalAdapter
 

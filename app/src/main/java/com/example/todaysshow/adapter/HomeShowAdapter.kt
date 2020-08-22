@@ -1,6 +1,7 @@
 package com.example.todaysshow.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +9,7 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.todaysshow.R
+import com.example.todaysshow.ShowDetailActivity
 import com.example.todaysshow.`object`.HomeShow
 
 class HomeShowAdapter(homeShows: ArrayList<HomeShow>, context : Context) :
@@ -24,6 +26,8 @@ class HomeShowAdapter(homeShows: ArrayList<HomeShow>, context : Context) :
         holder.homeShowIV.setBackgroundResource(homeShow.getImageResource())
         holder.homeShowIV.setOnClickListener(View.OnClickListener {
             Toast.makeText(context, homeShow.getShowName(), Toast.LENGTH_SHORT).show()
+            var intent : Intent = Intent(context, ShowDetailActivity::class.java)
+            context.startActivity(intent)
         })
 
     }
