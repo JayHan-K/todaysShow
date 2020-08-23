@@ -30,11 +30,6 @@ class MainActivity : AppCompatActivity() {
                         SearchFragment()
                     ).commitAllowingStateLoss()
                 }
-                R.id.bottom_category -> {
-                    supportFragmentManager.beginTransaction().replace(R.id.main_frameLayout,
-                        CategoryFragment()
-                    ).commitAllowingStateLoss()
-                }
                 R.id.bottom_community -> {
                     supportFragmentManager.beginTransaction().replace(R.id.main_frameLayout,
                         CommunityFragment(0)

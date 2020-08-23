@@ -11,10 +11,6 @@
         android:icon="@drawable/search"
         android:title="검색"/>
     <item
-        android:id="@+id/bottom_category"
-        android:icon="@drawable/category"
-        android:title="카테고리"/>
-    <item
         android:id="@+id/bottom_community"
         android:icon="@drawable/community"
         android:title="커뮤니티"/>

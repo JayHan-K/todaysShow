@@ -2,39 +2,42 @@
 <LinearLayout
     android:orientation="vertical"
     android:weightSum="1"
-    android:background="#ffffff"
+    android:background="#000000"
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-    
     <LinearLayout
-        android:layout_weight="0.16"
+        android:layout_marginLeft="100px"
         android:layout_width="match_parent"
-        android:layout_height="0dp">
+        android:layout_height="400px">
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/search_result_journal_rv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_weight="0.04"
-        android:layout_width="match_parent"
-        android:layout_height="0dp">
-        <TextView
-            android:layout_gravity="center_vertical"
-            android:textSize="15sp"
-            android:paddingLeft="15sp"
-            android:text="정확순 및 인기순"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"></TextView>
-    </LinearLayout>
-    <LinearLayout
-        android:paddingRight="15sp"
-        android:paddingLeft="15sp"
-        android:layout_weight="0.65"
-        android:layout_width="match_parent"
-        android:layout_height="0dp">
 
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30px">
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50px">
+        <TextView
+            android:textColor="#ffffff"
+            android:layout_marginLeft="100px"
+            android:text="정확순 및 인기"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"></TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30px"></LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1650px">
         <GridLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -119,17 +122,25 @@
         </GridLayout>
 
     </LinearLayout>
+
     <LinearLayout
-        android:paddingLeft="20sp"
-        android:orientation="vertical"
-        android:paddingTop="5sp"
-        android:layout_weight="0.15"
         android:layout_width="match_parent"
-        android:layout_height="0dp">
+        android:layout_height="50px"></LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50px">
         <TextView
+            android:layout_marginLeft="100px"
+            android:textColor="#ffffff"
             android:text="다음과 관련된 공연도 살펴보세요"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"></TextView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginLeft="100px"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
         <androidx.recyclerview.widget.RecyclerView
             android:clipToPadding="false"
             android:id="@+id/search_result_relation_rv"

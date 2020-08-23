@@ -5,9 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.FrameLayout
-import android.widget.LinearLayout
-import android.widget.TextView
+import android.widget.*
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -81,7 +79,6 @@ class SearchFragment : Fragment() {
 
         })
 
-
         setPopularSearch()
 
 
@@ -112,7 +109,7 @@ class SearchFragment : Fragment() {
                     RecyclerItemClickListener.OnItemClickListener {
                     override fun onItemClick(view: View, position: Int) {
                         var str = searchQueryAdapter.filteredList.get(position)
-                        searchbar!!.setQuery(str, false)
+                        searchbar!!.setQuery(str, true)
 
                     }
 
