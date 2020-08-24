@@ -2,6 +2,7 @@ package com.example.todaysshow.fragment.search
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,11 +12,13 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.todaysshow.ItemClickListener
-import com.example.todaysshow.`object`.Journal
 import com.example.todaysshow.R
 import com.example.todaysshow.ShowDetailActivity
+import com.example.todaysshow.`object`.Journal
 import com.example.todaysshow.adapter.JournalAdapter
 import com.example.todaysshow.adapter.SearchResultRelationAdapter
+import com.example.todaysshow.fragment.SearchFragment
+import kotlinx.android.synthetic.main.search_list_item.*
 
 class SearchResultFragment(resultStr : String) : Fragment(), View.OnClickListener {
     var searchResultStr = resultStr
@@ -33,6 +36,7 @@ class SearchResultFragment(resultStr : String) : Fragment(), View.OnClickListene
     ): View? {
         val viewGroup: ViewGroup = inflater.inflate(R.layout.search_result_layout, null) as ViewGroup
 
+        Toast.makeText(context, "Search Result : " + searchResultStr , Toast.LENGTH_SHORT).show()
         //var searchResultTv = viewGroup.findViewById<TextView>(R.id.search_result_tv) as TextView
         //searchResultTv.setText(searchResultStr)
 
@@ -53,11 +57,19 @@ class SearchResultFragment(resultStr : String) : Fragment(), View.OnClickListene
         searchResultJournalRV.adapter = journalAdapter
 
         relationList = getRelation()
+        val mListener : ItemClickListener = object : ItemClickListener {
+            override fun onItemClicked(vh: RecyclerView.ViewHolder, item: Any, pos: Int) {
+                var parentFrag : SearchFragment = this@SearchResultFragment.parentFragment as SearchFragment
+                parentFrag.setSearchQuery(item.toString())
+
+            }
+        }
         val relationListRV = viewGroup.findViewById<RecyclerView>(R.id.search_result_relation_rv)
         val relationAdapter =
             SearchResultRelationAdapter(
                 relationList!!,
-                context!!
+                context!!,
+                mListener
             )
         relationListRV.layoutManager = relationLayoutManager
         relationListRV.adapter = relationAdapter
@@ -149,6 +161,10 @@ class SearchResultFragment(resultStr : String) : Fragment(), View.OnClickListene
         relationList.add("쉬어 매드니스")
         relationList.add("캣츠")
         relationList.add("오페라의 유령")
+        relationList.add("show1")
+        relationList.add("show2")
+        relationList.add("show3")
+        relationList.add("show4")
 
         return relationList
 

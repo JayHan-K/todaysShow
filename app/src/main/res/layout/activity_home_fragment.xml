@@ -7,9 +7,16 @@
     tools:context=".fragment.HomeFragment"
     android:background="#000000"
     >
+    <FrameLayout
+        android:visibility="invisible"
+        android:id="@+id/home_fragment_child_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
+    </FrameLayout>
 
     <ScrollView
+        android:visibility="visible"
         android:id="@+id/home_fragment_main_sv"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -20,14 +27,14 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="1625px">
+                android:layout_height="1220px">
                 <androidx.viewpager.widget.ViewPager
                     android:id="@+id/home_main_ad_vp"
                     android:layout_width="match_parent"
-                    android:layout_height="1625px">
+                    android:layout_height="1220px">
                 </androidx.viewpager.widget.ViewPager>
                 <com.example.todaysshow.CircleIndicator
-                    android:paddingBottom="100px"
+                    android:paddingBottom="75px"
                     android:layout_centerHorizontal="true"
                     android:layout_alignParentBottom="true"
                     android:id="@+id/home_main_ad_ci"
@@ -39,13 +46,13 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="120px"></LinearLayout>
+                android:layout_height="30px"></LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="400px">
+                android:layout_height="300px">
                 <androidx.recyclerview.widget.RecyclerView
-                    android:paddingLeft="90px"
+                    android:paddingLeft="68px"
                     android:id="@+id/home_journal_rv"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
@@ -54,14 +61,14 @@
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="160px">
+                android:layout_height="30px">
 
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="90px">
+                android:layout_height="68px">
                 <TextView
-                    android:paddingLeft="110px"
+                    android:paddingLeft="83px"
                     android:textColor="#ffffff"
                     android:text="제우님 맞춤공연"
                     android:layout_width="wrap_content"
@@ -71,9 +78,9 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="440px">
+                android:layout_height="330px">
                 <androidx.recyclerview.widget.RecyclerView
-                    android:paddingLeft="100px"
+                    android:paddingLeft="75px"
                     android:id="@+id/personalizedShowRV"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"/>
@@ -81,14 +88,14 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="160px">
+                android:layout_height="50px">
 
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="90px">
+                android:layout_height="68px">
                 <TextView
-                    android:paddingLeft="110px"
+                    android:paddingLeft="83px"
                     android:textColor="#ffffff"
                     android:text="에디터's Choice"
                     android:layout_width="wrap_content"
@@ -98,9 +105,9 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="440px">
+                android:layout_height="330px">
                 <androidx.recyclerview.widget.RecyclerView
-                    android:paddingLeft="100px"
+                    android:paddingLeft="75px"
                     android:id="@+id/recommendShowRV"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"/>
@@ -108,7 +115,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="100px"></LinearLayout>
+                android:layout_height="75px"></LinearLayout>
 
         </LinearLayout>
 
@@ -116,13 +123,14 @@
 
     </ScrollView>
     <LinearLayout
+        android:id="@+id/home_fragment_top_title_ll"
         android:background="#cc000000"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="322px">
+        android:layout_height="242px">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="160px">
+            android:layout_height="120px">
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
@@ -134,13 +142,13 @@
                 <Button
                     android:id="@+id/home_fragment_category_bt"
                     android:layout_centerVertical="true"
-                    android:layout_marginLeft="110px"
+                    android:layout_marginLeft="82px"
                     android:background="@drawable/top_menu_bar_image"
-                    android:layout_width="80px"
-                    android:layout_height="90px">
+                    android:layout_width="60px"
+                    android:layout_height="68px">
                 </Button>
                 <TextView
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     android:textStyle="bold"
                     android:textColor="#ffffff"
                     android:layout_centerInParent="true"

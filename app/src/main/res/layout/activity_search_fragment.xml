@@ -12,20 +12,20 @@
         android:layout_height="match_parent">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="120px"></LinearLayout>
+            android:layout_height="90px"></LinearLayout>
         <androidx.appcompat.widget.SearchView
             android:theme="@style/SearchViewStyle"
             android:background="#353535"
-            android:layout_marginRight="110px"
-            android:layout_marginLeft="110px"
+            android:layout_marginRight="83px"
+            android:layout_marginLeft="83px"
             app:queryHint="검색어를 입력하세요."
             android:iconifiedByDefault="false"
             android:id="@+id/search_bar"
             android:layout_width="match_parent"
-            android:layout_height="110px"/>
+            android:layout_height="83px"/>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="95px"></LinearLayout>
+            android:layout_height="70px"></LinearLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -61,14 +61,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="30px"></LinearLayout>
                 <LinearLayout
-                    android:layout_marginLeft="115px"
-                    android:layout_marginRight="115px"
+                    android:layout_marginLeft="86px"
+                    android:layout_marginRight="86px"
                     android:background="#9b9b9b"
                     android:layout_width="match_parent"
                     android:layout_height="3px"></LinearLayout>
                 <androidx.recyclerview.widget.RecyclerView
-                    android:layout_marginTop="60px"
-                    android:layout_marginLeft="115px"
+                    android:layout_marginTop="45px"
+                    android:layout_marginLeft="86px"
                     android:id="@+id/search_result_rv"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"/>

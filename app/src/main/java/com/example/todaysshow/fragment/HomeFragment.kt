@@ -2,11 +2,11 @@ package com.example.todaysshow.fragment
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.Toast
+import android.widget.*
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -21,12 +21,17 @@ import com.example.todaysshow.adapter.CommunityPagerAdapter
 import com.example.todaysshow.adapter.HomeAdPagerAdapter
 import com.example.todaysshow.adapter.HomeShowAdapter
 import com.example.todaysshow.adapter.JournalAdapter
+import com.example.todaysshow.fragment.search.SearchResultFragment
 
 class HomeFragment : Fragment(){
 
     var journalList : ArrayList<Journal>? = null
     var personalizedShow : ArrayList<HomeShow>? = null
     var recommendedShow : ArrayList<HomeShow>? = null
+    var homeFragmentMainScrollView : ScrollView? = null
+    var homeFragmentChildFragment : FrameLayout? = null
+    var homeFragmentTopTitleLinearLayout : LinearLayout? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,6 +44,10 @@ class HomeFragment : Fragment(){
     ): View? {
         val viewGroup: ViewGroup =
             inflater.inflate(R.layout.activity_home_fragment, null) as ViewGroup
+
+        homeFragmentMainScrollView = viewGroup.findViewById(R.id.home_fragment_main_sv)
+        homeFragmentChildFragment = viewGroup.findViewById(R.id.home_fragment_child_fragment)
+        homeFragmentTopTitleLinearLayout = viewGroup.findViewById(R.id.home_fragment_top_title_ll)
 
         var homeViewPager = viewGroup.findViewById<ViewPager>(R.id.home_main_ad_vp)
         homeViewPager.adapter = HomeAdPagerAdapter(childFragmentManager)
@@ -88,13 +97,34 @@ class HomeFragment : Fragment(){
 
         val homePersonalRV = viewGroup.findViewById<RecyclerView>(R.id.personalizedShowRV)
         val homeRecommendedRV = viewGroup.findViewById<RecyclerView>(R.id.recommendShowRV)
+
+        val mListener : ItemClickListener = object : ItemClickListener {
+            override fun onItemClicked(vh: RecyclerView.ViewHolder, item: Any, pos: Int) {
+
+                var homeShow :HomeShow = item as HomeShow
+                Log.i("HomeFragment", homeShow.getShowName())
+
+                homeFragmentMainScrollView!!.visibility = View.INVISIBLE
+                homeFragmentChildFragment!!.visibility = View.VISIBLE
+                homeFragmentTopTitleLinearLayout!!.visibility = View.INVISIBLE
+
+                childFragmentManager.beginTransaction().replace(
+                    R.id.home_fragment_child_fragment,
+                    ShowDetailFragment("Home", homeShow.getShowName())
+                ).commitAllowingStateLoss()
+
+            }
+        }
+
         val personalAdapter = HomeShowAdapter(
             personalizedShow!!,
-            context!!
+            context!!,
+            mListener
         )
         val recommandedAdapter = HomeShowAdapter(
             recommendedShow!!,
-            context!!
+            context!!,
+            mListener
         )
         homePersonalRV.layoutManager = personalLayoutManger
         homeRecommendedRV.layoutManager = recommendedLayoutManager
@@ -268,5 +298,10 @@ class HomeFragment : Fragment(){
         return shows
     }
 
+    fun BackToHome(){
+        homeFragmentMainScrollView!!.visibility = View.VISIBLE
+        homeFragmentChildFragment!!.visibility = View.INVISIBLE
+        homeFragmentTopTitleLinearLayout!!.visibility = View.VISIBLE
+    }
 
 }

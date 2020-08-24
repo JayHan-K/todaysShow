@@ -119,5 +119,10 @@ class SearchFragment : Fragment() {
 
     }
 
+    fun setSearchQuery(query: String){
+        searchbar!!.setQuery(query, true)
+        Log.i("SearchFragment", query)
+    }
+
 
 }

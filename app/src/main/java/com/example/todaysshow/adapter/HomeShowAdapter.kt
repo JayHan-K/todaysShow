@@ -8,14 +8,16 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.example.todaysshow.ItemClickListener
 import com.example.todaysshow.R
 import com.example.todaysshow.ShowDetailActivity
 import com.example.todaysshow.`object`.HomeShow
 
-class HomeShowAdapter(homeShows: ArrayList<HomeShow>, context : Context) :
+class HomeShowAdapter(homeShows: ArrayList<HomeShow>, context : Context, itemClickListener: ItemClickListener) :
     RecyclerView.Adapter<HomeShowAdapter.HomeShowHolder>() {
     public var homeShows: ArrayList<HomeShow> = homeShows
     public var context: Context = context
+    var itemClickListener = itemClickListener
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeShowHolder {
         val inflatedView = LayoutInflater.from(parent.context).inflate(R.layout.home_show_list_item, parent, false)
@@ -25,9 +27,7 @@ class HomeShowAdapter(homeShows: ArrayList<HomeShow>, context : Context) :
         var homeShow : HomeShow = homeShows.get(position)
         holder.homeShowIV.setBackgroundResource(homeShow.getImageResource())
         holder.homeShowIV.setOnClickListener(View.OnClickListener {
-            Toast.makeText(context, homeShow.getShowName(), Toast.LENGTH_SHORT).show()
-            var intent : Intent = Intent(context, ShowDetailActivity::class.java)
-            context.startActivity(intent)
+            itemClickListener.onItemClicked(holder, homeShow, position)
         })
 
     }

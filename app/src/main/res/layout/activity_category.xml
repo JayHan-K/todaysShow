@@ -11,10 +11,10 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="322px">
+        android:layout_height="242px">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="160px">
+            android:layout_height="120px">
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
@@ -26,13 +26,13 @@
                 <Button
                     android:id="@+id/category_back_to_home"
                     android:layout_centerVertical="true"
-                    android:layout_marginLeft="110px"
+                    android:layout_marginLeft="82px"
                     android:background="@drawable/back_arrow"
-                    android:layout_width="80px"
-                    android:layout_height="90px">
+                    android:layout_width="60px"
+                    android:layout_height="68px">
                 </Button>
                 <TextView
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     android:textStyle="bold"
                     android:textColor="#ffffff"
                     android:layout_centerInParent="true"
