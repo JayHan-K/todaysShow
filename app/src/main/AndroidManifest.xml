@@ -10,11 +10,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".fragment.ProfileFragment"></activity>
+        <activity android:name=".CategoryActivity"
+            android:theme="@style/Transparent"
+            ></activity>
+        <activity android:name=".fragment.ProfileFragment" />
         <activity android:name=".fragment.CommunityFragment" />
-        <activity android:name=".fragment.CategoryFragment" />
-        <activity android:name=".fragment.SearchFragment"
-            />
+        <activity android:name=".fragment.SearchFragment" />
         <activity android:name=".fragment.HomeFragment" />
         <activity android:name=".LaunchActivity">
             <intent-filter>
@@ -23,10 +24,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"
-            android:windowSoftInputMode="adjustNothing"
-            />
-        <activity android:name=".ShowDetailActivity"/>
+        <activity
+            android:name=".MainActivity"
+            android:windowSoftInputMode="adjustNothing" />
+        <activity android:name=".ShowDetailActivity" />
     </application>
 
 </manifest>

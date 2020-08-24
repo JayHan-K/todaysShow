@@ -1,14 +1,17 @@
 package com.example.todaysshow.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
+import com.example.todaysshow.CategoryActivity
 import com.example.todaysshow.CircleIndicator
 import com.example.todaysshow.ItemClickListener
 import com.example.todaysshow.`object`.Journal
@@ -97,6 +100,12 @@ class HomeFragment : Fragment(){
         homeRecommendedRV.layoutManager = recommendedLayoutManager
         homePersonalRV.adapter = personalAdapter
         homeRecommendedRV.adapter = recommandedAdapter
+
+        var homeFragmentCategoryButton = viewGroup.findViewById<Button>(R.id.home_fragment_category_bt)
+        homeFragmentCategoryButton.setOnClickListener(View.OnClickListener {
+            var intent: Intent = Intent(context, CategoryActivity::class.java)
+            startActivity(intent)
+        })
 
         return viewGroup
     }
