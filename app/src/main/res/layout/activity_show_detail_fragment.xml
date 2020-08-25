@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <FrameLayout
+        android:visibility="invisible"
+        android:id="@+id/show_detail_fl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></FrameLayout>
+
     <RelativeLayout
+        android:id="@+id/show_detail_rl"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <ScrollView
@@ -229,6 +236,7 @@
 
         </ScrollView>
         <Button
+            android:id="@+id/show_detail_writing_review_bt"
             android:text="후기 쓰기"
             android:layout_margin="30sp"
             android:layout_alignParentRight="true"
@@ -239,4 +247,4 @@
 
 
 
-</LinearLayout>
+</FrameLayout>

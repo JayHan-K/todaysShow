@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            
+            <LinearLayout
+                android:background="#000000"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="720px">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="210px"></LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="430px">
+                    <LinearLayout
+                        android:layout_width="65px"
+                        android:layout_height="match_parent">
+                        
+                    </LinearLayout>
+
+                    <ImageView
+                        android:src="@drawable/show_sample2"
+                        android:layout_width="340px"
+                        android:layout_height="match_parent">
+                    </ImageView>
+                    <LinearLayout
+                        android:layout_width="50px"
+                        android:layout_height="match_parent"></LinearLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:textStyle="bold"
+                            android:id="@+id/writing_review_title_tv"
+                            android:paddingBottom="5dp"
+                            android:layout_centerVertical="true"
+                            android:textSize="18sp"
+                            android:textColor="#ffffff"
+                            android:text="뮤지컬 오페라의 유령"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"></TextView>
+                        <TextView
+                            android:id="@+id/writing_review_tag_tv"
+                            android:textColor="#ffffff"
+                            android:textSize="13sp"
+                            android:text="로맨스, 스릴러"
+                            android:layout_below="@+id/writing_review_title_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"></TextView>
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:background="#ffffff"
+                android:orientation="vertical"
+                android:paddingRight="90px"
+                android:paddingLeft="90px"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="80px"></LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="50px">
+                    <TextView
+                        android:textColor="#000000"
+                        android:textStyle="bold"
+                        android:text="좋았던 점   "
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"></TextView>
+                    <TextView
+                        android:textColor="#000000"
+                        android:text="(최소 30자 이상)"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"></TextView>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50px"></LinearLayout>
+
+                <EditText
+                    android:id="@+id/writing_review_good_thing_et"
+                    android:textAlignment="viewStart"
+                    android:scrollbars="vertical"
+                    android:textSize="12sp"
+                    android:hint="* 공연을 관람하시면서, 인상 깊언던 점이나 작품의 스토리, 공연의 전박적인 분위기 등에 대해 작성해주세요."
+                    android:layout_width="match_parent"
+                    android:layout_height="230px"
+                    android:gravity="start"></EditText>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="80px"></LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="50px">
+                    <TextView
+                        android:textColor="#000000"
+                        android:textStyle="bold"
+                        android:text="아쉬운 점   "
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"></TextView>
+                    <TextView
+                        android:textColor="#000000"
+                        android:text="(최소 30자 이상)"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"></TextView>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50px"></LinearLayout>
+
+                <EditText
+                    android:id="@+id/writing_review_bad_thing_et"
+                    android:textAlignment="viewStart"
+                    android:scrollbars="vertical"
+                    android:textSize="12sp"
+                    android:hint="* 공연을 관람하시면서, 인상 깊언던 점이나 작품의 스토리, 공연의 전박적인 분위기 등에 대해 작성해주세요."
+                    android:layout_width="match_parent"
+                    android:layout_height="230px"
+                    android:gravity="start"></EditText>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="80px"></LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="50px">
+                    <TextView
+                        android:textColor="#000000"
+                        android:textStyle="bold"
+                        android:text="공연 꿀팁   "
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"></TextView>
+                    <TextView
+                        android:textColor="#000000"
+                        android:text="(선택)"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"></TextView>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50px"></LinearLayout>
+
+                <EditText
+                    android:id="@+id/writing_review_tip_et"
+                    android:textAlignment="viewStart"
+                    android:scrollbars="vertical"
+                    android:textSize="12sp"
+                    android:hint="* 공연을 관람하시면서, 인상 깊언던 점이나 작품의 스토리, 공연의 전박적인 분위기 등에 대해 작성해주세요."
+                    android:layout_width="match_parent"
+                    android:layout_height="230px"
+                    android:gravity="start"></EditText>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="80px"></LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="50px">
+                    <TextView
+                        android:textColor="#000000"
+                        android:textStyle="bold"
+                        android:text="사진 첨부"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"></TextView>
+                    </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50px"></LinearLayout>
+                <TextView
+                    android:textColor="#777777"
+                    android:textSize="12sp"
+                    android:text="* 실제 공연관람을 확인할 수 있는 영수증 혹은 티켓을 첨부해주세요."
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"></TextView>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50px"></LinearLayout>
+                <Button
+                    android:textSize="12sp"
+                    android:text="인증 첨부"
+                    android:layout_width="match_parent"
+                    android:layout_height="100px"></Button>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50px"></LinearLayout>
+                <TextView
+                    android:textColor="#777777"
+                    android:textSize="12sp"
+                    android:text="* 실제 공연장에서 촬영한 공연장 사진, 공연 관련사진, \n인증샷 등을 올려주세요."
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"></TextView>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50px"></LinearLayout>
+                <Button
+                    android:textSize="12sp"
+                    android:text="사진 첨부"
+                    android:layout_width="match_parent"
+                    android:layout_height="100px"></Button>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50px">
+                </LinearLayout>
+                <LinearLayout
+                    android:background="#777777"
+                    android:layout_width="match_parent"
+                    android:layout_height="3px"></LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50px"></LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100px">
+                    <TextView
+                        android:layout_centerInParent="true"
+                        android:text="이 작품을 추천하시겠어요?"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
+                        android:textSize="15sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"></TextView>
+                </RelativeLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50px"></LinearLayout>
+
+                <LinearLayout
+                    android:weightSum="1"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="150px">
+
+                    <RelativeLayout
+                        android:layout_weight="0.5"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent">
+                        <Button
+                            android:layout_marginRight="40px"
+                            android:layout_alignParentRight="true"
+                            android:text="좋아요"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"></Button>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_weight="0.5"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent">
+                        <Button
+                            android:layout_marginLeft="40px"
+                            android:layout_alignParentLeft="true"
+                            android:text="싫어요"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"></Button>
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50px"></LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+        
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/writing_review_fragment_ll"
+        android:background="#cc000000"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="242px">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="120px">
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <Button
+                    android:id="@+id/writing_review_close_bt"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="82px"
+                    android:background="@drawable/back_arrow"
+                    android:layout_width="60px"
+                    android:layout_height="68px">
+                </Button>
+                <TextView
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#ffffff"
+                    android:layout_centerInParent="true"
+                    android:text="후기 쓰기"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                </TextView>
+                <Button
+                    android:textColor="#ffffff"
+                    android:textSize="14sp"
+                    android:text="등록"
+                    android:id="@+id/writing_review_apply_bt"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="82px"
+                    android:background="#00000000"
+                    android:layout_width="80px"
+                    android:layout_height="88px">
+                </Button>
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>
