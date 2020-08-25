@@ -4,12 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.FrameLayout
-import android.widget.RelativeLayout
-import android.widget.TextView
+import android.widget.*
 import androidx.fragment.app.Fragment
 import com.example.todaysshow.R
+import com.example.todaysshow.ShowDetailActivity
+import kr.co.prnd.YouTubePlayerView
 
 class ShowDetailFragment(parent: String, title: String) : Fragment() {
 
@@ -17,7 +16,7 @@ class ShowDetailFragment(parent: String, title: String) : Fragment() {
     var title = title
     var showDetailFrameLayout : FrameLayout? = null
     var showDetailRelativeLayout : RelativeLayout? = null
-
+    var showDetailTopLinearLayout : LinearLayout? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,7 +32,7 @@ class ShowDetailFragment(parent: String, title: String) : Fragment() {
 
         showDetailFrameLayout = viewGroup.findViewById(R.id.show_detail_fl)
         showDetailRelativeLayout = viewGroup.findViewById(R.id.show_detail_rl)
-
+        showDetailTopLinearLayout = viewGroup.findViewById(R.id.show_detail_top_ll)
 
         var showDetailTitleTextView = viewGroup.findViewById<TextView>(R.id.show_detail_title_tv)
         showDetailTitleTextView.setText(title)
@@ -51,6 +50,7 @@ class ShowDetailFragment(parent: String, title: String) : Fragment() {
         showDetailWritingReviewButton.setOnClickListener(View.OnClickListener {
             showDetailFrameLayout!!.visibility = View.VISIBLE
             showDetailRelativeLayout!!.visibility = View.INVISIBLE
+            showDetailTopLinearLayout!!.visibility = View.INVISIBLE
 
             childFragmentManager.beginTransaction().replace(
                 R.id.show_detail_fl,
@@ -59,12 +59,21 @@ class ShowDetailFragment(parent: String, title: String) : Fragment() {
 
         })
 
+        var youTubePlayer = viewGroup.findViewById<YouTubePlayerView>(R.id.show_detail_fragment_youtube)
+
+        youTubePlayer.play(ShowDetailFragment.VIDEO_ID)
+
         return viewGroup
     }
 
     fun showLayout(){
         showDetailFrameLayout!!.visibility = View.INVISIBLE
         showDetailRelativeLayout!!.visibility = View.VISIBLE
+        showDetailTopLinearLayout!!.visibility = View.VISIBLE
+    }
+
+    companion object{
+        private const val VIDEO_ID = "a7AP-XrBKC0"
     }
 
 }
