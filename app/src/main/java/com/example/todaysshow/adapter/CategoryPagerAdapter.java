@@ -35,14 +35,9 @@ public class CategoryPagerAdapter extends FragmentStatePagerAdapter {
             case 3:
                 CategoryClassic tab4 = new CategoryClassic();
                 return tab4;
-
-<<<<<<< HEAD
             default:
                 return null;
-=======
-                default:
-                    return null;
->>>>>>> hwayeon
+
         }
     }
 
@@ -50,8 +45,5 @@ public class CategoryPagerAdapter extends FragmentStatePagerAdapter {
     public int getCount() {
         return num;
     }
-<<<<<<< HEAD
+
 }
-=======
-}
->>>>>>> hwayeon

@@ -17,11 +17,6 @@ import com.example.todaysshow.R;
 
 public class CategoryPlay extends ListFragment {
     public CategoryPlay(){
-<<<<<<< HEAD
-
-=======
-        
->>>>>>> hwayeon
     }
     @Nullable
     @Override
@@ -41,8 +36,5 @@ public class CategoryPlay extends ListFragment {
         Log.d("Fragment: ", position + ": " +strText);
         Toast.makeText(this.getContext(), "클릭: " + position +" " + strText, Toast.LENGTH_SHORT).show();
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> hwayeon
+

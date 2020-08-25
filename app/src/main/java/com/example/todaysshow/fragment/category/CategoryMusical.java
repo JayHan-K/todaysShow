@@ -17,11 +17,7 @@ import com.example.todaysshow.R;
 
 public class CategoryMusical extends ListFragment {
     public CategoryMusical(){
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> hwayeon
     }
     @Nullable
     @Override
@@ -42,8 +38,4 @@ public class CategoryMusical extends ListFragment {
         Toast.makeText(this.getContext(), "클릭: " + position +" " + strText, Toast.LENGTH_SHORT).show();
     }
 
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> hwayeon

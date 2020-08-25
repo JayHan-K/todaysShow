@@ -24,7 +24,7 @@ public class CategoryFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.activity_category_fragment, container, false);
+        ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.activity_category, container, false);
 
         TabLayout tabLayout = (TabLayout) rootView.findViewById(R.id.tabLayout);
         tabLayout.addTab((tabLayout.newTab().setText("전체")));
