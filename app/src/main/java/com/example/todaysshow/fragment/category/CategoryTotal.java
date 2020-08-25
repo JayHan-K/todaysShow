@@ -41,4 +41,8 @@ public class CategoryTotal extends ListFragment {
 
     }
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> hwayeon

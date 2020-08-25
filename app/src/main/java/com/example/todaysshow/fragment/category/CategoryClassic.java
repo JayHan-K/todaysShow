@@ -1,6 +1,9 @@
 package com.example.todaysshow.fragment.category;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> hwayeon
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -39,4 +42,8 @@ public class CategoryClassic extends ListFragment {
         Log.d("Fragment: ", position + ": " +strText);
         Toast.makeText(this.getContext(), "클릭: " + position +" " + strText, Toast.LENGTH_SHORT).show();
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> hwayeon
