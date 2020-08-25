@@ -1,10 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <TextView
-        android:text="Q &amp; A "
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.SearchView
+            android:theme="@style/SearchViewStyle"
+            android:background="#353535"
+            android:layout_marginTop="30dp"
+            android:iconifiedByDefault="false"
+            android:id="@+id/qna_search_bar"
+            android:layout_width="match_parent"
+            android:layout_height="100px"/>
+        
+        <Spinner
+            android:entries="@array/spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp" />
+
+        <LinearLayout
+            android:background="#9b9b9b"
+            android:layout_width="match_parent"
+            android:layout_height="3px"></LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/qna_rv"
+            android:scrollbars="vertical"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingActionButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            app:srcCompat="@android:drawable/ic_menu_edit" />
+    </LinearLayout>
 
 </FrameLayout>
