@@ -59,8 +59,12 @@ class ShowDetailFragment(parent: String, title: String) : Fragment() {
         closeBt.setOnClickListener(View.OnClickListener {
             if (parent.equals("Home")) {
                 var parentFrag: HomeFragment =
-                    this@ShowDetailFragment.parentFragment as HomeFragment
+                this@ShowDetailFragment.parentFragment as HomeFragment
                 parentFrag.BackToHome()
+            }else if(parent.equals("Search")){
+                var parentFrag: SearchFragment =
+                    this@ShowDetailFragment.parentFragment as SearchFragment
+                parentFrag.changeShowDetailToSearchFrame()
             }
         })
 

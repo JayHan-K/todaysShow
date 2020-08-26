@@ -30,11 +30,6 @@ class JournalAdapter(journals: ArrayList<Journal>, context: Context, itemClickLi
         holder.journal_tv.text = journal.getJournalStr()
         holder.journal_iv.setImageResource(journal.getImageResource())
         holder.itemView.setOnClickListener {
-            Toast.makeText(
-                context,
-                journal.getJournalStr() + " ",
-                Toast.LENGTH_SHORT
-            ).show()
             itemClickListener.onItemClicked(holder, journal, position)
         }
     }

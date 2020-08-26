@@ -13,6 +13,7 @@ import com.example.todaysshow.R
 import com.example.todaysshow.RecyclerItemClickListener
 import com.example.todaysshow.fragment.search.SearchResultFragment
 import com.example.todaysshow.TodayShowApplication
+import com.example.todaysshow.`object`.Show
 import com.example.todaysshow.adapter.SearchQueryAdapter
 
 class SearchFragment : Fragment() {
@@ -22,6 +23,8 @@ class SearchFragment : Fragment() {
     var search_pop_rec : TextView? = null
     var searchFrameLayout : FrameLayout? = null
     var searchLinearLayout : LinearLayout? = null
+    var searchMainFrameLayout : FrameLayout? = null
+    var searchMainLinearLayout : LinearLayout? = null
 
     lateinit var searchQueryAdapter : SearchQueryAdapter
 
@@ -36,6 +39,9 @@ class SearchFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val viewGroup:ViewGroup = inflater.inflate(R.layout.activity_search_fragment, null) as ViewGroup
+        searchMainFrameLayout = viewGroup.findViewById(R.id.search_main_fl)
+        searchMainLinearLayout = viewGroup.findViewById(R.id.search_main_ll)
+
         searchFrameLayout = viewGroup.findViewById(R.id.search_frame)
         searchLinearLayout = viewGroup.findViewById(R.id.search_list_ll)
         search_pop_rec = viewGroup.findViewById(R.id.search_pop_rec_tv)
@@ -124,5 +130,21 @@ class SearchFragment : Fragment() {
         Log.i("SearchFragment", query)
     }
 
+    fun changeSearchFrameToShowDetail(show: Show){
+        searchMainLinearLayout!!.visibility = View.INVISIBLE
+        searchMainFrameLayout!!.visibility = View.VISIBLE
+        childFragmentManager.beginTransaction().replace(
+            R.id.search_main_fl,
+            ShowDetailFragment("Search", show.getShowName())
+        ).commitAllowingStateLoss()
+
+    }
+
+    fun changeShowDetailToSearchFrame(){
+        searchMainFrameLayout!!.visibility = View.INVISIBLE
+        searchMainLinearLayout!!.visibility = View.VISIBLE
+
+
+    }
 
 }

@@ -11,10 +11,10 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="242px">
+        android:layout_height="76dp">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="120px">
+            android:layout_height="40dp">
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
@@ -26,14 +26,14 @@
                 <Button
                     android:id="@+id/category_back_to_home"
                     android:layout_centerVertical="true"
-                    android:layout_marginLeft="82px"
-                    android:background="@drawable/back_arrow"
-                    android:layout_width="60px"
-                    android:layout_height="68px">
+                    android:layout_marginLeft="27dp"
+                    android:background="@drawable/icon_pre"
+                    android:layout_width="22dp"
+                    android:layout_height="20dp">
                 </Button>
                 <TextView
-                    android:textSize="16sp"
-                    android:textStyle="bold"
+                    android:fontFamily="@font/kopubworlddotumbold"
+                    android:textSize="16dp"
                     android:textColor="#ffffff"
                     android:layout_centerInParent="true"
                     android:text="오늘의 공연"
@@ -52,7 +52,11 @@
         android:orientation="vertical">
 
         <com.google.android.material.tabs.TabLayout
-            app:tabTextColor="#ffffff"
+            app:tabIndicatorFullWidth="false"
+            app:tabIndicatorColor="#fed700"
+            app:tabGravity="fill"
+            app:tabSelectedTextColor="#ffffff"
+            app:tabTextColor="#bababa"
             android:id="@+id/tabLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

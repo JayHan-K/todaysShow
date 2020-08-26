@@ -21,7 +21,9 @@ import com.example.todaysshow.`object`.Show
 import com.example.todaysshow.adapter.JournalAdapter
 import com.example.todaysshow.adapter.SearchResultImageAdapter
 import com.example.todaysshow.adapter.SearchResultRelationAdapter
+import com.example.todaysshow.fragment.HomeFragment
 import com.example.todaysshow.fragment.SearchFragment
+import com.example.todaysshow.fragment.ShowDetailFragment
 import kotlinx.android.synthetic.main.search_list_item.*
 
 class SearchResultFragment(resultStr : String) : Fragment() {
@@ -43,7 +45,16 @@ class SearchResultFragment(resultStr : String) : Fragment() {
 
 
         searchResultImageRecyclerView = viewGroup.findViewById(R.id.search_result_image_rv)
-        searchResultImageRecyclerView!!.adapter = SearchResultImageAdapter(getImageList(), context!!)
+        val myListener : ItemClickListener = object : ItemClickListener {
+            override fun onItemClicked(vh: RecyclerView.ViewHolder, item: Any, pos: Int) {
+                var show :Show = item as Show
+                var parentFrag: SearchFragment =
+                    this@SearchResultFragment.parentFragment as SearchFragment
+                parentFrag.changeSearchFrameToShowDetail(show)
+
+            }
+        }
+        searchResultImageRecyclerView!!.adapter = SearchResultImageAdapter(getImageList(), context!!,myListener)
         var gridLayoutManager : GridLayoutManager = GridLayoutManager(context!!, 3)
         searchResultImageRecyclerView!!.layoutManager = gridLayoutManager
 

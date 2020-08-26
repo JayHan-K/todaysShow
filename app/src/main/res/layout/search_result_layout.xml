@@ -1,89 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     android:orientation="vertical"
     android:weightSum="1"
     android:background="#000000"
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <LinearLayout
+        android:id="@+id/search_result_main_ll"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_marginLeft="27dp"
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
 
-            <LinearLayout
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/search_result_journal_rv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp">
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp">
+            <TextView
+                android:fontFamily="@font/kopubworlddotumbold"
+                android:textSize="15dp"
+                android:textColor="#ffffff"
                 android:layout_marginLeft="27dp"
-                android:layout_width="match_parent"
-                android:layout_height="100dp">
+                android:text="정확순 및 인기"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"></TextView>
+        </LinearLayout>
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/search_result_journal_rv"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="5dp"></LinearLayout>
 
-            </LinearLayout>
+        <LinearLayout
+            android:paddingRight="27dp"
+            android:paddingLeft="27dp"
+            android:layout_width="match_parent"
+            android:layout_height="410dp">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="20dp">
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="20dp">
-                <TextView
-                    android:fontFamily="@font/kopubworlddotumbold"
-                    android:textSize="15dp"
-                    android:textColor="#ffffff"
-                    android:layout_marginLeft="27dp"
-                    android:text="정확순 및 인기"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"></TextView>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="5dp"></LinearLayout>
-
-            <LinearLayout
-                android:paddingRight="27dp"
-                android:paddingLeft="27dp"
-                android:layout_width="match_parent"
-                android:layout_height="410dp">
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:overScrollMode="never"
-                    android:scrollbars="none"
-                    android:id="@+id/search_result_image_rv"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                </androidx.recyclerview.widget.RecyclerView>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="23dp"></LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="21dp">
-                <TextView
-                    android:fontFamily="@font/kopubworlddotummedium"
-                    android:textSize="16dp"
-                    android:layout_marginLeft="27dp"
-                    android:textColor="#ffffff"
-                    android:text="다음과 관련된 공연도 살펴보세요"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"></TextView>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="27dp"
+            <androidx.recyclerview.widget.RecyclerView
+                android:overScrollMode="never"
+                android:scrollbars="none"
+                android:id="@+id/search_result_image_rv"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-                <androidx.recyclerview.widget.RecyclerView
-                    android:clipToPadding="false"
-                    android:id="@+id/search_result_relation_rv"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>
-            </LinearLayout>
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="23dp"></LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="21dp">
+            <TextView
+                android:fontFamily="@font/kopubworlddotummedium"
+                android:textSize="16dp"
+                android:layout_marginLeft="27dp"
+                android:textColor="#ffffff"
+                android:text="다음과 관련된 공연도 살펴보세요"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="27dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.recyclerview.widget.RecyclerView
+                android:clipToPadding="false"
+                android:id="@+id/search_result_relation_rv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>
+        </LinearLayout>
+    </LinearLayout>
 
 
-</LinearLayout>
+
+
+
+</RelativeLayout>

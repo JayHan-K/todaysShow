@@ -10,14 +10,16 @@ import android.widget.LinearLayout
 import android.widget.RelativeLayout
 import androidx.core.view.marginRight
 import androidx.recyclerview.widget.RecyclerView
+import com.example.todaysshow.ItemClickListener
 import com.example.todaysshow.R
 import com.example.todaysshow.`object`.Show
 import kotlinx.android.synthetic.main.home_show_list_item.view.*
 
-class SearchResultImageAdapter(shows: ArrayList<Show>,context: Context) :
+class SearchResultImageAdapter(shows: ArrayList<Show>,context: Context, itemClickListener: ItemClickListener) :
     (RecyclerView.Adapter<SearchResultImageAdapter.SearchResultImageHolder>)() {
     var shows = shows
     var context = context
+    var itemClickListener = itemClickListener
 
 
     class SearchResultImageHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
@@ -45,6 +47,9 @@ class SearchResultImageAdapter(shows: ArrayList<Show>,context: Context) :
         setMarginsInDp(holder.showListItem, 0,0,0,2)
         setSizeInDP(holder.showListItem, 100, 135)
         holder.showListItem.scaleType = ImageView.ScaleType.FIT_XY
+        holder.itemView.setOnClickListener {
+            itemClickListener.onItemClicked(holder, show, position)
+        }
     }
 
     fun setMarginsInDp(view: View, left: Int, top: Int, right: Int, bottom: Int){
