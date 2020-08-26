@@ -7,23 +7,28 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.GridView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.todaysshow.ItemClickListener
 import com.example.todaysshow.R
 import com.example.todaysshow.ShowDetailActivity
 import com.example.todaysshow.`object`.Journal
+import com.example.todaysshow.`object`.Show
 import com.example.todaysshow.adapter.JournalAdapter
+import com.example.todaysshow.adapter.SearchResultImageAdapter
 import com.example.todaysshow.adapter.SearchResultRelationAdapter
 import com.example.todaysshow.fragment.SearchFragment
 import kotlinx.android.synthetic.main.search_list_item.*
 
-class SearchResultFragment(resultStr : String) : Fragment(), View.OnClickListener {
+class SearchResultFragment(resultStr : String) : Fragment() {
     var searchResultStr = resultStr
     var journalList : ArrayList<Journal>? = null
     var relationList : ArrayList<String>? = null
+    var searchResultImageRecyclerView : RecyclerView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,9 +41,14 @@ class SearchResultFragment(resultStr : String) : Fragment(), View.OnClickListene
     ): View? {
         val viewGroup: ViewGroup = inflater.inflate(R.layout.search_result_layout, null) as ViewGroup
 
-        Toast.makeText(context, "Search Result : " + searchResultStr , Toast.LENGTH_SHORT).show()
-        //var searchResultTv = viewGroup.findViewById<TextView>(R.id.search_result_tv) as TextView
-        //searchResultTv.setText(searchResultStr)
+
+        searchResultImageRecyclerView = viewGroup.findViewById(R.id.search_result_image_rv)
+        searchResultImageRecyclerView!!.adapter = SearchResultImageAdapter(getImageList(), context!!)
+        var gridLayoutManager : GridLayoutManager = GridLayoutManager(context!!, 3)
+        searchResultImageRecyclerView!!.layoutManager = gridLayoutManager
+
+
+
 
         val journalLayoutManager : LinearLayoutManager = LinearLayoutManager(context)
         journalLayoutManager.orientation = LinearLayoutManager.HORIZONTAL
@@ -74,29 +84,6 @@ class SearchResultFragment(resultStr : String) : Fragment(), View.OnClickListene
         relationListRV.layoutManager = relationLayoutManager
         relationListRV.adapter = relationAdapter
 
-        var searchResultBt1 = viewGroup.findViewById<Button>(R.id.search_result_bt1)
-        var searchResultBt2 = viewGroup.findViewById<Button>(R.id.search_result_bt2)
-        var searchResultBt3 = viewGroup.findViewById<Button>(R.id.search_result_bt3)
-        var searchResultBt4 = viewGroup.findViewById<Button>(R.id.search_result_bt4)
-        var searchResultBt5 = viewGroup.findViewById<Button>(R.id.search_result_bt5)
-        var searchResultBt6 = viewGroup.findViewById<Button>(R.id.search_result_bt6)
-        var searchResultBt7 = viewGroup.findViewById<Button>(R.id.search_result_bt7)
-        var searchResultBt8 = viewGroup.findViewById<Button>(R.id.search_result_bt8)
-        var searchResultBt9 = viewGroup.findViewById<Button>(R.id.search_result_bt9)
-
-        searchResultBt1.setOnClickListener(this)
-        searchResultBt2.setOnClickListener(this)
-        searchResultBt3.setOnClickListener(this)
-        searchResultBt4.setOnClickListener(this)
-        searchResultBt5.setOnClickListener(this)
-        searchResultBt6.setOnClickListener(this)
-        searchResultBt7.setOnClickListener(this)
-        searchResultBt8.setOnClickListener(this)
-        searchResultBt9.setOnClickListener(this)
-
-
-
-
 
         return viewGroup
     }
@@ -106,52 +93,29 @@ class SearchResultFragment(resultStr : String) : Fragment(), View.OnClickListene
         val journals = java.util.ArrayList<Journal>()
         journals.add(
             Journal(
-                "2020\n공연트렌트",
-                R.drawable.empty_circle
+                "2020\n오페라트렌",
+                R.drawable.tip
             )
         )
         journals.add(
             Journal(
-                "샤롯데 씨어\n첫! 방문기",
-                R.drawable.empty_circle
+                "나의 오페라\n첫! 도전기",
+                R.drawable.alone
             )
         )
         journals.add(
             Journal(
-                "나는\n도대체 어디...?",
-                R.drawable.empty_circle
-            )
-        )
-        journals.add(
-            Journal(
-                "4대 뮤지컬\n오페라의 유령",
-                R.drawable.empty_circle
-            )
-        )
-        journals.add(
-            Journal(
-                "2020\n공연트렌트",
-                R.drawable.empty_circle
-            )
-        )
-        journals.add(
-            Journal(
-                "샤롯데 씨어\n첫! 방문기",
-                R.drawable.empty_circle
-            )
-        )
-        journals.add(
-            Journal(
-                "나는\n도대체 어디...?",
-                R.drawable.empty_circle
+                "오페라는\n무엇일까?",
+                R.drawable.journal_image_sample2
             )
         )
         journals.add(
             Journal(
                 "4대 뮤지컬\n오페라의 유령",
-                R.drawable.empty_circle
+                R.drawable.the_phantom_of_the_opera
             )
         )
+
         return journals
     }
 
@@ -161,18 +125,72 @@ class SearchResultFragment(resultStr : String) : Fragment(), View.OnClickListene
         relationList.add("쉬어 매드니스")
         relationList.add("캣츠")
         relationList.add("오페라의 유령")
-        relationList.add("show1")
-        relationList.add("show2")
-        relationList.add("show3")
-        relationList.add("show4")
+        relationList.add("파우스트")
 
         return relationList
 
     }
 
-    override fun onClick(v: View?) {
-        var intent: Intent = Intent(activity, ShowDetailActivity::class.java)
-        startActivity(intent)
+
+    fun getImageList(): ArrayList<Show>{
+        var shows : ArrayList<Show> = ArrayList()
+
+        shows.add(
+            Show(
+                R.drawable.poster_sample6,
+                "마리퀴리"
+            )
+        )
+        shows.add(
+            Show(
+                R.drawable.poster_sample5,
+                "렌트"
+            )
+        )
+        shows.add(
+            Show(
+                R.drawable.poster_sample4,
+                "레미제라블"
+            )
+        )
+        shows.add(
+            Show(
+                R.drawable.poster_sample2,
+                "라스트 세션"
+            )
+        )
+        shows.add(
+            Show(
+                R.drawable.poster_sample9,
+                "쉬어매드니스"
+            )
+        )
+        shows.add(
+            Show(
+                R.drawable.poster_sample15,
+                "파우스트"
+            )
+        )
+        shows.add(
+            Show(
+                R.drawable.poster_sample10,
+                "썸씽로튼"
+            )
+        )
+        shows.add(
+            Show(
+                R.drawable.poster_sample12,
+                "제이미"
+            )
+        )
+        shows.add(
+            Show(
+                R.drawable.poster_sample12,
+                "제이미"
+            )
+        )
+
+        return shows
     }
 
 }

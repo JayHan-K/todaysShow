@@ -16,18 +16,16 @@ import com.example.todaysshow.CircleIndicator
 import com.example.todaysshow.ItemClickListener
 import com.example.todaysshow.`object`.Journal
 import com.example.todaysshow.R
-import com.example.todaysshow.`object`.HomeShow
-import com.example.todaysshow.adapter.CommunityPagerAdapter
+import com.example.todaysshow.`object`.Show
 import com.example.todaysshow.adapter.HomeAdPagerAdapter
 import com.example.todaysshow.adapter.HomeShowAdapter
 import com.example.todaysshow.adapter.JournalAdapter
-import com.example.todaysshow.fragment.search.SearchResultFragment
 
 class HomeFragment : Fragment(){
 
     var journalList : ArrayList<Journal>? = null
-    var personalizedShow : ArrayList<HomeShow>? = null
-    var recommendedShow : ArrayList<HomeShow>? = null
+    var personalizedShow : ArrayList<Show>? = null
+    var recommendedShow : ArrayList<Show>? = null
     var homeFragmentMainScrollView : ScrollView? = null
     var homeFragmentChildFragment : FrameLayout? = null
     var homeFragmentTopTitleLinearLayout : LinearLayout? = null
@@ -101,8 +99,8 @@ class HomeFragment : Fragment(){
         val mListener : ItemClickListener = object : ItemClickListener {
             override fun onItemClicked(vh: RecyclerView.ViewHolder, item: Any, pos: Int) {
 
-                var homeShow :HomeShow = item as HomeShow
-                Log.i("HomeFragment", homeShow.getShowName())
+                var show :Show = item as Show
+                Log.i("HomeFragment", show.getShowName())
 
                 homeFragmentMainScrollView!!.visibility = View.INVISIBLE
                 homeFragmentChildFragment!!.visibility = View.VISIBLE
@@ -110,7 +108,7 @@ class HomeFragment : Fragment(){
 
                 childFragmentManager.beginTransaction().replace(
                     R.id.home_fragment_child_fragment,
-                    ShowDetailFragment("Home", homeShow.getShowName())
+                    ShowDetailFragment("Home", show.getShowName())
                 ).commitAllowingStateLoss()
 
             }
@@ -144,155 +142,155 @@ class HomeFragment : Fragment(){
         val journals = java.util.ArrayList<Journal>()
         journals.add(
             Journal(
-                "2020\n공연트렌트",
-                R.drawable.empty_circle
+                "2020\n공연트렌드",
+                R.drawable.editors_sample1
             )
         )
         journals.add(
             Journal(
-                "샤롯데 씨어\n첫! 방문기",
-                R.drawable.empty_circle
+                "디큐브아트센터,\n미로같은 ...",
+                R.drawable.family
             )
         )
         journals.add(
             Journal(
-                "나는\n도대체 어디...?",
-                R.drawable.empty_circle
+                "모든 이야기의\n시작, 오이디...?",
+                R.drawable.editors_sample2
             )
         )
         journals.add(
             Journal(
-                "4대 뮤지컬\n오페라의 유령",
-                R.drawable.empty_circle
+                "세계 4대\n뮤지컬을 알...",
+                R.drawable.alone
             )
         )
         journals.add(
             Journal(
-                "2020\n공연트렌트",
-                R.drawable.empty_circle
+                "공연 좀 많이봤니?",
+                R.drawable.family
             )
         )
         journals.add(
             Journal(
-                "샤롯데 씨어\n첫! 방문기",
-                R.drawable.empty_circle
+                "집순이도\n볼 수 있어",
+                R.drawable.editors_sample3
             )
         )
         journals.add(
             Journal(
-                "나는\n도대체 어디...?",
-                R.drawable.empty_circle
+                "해외가면 꼭 봐!",
+                R.drawable.editors_sample4
             )
         )
         journals.add(
             Journal(
-                "4대 뮤지컬\n오페라의 유령",
-                R.drawable.empty_circle
+                "공연 후기 & 꿀팁",
+                R.drawable.tip
             )
         )
         return journals
     }
-    fun getPersonals() : ArrayList<HomeShow>{
-        val shows = ArrayList<HomeShow>()
+    fun getPersonals() : ArrayList<Show>{
+        val shows = ArrayList<Show>()
         shows.add(
-            HomeShow(
-                R.drawable.show_sample1,
-                "Show1"
+            Show(
+                R.drawable.poster_sample6,
+                "마리퀴리"
             )
         )
         shows.add(
-            HomeShow(
-                R.drawable.show_sample2,
-                "Show2"
+            Show(
+                R.drawable.poster_sample5,
+                "렌트"
             )
         )
         shows.add(
-            HomeShow(
-                R.drawable.show_sample1,
-                "Show3"
+            Show(
+                R.drawable.poster_sample4,
+                "레미제라블"
             )
         )
         shows.add(
-            HomeShow(
-                R.drawable.show_sample2,
-                "Show4"
+            Show(
+                R.drawable.poster_sample2,
+                "라스트 세션"
             )
         )
         shows.add(
-            HomeShow(
-                R.drawable.show_sample1,
-                "Show5"
+            Show(
+                R.drawable.poster_sample9,
+                "쉬어매드니스"
             )
         )
         shows.add(
-            HomeShow(
-                R.drawable.show_sample2,
-                "Show6"
+            Show(
+                R.drawable.poster_sample15,
+                "파우스트"
             )
         )
         shows.add(
-            HomeShow(
-                R.drawable.show_sample1,
-                "Show7"
+            Show(
+                R.drawable.poster_sample10,
+                "썸씽로튼"
             )
         )
         shows.add(
-            HomeShow(
-                R.drawable.show_sample2,
-                "Show8"
+            Show(
+                R.drawable.poster_sample12,
+                "제이미"
             )
         )
         return shows
     }
 
-    fun getRecommended() : ArrayList<HomeShow>{
-        val shows = ArrayList<HomeShow>()
+    fun getRecommended() : ArrayList<Show>{
+        val shows = ArrayList<Show>()
         shows.add(
-            HomeShow(
-                R.drawable.show_sample2,
-                "RShow1"
+            Show(
+                R.drawable.poster_sample11,
+                "오페라의 유령"
             )
         )
         shows.add(
-            HomeShow(
-                R.drawable.show_sample1,
-                "RShow2"
+            Show(
+                R.drawable.poster_sample14,
+                "킹키부츠"
             )
         )
         shows.add(
-            HomeShow(
-                R.drawable.show_sample2,
-                "RShow3"
+            Show(
+                R.drawable.poster_sample13,
+                "캣츠"
             )
         )
         shows.add(
-            HomeShow(
-                R.drawable.show_sample1,
-                "RShow4"
+            Show(
+                R.drawable.poster_sample12,
+                "제이미"
             )
         )
         shows.add(
-            HomeShow(
-                R.drawable.show_sample2,
-                "RShow5"
+            Show(
+                R.drawable.poster_sample15,
+                "파우스트"
             )
         )
         shows.add(
-            HomeShow(
-                R.drawable.show_sample1,
-                "RShow6"
+            Show(
+                R.drawable.poster_sample16,
+                "행오버"
             )
         )
         shows.add(
-            HomeShow(
-                R.drawable.show_sample2,
-                "RShow7"
+            Show(
+                R.drawable.poster_sample17,
+                "라흐마니노프"
             )
         )
         shows.add(
-            HomeShow(
-                R.drawable.show_sample1,
-                "RShow8"
+            Show(
+                R.drawable.poster_sample8,
+                "브로드웨이 42번가"
             )
         )
         return shows

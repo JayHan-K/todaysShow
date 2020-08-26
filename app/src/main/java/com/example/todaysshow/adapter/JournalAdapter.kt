@@ -13,6 +13,7 @@ import com.example.todaysshow.R
 import com.example.todaysshow.RecyclerItemClickListener
 import com.example.todaysshow.`object`.Journal
 import com.example.todaysshow.fragment.CommunityFragment
+import com.mikhaellopez.circularimageview.CircularImageView
 
 class JournalAdapter(journals: ArrayList<Journal>, context: Context, itemClickListener: ItemClickListener) : RecyclerView.Adapter<JournalAdapter.JournalHolder>() {
     var journals : ArrayList<Journal> = journals
@@ -27,7 +28,7 @@ class JournalAdapter(journals: ArrayList<Journal>, context: Context, itemClickLi
     override fun onBindViewHolder(holder: JournalHolder, position: Int) {
         val journal: Journal = journals.get(position)
         holder.journal_tv.text = journal.getJournalStr()
-        holder.journal_iv.setBackgroundResource(journal.getImageResource())
+        holder.journal_iv.setImageResource(journal.getImageResource())
         holder.itemView.setOnClickListener {
             Toast.makeText(
                 context,
@@ -45,6 +46,6 @@ class JournalAdapter(journals: ArrayList<Journal>, context: Context, itemClickLi
 
     class JournalHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         var journal_tv = itemView?.findViewById<TextView>(R.id.journal_tv)
-        var journal_iv = itemView?.findViewById<ImageView>(R.id.journal_iv);
+        var journal_iv = itemView?.findViewById<CircularImageView>(R.id.journal_iv);
     }
 }

@@ -19,12 +19,13 @@
         android:layout_width="match_parent"
         android:layout_height="0dp">
         <com.google.android.material.bottomnavigation.BottomNavigationView
+            app:itemIconSize="70px"
             android:background="#000000"
             android:id="@+id/main_bottomNavigationView"
             android:layout_width="match_parent"
             app:menu="@menu/menu_bottomnavigationview"
             android:layout_height="match_parent"
-            app:labelVisibilityMode="labeled"
+            app:labelVisibilityMode="unlabeled"
             app:itemIconTint="@animator/menu_selector_color"
             app:itemTextColor="@animator/menu_selector_color"
             app:itemTextAppearanceActive="@style/BottomNavigationView.Active"

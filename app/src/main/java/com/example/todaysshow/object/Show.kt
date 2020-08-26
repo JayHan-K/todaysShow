@@ -1,6 +1,6 @@
 package com.example.todaysshow.`object`
 
-class HomeShow(imageSource: Int, showName: String) {
+class Show(imageSource: Int, showName: String) {
     private var imageSource : Int = imageSource
     private var showName : String = showName
 

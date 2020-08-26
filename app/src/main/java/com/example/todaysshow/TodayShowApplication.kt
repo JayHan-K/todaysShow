@@ -17,21 +17,30 @@ class TodayShowApplication : Application() {
 
         instance = this
 
-        popularSearchList.add("The Phantom of the Opera")
-        popularSearchList.add("CATS")
+        popularSearchList.add("오페라의 유령")
+        popularSearchList.add("캣츠")
         popularSearchList.add("오백에 삼십")
         popularSearchList.add("쉬어 매드니스")
-        popularSearchList.add("42nd Street")
-        popularSearchList.add("RENT")
+        popularSearchList.add("브로드웨이 42번가")
+        popularSearchList.add("렌트")
 
-        defaultSearchList.add("show1")
-        defaultSearchList.add("show2")
-        defaultSearchList.add("show3")
-        defaultSearchList.add("show4")
-        defaultSearchList.add("show5")
-        defaultSearchList.add("show6")
-        defaultSearchList.add("show7")
-        defaultSearchList.add("show8")
+        defaultSearchList.add("돈 조반니")
+        defaultSearchList.add("라스트 세션")
+        defaultSearchList.add("라인의 황금")
+        defaultSearchList.add("레미제라블")
+        defaultSearchList.add("렌트")
+        defaultSearchList.add("마리퀴리")
+        defaultSearchList.add("마우스피스")
+        defaultSearchList.add("브로드웨이 42번가")
+        defaultSearchList.add("쉬어매드니스")
+        defaultSearchList.add("썸씽로튼")
+        defaultSearchList.add("오페라의 유령")
+        defaultSearchList.add("제이미")
+        defaultSearchList.add("캣츠")
+        defaultSearchList.add("킹키부츠")
+        defaultSearchList.add("파우스트")
+        defaultSearchList.add("라흐마니노프")
+        defaultSearchList.add("행오버")
 
 
     }

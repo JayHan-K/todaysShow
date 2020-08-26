@@ -12,20 +12,20 @@
         android:layout_height="match_parent">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="90px"></LinearLayout>
+            android:layout_height="30dp"></LinearLayout>
         <androidx.appcompat.widget.SearchView
             android:theme="@style/SearchViewStyle"
             android:background="#353535"
-            android:layout_marginRight="83px"
-            android:layout_marginLeft="83px"
+            android:layout_marginRight="27dp"
+            android:layout_marginLeft="27dp"
             app:queryHint="검색어를 입력하세요."
             android:iconifiedByDefault="false"
             android:id="@+id/search_bar"
             android:layout_width="match_parent"
-            android:layout_height="83px"/>
+            android:layout_height="30dp"/>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="70px"></LinearLayout>
+            android:layout_height="20dp"></LinearLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -46,12 +46,12 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="60px">
+                    android:layout_height="23dp">
                     <TextView
+                        android:fontFamily="@font/kopubworlddotumbold"
                         android:id="@+id/search_pop_rec_tv"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:paddingLeft="115px"
+                        android:textSize="18dp"
+                        android:paddingLeft="27dp"
                         android:textColor="#ffffff"
                         android:text="인기 검색어"
                         android:layout_width="wrap_content"
@@ -59,16 +59,16 @@
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="30px"></LinearLayout>
+                    android:layout_height="8dp"></LinearLayout>
                 <LinearLayout
-                    android:layout_marginLeft="86px"
-                    android:layout_marginRight="86px"
+                    android:layout_marginLeft="27dp"
+                    android:layout_marginRight="27dp"
                     android:background="#9b9b9b"
                     android:layout_width="match_parent"
-                    android:layout_height="3px"></LinearLayout>
+                    android:layout_height="1dp"></LinearLayout>
                 <androidx.recyclerview.widget.RecyclerView
-                    android:layout_marginTop="45px"
-                    android:layout_marginLeft="86px"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="27dp"
                     android:id="@+id/search_result_rv"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"/>

@@ -24,6 +24,9 @@ class WritingReviewFragment(title: String) : Fragment() {
     ): View? {
         val viewGroup: ViewGroup = inflater.inflate(R.layout.activity_writing_review_fragment, null) as ViewGroup
 
+
+
+
         var closeBt : Button = viewGroup.findViewById<Button>(R.id.writing_review_close_bt)
         closeBt.setOnClickListener(View.OnClickListener {
             var parentFrag: ShowDetailFragment = this@WritingReviewFragment.parentFragment as ShowDetailFragment

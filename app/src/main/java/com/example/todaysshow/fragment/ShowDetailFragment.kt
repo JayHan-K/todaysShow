@@ -6,8 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.todaysshow.R
 import com.example.todaysshow.ShowDetailActivity
+import com.example.todaysshow.adapter.SearchResultImageAdapter
+import com.example.todaysshow.adapter.ShowDetailImageAdapter
 import kr.co.prnd.YouTubePlayerView
 
 class ShowDetailFragment(parent: String, title: String) : Fragment() {
@@ -17,6 +21,7 @@ class ShowDetailFragment(parent: String, title: String) : Fragment() {
     var showDetailFrameLayout : FrameLayout? = null
     var showDetailRelativeLayout : RelativeLayout? = null
     var showDetailTopLinearLayout : LinearLayout? = null
+    var showDetailImageRecyclerView : RecyclerView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,6 +34,19 @@ class ShowDetailFragment(parent: String, title: String) : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val viewGroup: ViewGroup = inflater.inflate(R.layout.activity_show_detail_fragment, null) as ViewGroup
+
+        showDetailImageRecyclerView = viewGroup.findViewById(R.id.show_detail_image_rv)
+        var imageResources : ArrayList<Int> = ArrayList()
+        imageResources.add(R.drawable.opera_1)
+        imageResources.add(R.drawable.opera_2)
+        imageResources.add(R.drawable.opera_3)
+        imageResources.add(R.drawable.opera_4)
+        imageResources.add(R.drawable.opera_5)
+        imageResources.add(R.drawable.opera_6)
+
+        showDetailImageRecyclerView!!.adapter = ShowDetailImageAdapter(imageResources, context!!)
+        var gridLayoutManager : GridLayoutManager = GridLayoutManager(context!!, 3)
+        showDetailImageRecyclerView!!.layoutManager = gridLayoutManager
 
         showDetailFrameLayout = viewGroup.findViewById(R.id.show_detail_fl)
         showDetailRelativeLayout = viewGroup.findViewById(R.id.show_detail_rl)

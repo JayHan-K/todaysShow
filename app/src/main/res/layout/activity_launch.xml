@@ -7,7 +7,7 @@
     tools:context=".LaunchActivity">
 
    <ImageView
-       android:background="@drawable/ic_launcher_background"
+       android:background="@drawable/intro"
        android:layout_width="match_parent"
        android:layout_height="match_parent"></ImageView>
 

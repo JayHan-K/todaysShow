@@ -26,17 +26,15 @@
                 android:layout_height="wrap_content">
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="240px"></LinearLayout>
+                    android:layout_height="84dp"></LinearLayout>
                 <LinearLayout
+                    android:layout_marginLeft="27dp"
+                    android:layout_marginRight="27dp"
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="430px">
-
+                    android:layout_height="210dp">
                     <LinearLayout
-                        android:layout_width="30px"
-                        android:layout_height="match_parent"></LinearLayout>
-                    <LinearLayout
-                        android:layout_width="340px"
+                        android:layout_width="158dp"
                         android:layout_height="match_parent">
                         <ImageView
                             android:id="@+id/show_detail_iv"
@@ -47,20 +45,24 @@
 
 
                     <RelativeLayout
+                        android:layout_marginLeft="8dp"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
                         <TextView
+                            android:fontFamily="@font/kopubworlddotumbold"
+                            android:layout_marginTop="8dp"
                             android:layout_alignParentLeft="true"
                             android:layout_alignParentTop="true"
                             android:id="@+id/show_detail_title_tv"
-                            android:textSize="20sp"
-                            android:textStyle="bold"
+                            android:textSize="15dp"
                             android:textColor="#ffffff"
                             android:text="뮤지컬 오페라의 유령"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"></TextView>
 
                         <TextView
+                            android:textSize="9dp"
+                            android:fontFamily="@font/kopubworlddotumlight"
                             android:textColor="#ffffff"
                             android:layout_below="@+id/show_detail_title_tv"
                             android:text="로맨스, 스릴러"
@@ -68,33 +70,94 @@
                             android:layout_height="wrap_content"></TextView>
 
                         <LinearLayout
-                            android:id="@+id/show_detail_tag_ll"
+                            android:orientation="horizontal"
                             android:layout_alignParentBottom="true"
+                            android:id="@+id/show_detail_poster_bottom_ll"
+                            android:layout_width="match_parent"
+                            android:layout_height="10dp"></LinearLayout>
+                        
+                        <LinearLayout
+                            android:id="@+id/show_detail_tag_ll"
+                            android:layout_above="@+id/show_detail_poster_bottom_ll"
                             android:weightSum="1"
                             android:orientation="horizontal"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="33dp">
                             <LinearLayout
-                                android:layout_weight="0.8"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"></LinearLayout>
-                            <LinearLayout
-                                android:layout_weight="0.2"
-                                android:layout_width="0dp"
-                                android:layout_height="100px">
-                                <Button
-                                    android:text="찜"
+                                android:orientation="horizontal"
+                                android:layout_width="150dp"
+                                android:layout_height="match_parent">
+                                <RelativeLayout
                                     android:layout_width="match_parent"
-                                    android:layout_height="match_parent"></Button>
+                                    android:layout_height="match_parent">
+                                    <LinearLayout
+                                        android:background="#515151"
+                                        android:layout_width="27dp"
+                                        android:layout_height="13dp">
+                                        <TextView
+                                            android:textSize="8dp"
+                                            android:gravity="center"
+                                            android:textColor="#ffffff"
+                                            android:text="가면"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"></TextView>
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:layout_marginLeft="30dp"
+                                        android:background="#515151"
+                                        android:layout_width="33dp"
+                                        android:layout_height="13dp">
+                                        <TextView
+                                            android:textSize="8dp"
+                                            android:gravity="center"
+                                            android:textColor="#ffffff"
+                                            android:text="대극장"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"></TextView>
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:layout_marginLeft="67dp"
+                                        android:background="#515151"
+                                        android:layout_width="45dp"
+                                        android:layout_height="13dp">
+                                        <TextView
+                                            android:textSize="8dp"
+                                            android:gravity="center"
+                                            android:textColor="#ffffff"
+                                            android:text="4대 뮤지컬"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"></TextView>
+                                    </LinearLayout>
+
+                                </RelativeLayout>
+
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="25dp"
+                                android:layout_height="34dp">
+                                <Button
+                                    android:background="@drawable/icon_heart"
+                                    android:layout_width="23dp"
+                                    android:layout_height="23dp"></Button>
+                                <TextView
+                                    android:layout_gravity="center"
+                                    android:textSize="7dp"
+                                    android:textColor="#ffffff"
+                                    android:fontFamily="@font/kopubworlddotumlight"
+                                    android:text="찜하기"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+                                </TextView>
                             </LinearLayout>
                             
                         </LinearLayout>
                         <TextView
-                            android:textSize="12sp"
+                            android:fontFamily="@font/kopubworlddotummedium"
+                            android:textSize="10dp"
                             android:textColor="#ffffff"
                             android:layout_above="@+id/show_detail_tag_ll"
-                            android:layout_marginTop="20sp"
-                            android:layout_marginRight="20sp"
                             android:text="흉측하게 일그러진 얼굴을 가면으로 가린 오페라의 유령이 아름다운 프리마돈나 크리스틴을 짝사랑하는 이야기."
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"></TextView>
@@ -108,14 +171,15 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="50px"></LinearLayout>
+                    android:layout_height="50dp"></LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="18dp">
                     <TextView
-                        android:paddingLeft="60px"
-                        android:textSize="15sp"
+                        android:fontFamily="@font/kopubworlddotumbold"
+                        android:paddingLeft="27dp"
+                        android:textSize="13dp"
                         android:textColor="#ffffff"
                         android:text="에디터's"
                         android:layout_width="wrap_content"
@@ -123,72 +187,243 @@
                 </LinearLayout>
 
                 <RelativeLayout
-                    android:background="#f0f0aa"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/journal"
                     android:layout_width="match_parent"
-                    android:layout_height="450px">
+                    android:layout_height="180dp">
+                    <TextView
+                        android:layout_marginTop="86dp"
+                        android:layout_marginLeft="27dp"
+                        android:textColor="#ffffff"
+                        android:textSize="10dp"
+                        android:text="세계 4대 뮤지컬을 알려줄게"
+                        android:background="#000000"
+                        android:layout_width="wrap_content"
+                        android:layout_height="12dp"></TextView>
+                    <TextView
+                        android:layout_marginTop="100dp"
+                        android:layout_marginLeft="27dp"
+                        android:textColor="#ffffff"
+                        android:textSize="10dp"
+                        android:text="#2. 오페라의 유령"
+                        android:background="#000000"
+                        android:layout_width="wrap_content"
+                        android:layout_height="12dp"></TextView>
+
+                    <TextView
+                        android:layout_marginTop="120dp"
+                        android:layout_marginLeft="29dp"
+                        android:fontFamily="@font/kopubworlddotumlight"
+                        android:text="유알못도 알아야 하는 필수 상식!! 시계 4대 뮤지컬을 알려줄게!\n두번째(빠밤!!) 지난번 '캣츠'에 이어 오늘 소개할 작품은\n'오페라의 유령'
+'이에요! 이 작품 또한 [캣츠]와 동일한 작곡가 ..."
+                        android:textSize="8dp"
+                        android:textColor="#ffffff"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"></TextView>
+                    
+                    <Button
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="140dp"
+                        android:layout_marginRight="30dp"
+                        android:background="@drawable/icon_arrow"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"></Button>
 
                 </RelativeLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="80px"></LinearLayout>
+                    android:layout_height="50dp"></LinearLayout>
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="60px">
+                    android:layout_height="18dp">
                     <TextView
-                        android:textSize="12sp"
+                        android:textSize="13dp"
                         android:layout_alignParentLeft="true"
                         android:textColor="#ffffff"
-                        android:paddingLeft="60px"
+                        android:paddingLeft="27dp"
                         android:text="공연 찐 후기"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                     </TextView>
                     <Button
-                        android:layout_marginRight="60px"
+                        android:layout_toLeftOf="@id/show_detail_more_review_tv"
+                        android:gravity="center_vertical"
+                        android:id="@+id/show_detail_more_review"
+                        android:background="@drawable/icon_more"
+                        android:layout_marginRight="3dp"
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"></Button>
+                    <TextView
+                        android:gravity="center_vertical"
+                        android:id="@+id/show_detail_more_review_tv"
+                        android:layout_marginRight="30dp"
                         android:layout_alignParentRight="true"
-                        android:text="더 보기"
+                        android:textColor="#ffffff"
+                        android:textSize="7dp"
+                        android:text="더보기"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"></Button>
+                        android:layout_height="wrap_content"/>
 
                 </RelativeLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="30px"></LinearLayout>
+                    android:layout_height="15dp"></LinearLayout>
                 
                 <RelativeLayout
+                    android:layout_marginRight="27dp"
+                    android:layout_marginLeft="27dp"
                     android:layout_width="match_parent"
-                    android:layout_height="400px">
+                    android:layout_height="130dp">
 
 
                     <LinearLayout
                         android:background="@drawable/show_detail_review_rounded_layout"
-                        android:layout_marginLeft="98px"
-                        android:layout_marginTop="60px"
-                        android:layout_width="920px"
-                        android:layout_height="360px">
+                        android:layout_marginTop="18dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="113dp">
 
                     </LinearLayout>
                     <com.mikhaellopez.circularimageview.CircularImageView
+                        app:civ_border_width="0dp"
+                        android:src="@drawable/editor_profile_4"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"></com.mikhaellopez.circularimageview.CircularImageView>
 
-                        android:src="@drawable/show_sample2"
-                        android:layout_marginLeft="125px"
-                        android:layout_width="130px"
-                        android:layout_height="130px"></com.mikhaellopez.circularimageview.CircularImageView>
+                    <LinearLayout
+                        android:layout_marginTop="50dp"
+                        android:background="#dddddd"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"></LinearLayout>
 
+                    <TextView
+                        android:id="@+id/show_detail_review_editor_name_tv"
+                        android:layout_marginTop="28dp"
+                        android:layout_marginLeft="65dp"
+                        android:fontFamily="@font/kopubworlddotumbold"
+                        android:textSize="12dp"
+                        android:textColor="#000000"
+                        android:text="제인"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_marginTop="30dp"
+                        android:id="@+id/show_detail_review_editor_info_tv"
+                        android:layout_toRightOf="@id/show_detail_review_editor_name_tv"
+                        android:layout_marginLeft="15dp"
+                        android:fontFamily="@font/kopubworlddotumlight"
+                        android:textSize="10dp"
+                        android:textColor="#bbbbbb"
+                        android:text="20대 / 병아리"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    
+                    <ImageView
+                        android:layout_marginTop="28dp"
+                        android:layout_toRightOf="@+id/show_detail_review_editor_info_tv"
+                        android:layout_marginLeft="5dp"
+                        android:src="@drawable/icon_good"
+                        android:layout_width="15dp"
+                        android:layout_height="13dp"/>
+
+                    <TextView
+                        android:id="@+id/show_detail_review_comment_tv"
+                        android:layout_marginRight="20dp"
+                        android:layout_alignParentRight="true"
+                        android:textColor="#ffffff"
+                        android:fontFamily="@font/kopubworlddotumlight"
+                        android:textSize="8dp"
+                        android:text="35"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <ImageView
+                        android:src="@drawable/icon_comment"
+                        android:id="@+id/show_detail_review_comment_iv"
+                        android:layout_marginRight="3dp"
+                        android:layout_toLeftOf="@id/show_detail_review_comment_tv"
+                        android:layout_width="9dp"
+                        android:layout_height="9dp"/>
+                    <TextView
+                        android:id="@+id/show_detail_review_heart_tv"
+                        android:layout_marginRight="10dp"
+                        android:layout_toLeftOf="@id/show_detail_review_comment_iv"
+                        android:textColor="#ffffff"
+                        android:fontFamily="@font/kopubworlddotumlight"
+                        android:textSize="8dp"
+                        android:text="128"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <ImageView
+                        android:src="@drawable/icon_heart"
+                        android:layout_marginRight="3dp"
+                        android:layout_toLeftOf="@id/show_detail_review_heart_tv"
+                        android:layout_width="9dp"
+                        android:layout_height="9dp"/>
+
+                    <TextView
+                        android:layout_marginTop="60dp"
+                        android:layout_marginLeft="13dp"
+                        android:textSize="9dp"
+                        android:fontFamily="@font/kopubworlddotumlight"
+                        android:textColor="#000000"
+                        android:text="좋은 점"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:layout_marginTop="98dp"
+                        android:layout_marginLeft="13dp"
+                        android:textSize="9dp"
+                        android:fontFamily="@font/kopubworlddotumlight"
+                        android:textColor="#000000"
+                        android:text="아쉬운 점"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:layout_marginTop="60dp"
+                        android:layout_marginLeft="65dp"
+                        android:textSize="9dp"
+                        android:fontFamily="@font/kopubworlddotumlight"
+                        android:textColor="#000000"
+                        android:text="줄거리가 좋고, 무대 꽤 화려함!\n박효신 노래 너무잘해요ㅠㅠ"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:layout_marginTop="98dp"
+                        android:layout_marginLeft="65dp"
+                        android:textSize="9dp"
+                        android:fontFamily="@font/kopubworlddotumlight"
+                        android:textColor="#000000"
+                        android:text="티켓가격 8만원.....? 박효신때문에 봤지...\n다른 캐스팅이면 못볼듯... 그래도 한번쯤은..."
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_marginBottom="15dp"
+                        android:layout_marginRight="30dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentRight="true"
+                        android:fontFamily="@font/kopubworlddotumlight"
+                        android:textColor="#bbbbbb"
+                        android:textSize="7dp"
+                        android:text="3개월전"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
 
                 </RelativeLayout>
                 
                 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="100px">
+                    android:layout_height="70dp">
                     </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="400px">
+                    android:layout_height="170dp">
                     <kr.co.prnd.YouTubePlayerView
-                        android:layout_margin="10dp"
+                        android:layout_marginRight="30dp"
+                        android:layout_marginLeft="30dp"
                         android:id="@+id/show_detail_fragment_youtube"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"></kr.co.prnd.YouTubePlayerView>
@@ -197,53 +432,19 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="20dp"></LinearLayout>
+                    android:layout_height="70dp"></LinearLayout>
 
 
                 <LinearLayout
+                    android:layout_marginRight="30dp"
+                    android:layout_marginLeft="30dp"
                     android:layout_width="match_parent"
                     android:layout_height="250dp">
-                    <GridLayout
-                        android:layout_margin="30dp"
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/show_detail_image_rv"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-                        <ImageView
-                            android:background="#f66b10"
-                            android:layout_rowWeight="1"
-                            android:layout_columnWeight="1"
-                            android:layout_column="0"
-                            android:layout_row="0"></ImageView>
-                        <ImageView
-                            android:background="#d3babe"
-                            android:layout_rowWeight="1"
-                            android:layout_columnWeight="1"
-                            android:layout_column="0"
-                            android:layout_row="1"></ImageView>
-                        <ImageView
-                            android:background="#f6e241"
-                            android:layout_rowWeight="1"
-                            android:layout_columnWeight="1"
-                            android:layout_column="1"
-                            android:layout_row="0"></ImageView>
-                        <ImageView
-                            android:background="#822141"
-                            android:layout_rowWeight="1"
-                            android:layout_columnWeight="1"
-                            android:layout_column="1"
-                            android:layout_row="1"></ImageView>
-                        <ImageView
-                            android:background="#8221bf"
-                            android:layout_rowWeight="1"
-                            android:layout_columnWeight="1"
-                            android:layout_column="2"
-                            android:layout_row="0"></ImageView>
-                        <ImageView
-                            android:background="#82abbf"
-                            android:layout_rowWeight="1"
-                            android:layout_columnWeight="1"
-                            android:layout_column="2"
-                            android:layout_row="1"></ImageView>
-                    </GridLayout>
+                        android:layout_height="match_parent"/>
+
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -254,12 +455,12 @@
         </ScrollView>
         <Button
             android:id="@+id/show_detail_writing_review_bt"
-            android:text="후기 쓰기"
+            android:background="@drawable/icon_writing_review"
             android:layout_margin="30sp"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"></Button>
+            android:layout_width="80dp"
+            android:layout_height="78dp"></Button>
     </RelativeLayout>
 
     <LinearLayout
@@ -267,10 +468,10 @@
         android:background="#cc000000"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="240px">
+        android:layout_height="84dp">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="120px">
+            android:layout_height="40dp">
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
@@ -282,22 +483,19 @@
                 <Button
                     android:id="@+id/show_detail_fragment_close_bt"
                     android:layout_centerVertical="true"
-                    android:layout_marginLeft="82px"
-                    android:background="@drawable/back_arrow"
-                    android:layout_width="60px"
-                    android:layout_height="68px">
+                    android:layout_marginLeft="27dp"
+                    android:background="@drawable/icon_pre"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp">
                 </Button>
                 <Button
-                    android:textColor="#ffffff"
-                    android:textSize="14sp"
-                    android:text="공유"
+                    android:background="@drawable/icon_sharing"
                     android:id="@+id/show_detail_share_bt"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginRight="82px"
-                    android:background="#00000000"
-                    android:layout_width="80px"
-                    android:layout_height="88px">
+                    android:layout_marginRight="27dp"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp">
                 </Button>
             </RelativeLayout>
         </LinearLayout>

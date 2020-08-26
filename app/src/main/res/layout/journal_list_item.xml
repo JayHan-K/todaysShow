@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     android:orientation="vertical"
-    android:layout_marginRight="45px"
+    android:layout_marginRight="25dp"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="200px"
-    android:layout_height="300px">
-    <ImageView
-        android:background="@drawable/empty_circle"
+    android:layout_width="65dp"
+    android:layout_height="100dp">
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:src="@drawable/empty_circle"
         android:id="@+id/journal_iv"
-        android:layout_width="200px"
-        android:layout_height="200px"/>
+        android:layout_width="65dp"
+        android:layout_height="65dp"/>
     <TextView
+        android:layout_marginTop="5dp"
         android:textColor="#ffffff"
         android:layout_gravity="center_horizontal"
-        android:textSize="10sp"
+        android:textSize="10dp"
         android:layout_centerHorizontal="true"
         android:gravity="center_horizontal"
         android:textAlignment="center"
