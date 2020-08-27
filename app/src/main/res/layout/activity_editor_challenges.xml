@@ -1,63 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
-
     <LinearLayout
+        android:background="#ffffff"
         android:orientation="vertical"
-        android:weightSum="1"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
-            android:weightSum="1"
+            android:id="@+id/writing_review_fragment_ll"
+            android:background="#000000"
             android:orientation="vertical"
-            android:layout_weight="0.08"
             android:layout_width="match_parent"
-            android:layout_height="0dp">
-            <RelativeLayout
+            android:layout_height="84dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp">
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="뒤로가기">
-                </Button>
-
-                <LinearLayout
-                    android:background="#444444"
-                    android:layout_alignParentTop="true"
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="5sp"></LinearLayout>
-                <TextView
-                    android:textColor="#000000"
-                    android:textStyle="bold"
-                    android:textSize="17sp"
-                    android:layout_centerInParent="true"
-                    android:text="에디터'S 도전"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-                <LinearLayout
-                    android:background="#444444"
-                    android:layout_alignParentBottom="true"
-                    android:layout_width="match_parent"
-                    android:layout_height="5sp"></LinearLayout>
-            </RelativeLayout>
+                    android:layout_height="match_parent">
+                    <Button
+                        android:id="@+id/editor_challenges_close_bt"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="27dp"
+                        android:background="@drawable/icon_pre"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp">
+                    </Button>
+                    <TextView
+                        android:fontFamily="@font/kopubworlddotumbold"
+                        android:textSize="16dp"
+                        android:textStyle="bold"
+                        android:textColor="#ffffff"
+                        android:layout_centerInParent="true"
+                        android:text="에디터's 도전"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    </TextView>
+                    <Button
+                        android:fontFamily="@font/kopubworlddotummedium"
+                        android:textColor="#ffffff"
+                        android:textSize="13dp"
+                        android:text="등록"
+                        android:id="@+id/editor_challenges_apply_bt"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="30dp"
+                        android:background="#00000000"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                    </Button>
+                </RelativeLayout>
+            </LinearLayout>
         </LinearLayout>
         <LinearLayout
-            android:layout_weight="0.92"
+            android:background="#000000"
             android:layout_width="match_parent"
-            android:layout_height="0dp">
+            android:layout_height="20dp"></LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"></LinearLayout>
 
-            <androidx.core.widget.NestedScrollView
-                android:id="@+id/community_editor_challengs_sv"
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="221dp">
+
+            <RelativeLayout
+                android:background="@drawable/editor_challenges_picture_rounded_corner"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+                <Button
+                    android:background="#00000000"
+                    android:id="@+id/editor_challenges_add_picture_bt"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"></Button>
+                <TextView
+                    android:layout_marginTop="17dp"
+                    android:layout_marginLeft="20dp"
+                    android:id="@+id/editor_challenges_add_picture_notice_tv"
+                    android:fontFamily="@font/kopubworlddotummedium"
+                    android:textSize="11dp"
+                    android:text="* 직접 촬영한 저널 관련 사진(혹은 공식 포스터)을 올려주세요"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"></TextView>
+                <ImageView
+                    android:id="@+id/editor_challenges_add_picture_iv"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/icon_camera"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"></ImageView>
+                <TextView
+                    android:textColor="#777777"
+                    android:layout_marginTop="10dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/editor_challenges_add_picture_iv"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/kopubworlddotummedium"
+                    android:text="사진을 추가해주세요 (필수)"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"></TextView>
 
-            </androidx.core.widget.NestedScrollView>
+            </RelativeLayout>
+            <Spinner
+                android:layout_marginLeft="30dp"
+                android:layout_alignParentBottom="true"
+                android:spinnerMode="dropdown"
+                android:id="@+id/editor_challenges_spinner"
+                android:background="@drawable/editor_challenges_spinner_bg"
+                android:layout_width="124dp"
+                android:layout_height="29dp"></Spinner>
 
-        </LinearLayout>
+        </RelativeLayout>
+
 
     </LinearLayout>
 
-</LinearLayout>
+    
+
+</FrameLayout>

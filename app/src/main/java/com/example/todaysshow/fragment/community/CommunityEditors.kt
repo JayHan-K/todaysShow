@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
@@ -17,6 +18,7 @@ import com.example.todaysshow.adapter.CommunityEditorsJournalAdapter
 import com.example.todaysshow.adapter.JournalAdapter
 import com.example.todaysshow.adapter.SearchResultImageAdapter
 import com.example.todaysshow.adapter.SearchResultRelationAdapter
+import com.example.todaysshow.fragment.CommunityFragment
 import com.example.todaysshow.fragment.SearchFragment
 
 class CommunityEditors : Fragment() {
@@ -64,6 +66,12 @@ class CommunityEditors : Fragment() {
         searchResultJournalRV.layoutManager = journalLayoutManager
         searchResultJournalRV.adapter = journalAdapter
 
+        var communityEditorsChallengesButton = viewGroup.findViewById<Button>(R.id.community_editors_challenges_bt)
+        communityEditorsChallengesButton.setOnClickListener(View.OnClickListener {
+            var parentFrag: CommunityFragment =
+                this@CommunityEditors.parentFragment as CommunityFragment
+            parentFrag.communityChangeToEditorChallenges()
+        })
 
 
         return viewGroup

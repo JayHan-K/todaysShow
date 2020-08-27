@@ -75,6 +75,7 @@
 
 
         <Button
+            android:id="@+id/community_editors_challenges_bt"
             android:background="@drawable/icon_writing_editor"
             android:layout_margin="30dp"
             android:layout_alignParentBottom="true"
