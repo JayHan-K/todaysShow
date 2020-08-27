@@ -52,9 +52,19 @@ class CommunityFragment(initIndex: Int) : Fragment() {
         ).commitAllowingStateLoss()
     }
 
-    fun editorChallengesChangeToCommunity(){
+    fun backToCommunity(){
         communityMainLinearLayout!!.visibility = View.VISIBLE
         communityMainFrameLayout!!.visibility = View.INVISIBLE
+    }
+
+    fun communityChangeToJournalDetail(){
+        communityMainLinearLayout!!.visibility = View.INVISIBLE
+        communityMainFrameLayout!!.visibility = View.VISIBLE
+
+        childFragmentManager.beginTransaction().replace(
+            R.id.community_main_fl,
+            JournalDetailFragment()
+        ).commitAllowingStateLoss()
     }
 
 }

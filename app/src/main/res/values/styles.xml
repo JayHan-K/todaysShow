@@ -41,4 +41,8 @@
         -->
         <item name="android:backgroundDimEnabled">true</item>
     </style>
+
+    <style name="SpinnerTheme" parent="android:Widget.Spinner">
+        <item name="android:background">@drawable/editor_challenges_spinner_bg</item>
+    </style>
 </resources>

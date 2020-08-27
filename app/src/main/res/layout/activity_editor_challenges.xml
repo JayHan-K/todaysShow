@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <LinearLayout
         android:background="#ffffff"
         android:orientation="vertical"
@@ -25,14 +26,20 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
+                    <ImageView
+                        android:layout_marginLeft="27dp"
+                        android:src="@drawable/icon_pre"
+                        android:layout_centerVertical="true"
+                        android:layout_width="9dp"
+                        android:layout_height="14dp"/>
                     <Button
                         android:id="@+id/editor_challenges_close_bt"
                         android:layout_centerVertical="true"
-                        android:layout_marginLeft="27dp"
-                        android:background="@drawable/icon_pre"
-                        android:layout_width="15dp"
-                        android:layout_height="15dp">
-                    </Button>
+                        android:layout_marginLeft="20dp"
+                        android:background="#00000000"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"/>
+
                     <TextView
                         android:fontFamily="@font/kopubworlddotumbold"
                         android:textSize="16dp"
@@ -47,7 +54,7 @@
                     <Button
                         android:fontFamily="@font/kopubworlddotummedium"
                         android:textColor="#ffffff"
-                        android:textSize="13dp"
+                        android:textSize="16dp"
                         android:text="등록"
                         android:id="@+id/editor_challenges_apply_bt"
                         android:layout_alignParentRight="true"
@@ -63,14 +70,14 @@
         <LinearLayout
             android:background="#000000"
             android:layout_width="match_parent"
-            android:layout_height="20dp"></LinearLayout>
+            android:layout_height="10dp"></LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="35dp"></LinearLayout>
+            android:layout_height="15dp"></LinearLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="221dp">
+            android:layout_height="210dp">
 
             <RelativeLayout
                 android:background="@drawable/editor_challenges_picture_rounded_corner"
@@ -111,16 +118,115 @@
                     android:layout_height="wrap_content"></TextView>
 
             </RelativeLayout>
+
             <Spinner
-                android:layout_marginLeft="30dp"
+                style="@style/SpinnerTheme"
+                android:dropDownWidth="124dp"
+                android:popupElevation="3dp"
+                android:layout_marginLeft="40dp"
                 android:layout_alignParentBottom="true"
                 android:spinnerMode="dropdown"
+                android:dropDownVerticalOffset="26dp"
                 android:id="@+id/editor_challenges_spinner"
-                android:background="@drawable/editor_challenges_spinner_bg"
                 android:layout_width="124dp"
                 android:layout_height="29dp"></Spinner>
 
         </RelativeLayout>
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="15dp"/>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="44dp">
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:layout_marginLeft="50dp"
+                android:src="@drawable/editor_profile_4"
+                app:civ_border_width="0dp"
+                android:layout_width="44dp"
+                android:layout_height="44dp"/>
+            <TextView
+                android:textSize="15dp"
+                android:textColor="#000000"
+                android:fontFamily="@font/kopubworlddotumbold"
+                android:layout_marginLeft="10dp"
+                android:text="제인 인턴 에디터"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"/>
+        <EditText
+            android:textColor="#000000"
+            android:textColorHint="#838383"
+            android:fontFamily="@font/kopubworlddotumbold"
+            android:paddingTop="0dp"
+            android:paddingBottom="5dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="50dp"
+            android:textSize="20dp"
+            android:hint="제목을 입력해주세요"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"/>
+        
+        <RelativeLayout
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="230dp">
+            <EditText
+                android:id="@+id/editor_challenges_journal_et"
+                android:textSize="15dp"
+                android:padding="10dp"
+                android:gravity="start"
+                android:hint="여기를 눌러 저널을 작성해주세요"
+                android:background="#f4f4f4"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+            <TextView
+                android:id="@+id/editor_challenges_journal_hint_tv"
+                android:textSize="12dp"
+                android:text="#공지\n - 모바일 화면에서 보기좋게 글을 배열해주세요.\n  에디터들의 글을 참고하세요! (커뮤니티 ->에디터's)\n - 공연과 관련된 ' 나만 알고있는 꿀정보'들을 소개해주세요!\n   선정시, 사용자님의 닉네임과 함께 '인턴 에디터'로 표기되어\n   이글이 기고됩니다. (선정시 +포인트 000점 적립) "
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_alignParentBottom="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"/>
+        <TextView
+            android:fontFamily="@font/kopubworlddotumbold"
+            android:textColor="#000000"
+            android:textSize="20dp"
+            android:text="해쉬태그"
+            android:layout_marginLeft="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="0dp"
+            android:paddingTop="0dp"
+            android:paddingBottom="0dp"
+            android:textSize="20dp"
+            android:fontFamily="@font/kopubworlddotummedium"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
+            android:hint="#"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"/>
+
+
 
 
     </LinearLayout>

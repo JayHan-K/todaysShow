@@ -56,7 +56,9 @@ class CommunityEditors : Fragment() {
 
         val listener : ItemClickListener = object : ItemClickListener {
             override fun onItemClicked(vh: RecyclerView.ViewHolder, item: Any, pos: Int) {
-                Toast.makeText(context, "Community Editors", Toast.LENGTH_SHORT).show()
+                var parentFrag: CommunityFragment =
+                    this@CommunityEditors.parentFragment as CommunityFragment
+                parentFrag.communityChangeToJournalDetail()
             }
         }
         journalList = getJournals()

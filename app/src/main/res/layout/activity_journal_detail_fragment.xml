@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    android:id="@+id/journal_detail_cover_fl"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:fillViewport="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/journal_detail_main_iv_rl"
+                android:layout_width="match_parent"
+                android:layout_height="500dp">
+                <ImageView
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/journal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"></ImageView>
+
+
+                <TextView
+                    android:id="@+id/journal_detail_main_title_tv"
+                    android:fontFamily="@font/kopubworlddotumbold"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_above="@+id/journal_detail_main_category_tv"
+                    android:textSize="25dp"
+                    android:textColor="#ffffff"
+                    android:text="'세계 4대 뮤지컬'을 알려줄게\n#2. 오페라의 유령"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"></TextView>
+
+                <TextView
+                    android:textSize="15dp"
+                    android:fontFamily="@font/kopubworlddotummedium"
+                    android:id="@+id/journal_detail_main_category_tv"
+                    android:layout_marginBottom="150dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentBottom="true"
+                    android:background="#000000"
+                    android:textColor="#ffffff"
+                    android:text="집순이도 볼 수 있어"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </RelativeLayout>
+
+
+
+            <LinearLayout
+                android:background="#ff00ff"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/show_detail_top_ll"
+        android:background="#cc000000"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="84dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:layout_marginLeft="27dp"
+                    android:src="@drawable/icon_pre"
+                    android:layout_centerVertical="true"
+                    android:layout_width="9dp"
+                    android:layout_height="14dp"/>
+                <Button
+                    android:id="@+id/journal_detail_fragment_close_bt"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:background="#00000000"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp">
+                </Button>
+
+
+                <ImageView
+                    android:layout_toLeftOf="@+id/journal_detail_top_heart_tv"
+                    android:layout_marginRight="5dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/icon_heart_line"
+                    android:layout_width="14dp"
+                    android:layout_height="17dp"/>
+
+                <Button
+                    android:layout_toLeftOf="@+id/journal_detail_top_heart_tv"
+                    android:background="#00000000"
+                    android:id="@+id/journal_detail_heart_bt"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp">
+                </Button>
+
+                <TextView
+                    android:layout_toLeftOf="@+id/journal_detail_scrap_bt"
+                    android:layout_marginRight="10dp"
+                    android:id="@+id/journal_detail_top_heart_tv"
+                    android:layout_centerVertical="true"
+                    android:textSize="15dp"
+                    android:textColor="#ffffff"
+                    android:fontFamily="@font/kopubworlddotummedium"
+                    android:text="200"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+                <ImageView
+                    android:layout_toLeftOf="@+id/journal_detail_top_scrap_tv"
+                    android:layout_marginRight="5dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/icon_scrap"
+                    android:layout_width="14dp"
+                    android:layout_height="17dp"/>
+
+                <Button
+                    android:layout_toLeftOf="@+id/journal_detail_top_scrap_tv"
+                    android:background="#00000000"
+                    android:id="@+id/journal_detail_scrap_bt"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp">
+                </Button>
+
+                <TextView
+                    android:layout_toLeftOf="@+id/journal_detail_share_bt"
+                    android:layout_marginRight="10dp"
+                    android:id="@+id/journal_detail_top_scrap_tv"
+                    android:layout_centerVertical="true"
+                    android:textSize="15dp"
+                    android:textColor="#ffffff"
+                    android:fontFamily="@font/kopubworlddotummedium"
+                    android:text="100"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+                <ImageView
+                    android:layout_toLeftOf="@+id/journal_detail_top_share_tv"
+                    android:layout_marginRight="5dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/icon_sharing"
+                    android:layout_width="14dp"
+                    android:layout_height="17dp"/>
+
+                <Button
+                    android:layout_toLeftOf="@+id/journal_detail_top_share_tv"
+                    android:background="#00000000"
+                    android:id="@+id/journal_detail_share_bt"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp">
+                </Button>
+                <TextView
+                    android:layout_marginRight="15dp"
+                    android:id="@+id/journal_detail_top_share_tv"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:textSize="15dp"
+                    android:textColor="#ffffff"
+                    android:fontFamily="@font/kopubworlddotummedium"
+                    android:text="14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>

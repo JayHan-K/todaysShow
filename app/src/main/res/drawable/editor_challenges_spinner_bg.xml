@@ -20,6 +20,9 @@
         </inset>
 
     </item>
+    <item>
+        <bitmap android:gravity="right" android:src="@drawable/icon_camera" />
+    </item>
 
 
 </selector>

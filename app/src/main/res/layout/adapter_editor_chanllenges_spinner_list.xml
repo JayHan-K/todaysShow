@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_gravity="center_vertical"
+    android:id="@+id/adapter_editor_chanllenges_spinner_list_tv"
+    style="?attr/spinnerDropDownItemStyle"
+    android:textSize="11dp"
+    android:paddingLeft="10dp"
+    android:paddingBottom="5dp"
+    android:paddingTop="5dp"
+    android:background="#ffffff"
+    android:textColor="#000000"
+    android:singleLine="true"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"/>

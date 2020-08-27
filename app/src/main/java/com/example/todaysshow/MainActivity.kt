@@ -1,6 +1,8 @@
 package com.example.todaysshow
 
 import android.os.Bundle
+import android.util.Log
+import android.widget.FrameLayout
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.todaysshow.fragment.*
@@ -14,6 +16,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
 
         supportFragmentManager.beginTransaction().replace(R.id.main_frameLayout,
             HomeFragment()
@@ -43,8 +47,6 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
-
-
     }
 
     override fun onBackPressed() {
