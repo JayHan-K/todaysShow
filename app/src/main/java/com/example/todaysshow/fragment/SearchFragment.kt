@@ -140,7 +140,17 @@ class SearchFragment : Fragment() {
 
     }
 
-    fun changeShowDetailToSearchFrame(){
+    fun changeSearchFrameToJournalDetail(){
+        searchMainLinearLayout!!.visibility = View.INVISIBLE
+        searchMainFrameLayout!!.visibility = View.VISIBLE
+        childFragmentManager.beginTransaction().replace(
+            R.id.search_main_fl,
+            JournalDetailFragment("Search")
+        ).commitAllowingStateLoss()
+
+    }
+
+    fun backToSearchFrame(){
         searchMainFrameLayout!!.visibility = View.INVISIBLE
         searchMainLinearLayout!!.visibility = View.VISIBLE
 

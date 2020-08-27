@@ -2,7 +2,6 @@ package com.example.todaysshow.fragment
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -86,7 +85,7 @@ class HomeFragment : Fragment(){
         val homeJournalRV = viewGroup.findViewById<RecyclerView>(R.id.home_journal_rv) as RecyclerView
         val listener : ItemClickListener = object : ItemClickListener {
             override fun onItemClicked(vh: RecyclerView.ViewHolder, item: Any, pos: Int) {
-                Toast.makeText(context, "Home Fragment", Toast.LENGTH_SHORT).show()
+                homeChangeToJournalDetail()
             }
         }
         val journalAdapter = JournalAdapter(journalList!!, context!!, listener )
@@ -100,7 +99,6 @@ class HomeFragment : Fragment(){
             override fun onItemClicked(vh: RecyclerView.ViewHolder, item: Any, pos: Int) {
 
                 var show :Show = item as Show
-                Log.i("HomeFragment", show.getShowName())
 
                 homeFragmentMainScrollView!!.visibility = View.INVISIBLE
                 homeFragmentChildFragment!!.visibility = View.VISIBLE
@@ -301,5 +299,16 @@ class HomeFragment : Fragment(){
         homeFragmentChildFragment!!.visibility = View.INVISIBLE
         homeFragmentTopTitleLinearLayout!!.visibility = View.VISIBLE
     }
+    fun homeChangeToJournalDetail(){
+        homeFragmentMainScrollView!!.visibility = View.INVISIBLE
+        homeFragmentChildFragment!!.visibility = View.VISIBLE
+        homeFragmentTopTitleLinearLayout!!.visibility = View.INVISIBLE
+
+        childFragmentManager.beginTransaction().replace(
+            R.id.home_fragment_child_fragment,
+            JournalDetailFragment("Home")
+        ).commitAllowingStateLoss()
+    }
+
 
 }

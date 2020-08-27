@@ -1,11 +1,12 @@
 package com.example.todaysshow
 
 import android.os.Bundle
-import android.util.Log
-import android.widget.FrameLayout
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.todaysshow.fragment.*
+import com.example.todaysshow.fragment.CommunityFragment
+import com.example.todaysshow.fragment.HomeFragment
+import com.example.todaysshow.fragment.ProfileFragment
+import com.example.todaysshow.fragment.SearchFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -50,6 +51,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
+
+
 
         if(System.currentTimeMillis() - mBackWait >= 2000){
             mBackWait = System.currentTimeMillis()

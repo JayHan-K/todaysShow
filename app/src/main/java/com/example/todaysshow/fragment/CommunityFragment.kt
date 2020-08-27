@@ -63,7 +63,7 @@ class CommunityFragment(initIndex: Int) : Fragment() {
 
         childFragmentManager.beginTransaction().replace(
             R.id.community_main_fl,
-            JournalDetailFragment()
+            JournalDetailFragment("Community")
         ).commitAllowingStateLoss()
     }
 

@@ -10,15 +10,17 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.todaysshow.ItemClickListener
 import com.example.todaysshow.R
 import com.example.todaysshow.`object`.Journal
 import com.makeramen.roundedimageview.RoundedImageView
 
-class CommunityHotIssueJournalAdapter (journals: ArrayList<Journal>, context: Context) :
+class CommunityHotIssueJournalAdapter (journals: ArrayList<Journal>, context: Context, itemClickListener: ItemClickListener) :
     RecyclerView.Adapter<CommunityHotIssueJournalAdapter.CommunityHotIssueJournalHolder>() {
 
     var journals = journals
     var context = context
+    var itemClickListener = itemClickListener
 
     class CommunityHotIssueJournalHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         var communityHotIssueCardView : CardView = itemView.findViewById(R.id.community_hot_issue_cv)
@@ -47,12 +49,7 @@ class CommunityHotIssueJournalAdapter (journals: ArrayList<Journal>, context: Co
         holder.communityHotIssueCardViewIndexTextView.setText("0" + (position+1).toString())
         holder.communityHotIssueCardViewTitleTextView.setText(journal.getJournalStr())
         holder.itemView.setOnClickListener {
-            Toast.makeText(
-                context,
-                journal.getJournalStr() + " ",
-                Toast.LENGTH_SHORT
-            ).show()
-            //itemClickListener.onItemClicked(holder, journal, position)
+            itemClickListener.onItemClicked(holder, journal, position)
         }
     }
 }
