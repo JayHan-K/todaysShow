@@ -13,15 +13,16 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
+import com.example.todaysshow.ItemClickListener
 import com.example.todaysshow.R
 import com.example.todaysshow.`object`.Journal
 
-class CommunityEditorsJournalAdapter (journals :ArrayList<Journal>, context: Context) :
+class CommunityEditorsJournalAdapter (journals :ArrayList<Journal>, context: Context, itemClickListener: ItemClickListener) :
     RecyclerView.Adapter<CommunityEditorsJournalAdapter.CommunityEditorsJournalHolder>() {
 
     var journals = journals
     var context = context
-
+    var itemClickListener = itemClickListener
 
     class CommunityEditorsJournalHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         var communityEditorJournalListImageView: ImageView = itemView.findViewById<ImageView>(R.id.editor_journal_list_iv)
@@ -49,12 +50,7 @@ class CommunityEditorsJournalAdapter (journals :ArrayList<Journal>, context: Con
         journalString = journalString.replace("\n","")
         holder.communityEditorJournalTitleTextView.setText(journalString)
         holder.itemView.setOnClickListener {
-            Toast.makeText(
-                context,
-                journal.getJournalStr() + " ",
-                Toast.LENGTH_SHORT
-            ).show()
-            //itemClickListener.onItemClicked(holder, journal, position)
+            itemClickListener.onItemClicked(holder, journal, position)
         }
     }
 

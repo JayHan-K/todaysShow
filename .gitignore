@@ -12,3 +12,7 @@
 /captures
 .externalNativeBuild
 .cxx
+app/src/main/res/font/kopubworld 2.xml
+app/src/main/res/font/kopubworlddotumbold 2.ttf
+app/src/main/res/font/kopubworlddotummedium 2.ttf
+app/src/main/res/font/kopubworlddotumlight 2.ttf

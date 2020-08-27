@@ -8,9 +8,11 @@ import android.widget.GridView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.todaysshow.ItemClickListener
 import com.example.todaysshow.R
 import com.example.todaysshow.`object`.Journal
 import com.example.todaysshow.adapter.CommunityHotIssueJournalAdapter
+import com.example.todaysshow.fragment.CommunityFragment
 
 class CommunityHotIssue : Fragment() {
 
@@ -24,10 +26,17 @@ class CommunityHotIssue : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val viewGroup: ViewGroup = inflater.inflate(R.layout.activity_community_hot_issue_fragment, null) as ViewGroup
+        val mListener : ItemClickListener = object : ItemClickListener {
+            override fun onItemClicked(vh: RecyclerView.ViewHolder, item: Any, pos: Int) {
+                var parentFrag: CommunityFragment =
+                    this@CommunityHotIssue.parentFragment as CommunityFragment
+                parentFrag.communityChangeToJournalDetail()
+            }
+        }
 
         var communityHotIssueRecyclerView : RecyclerView = viewGroup.findViewById(R.id.community_hot_issue_rv)
         communityHotIssueRecyclerView.layoutManager = LinearLayoutManager(context)
-        communityHotIssueRecyclerView.adapter = CommunityHotIssueJournalAdapter(getJournals(), context!!)
+        communityHotIssueRecyclerView.adapter = CommunityHotIssueJournalAdapter(getJournals(), context!!, mListener)
 
         return viewGroup
     }

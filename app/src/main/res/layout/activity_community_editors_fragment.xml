@@ -6,10 +6,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <ScrollView
+            android:fillViewport="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
 
                 <LinearLayout
                     android:layout_marginBottom="17dp"
@@ -63,14 +68,27 @@
                         android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>
                 </LinearLayout>
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:layout_marginRight="25dp"
-                    android:layout_marginLeft="25dp"
-                    android:id="@+id/community_editors_editor_rv"
+                <RelativeLayout
+                    android:descendantFocusability="blocksDescendants"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content">
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:nestedScrollingEnabled="false"
+                        android:layout_marginRight="25dp"
+                        android:layout_marginLeft="25dp"
+                        android:id="@+id/community_editors_editor_rv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </RelativeLayout>
+
+
 
             </LinearLayout>
+
+
+        </ScrollView>
+
+
 
 
 

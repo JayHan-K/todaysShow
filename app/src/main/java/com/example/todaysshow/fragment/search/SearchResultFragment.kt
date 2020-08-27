@@ -67,7 +67,9 @@ class SearchResultFragment(resultStr : String) : Fragment() {
 
         val listener : ItemClickListener = object : ItemClickListener {
             override fun onItemClicked(vh: RecyclerView.ViewHolder, item: Any, pos: Int) {
-                Toast.makeText(context, "Search Fragment", Toast.LENGTH_SHORT).show()
+                var parentFrag: SearchFragment =
+                    this@SearchResultFragment.parentFragment as SearchFragment
+                parentFrag.changeSearchFrameToJournalDetail()
             }
         }
         journalList = getJournals()
