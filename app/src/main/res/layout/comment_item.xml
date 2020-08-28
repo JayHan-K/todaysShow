@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_marginRight="27dp"
+    android:layout_marginLeft="27dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="130dp">
+
+
+        <LinearLayout
+            android:background="@drawable/show_detail_review_rounded_layout"
+            android:layout_marginTop="18dp"
+            android:layout_width="match_parent"
+            android:layout_height="113dp">
+
+        </LinearLayout>
+        <com.mikhaellopez.circularimageview.CircularImageView
+            app:civ_border_width="0dp"
+            android:src="@drawable/editor_profile_4"
+            android:layout_marginLeft="10dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"></com.mikhaellopez.circularimageview.CircularImageView>
+
+        <LinearLayout
+            android:layout_marginTop="50dp"
+            android:background="#dddddd"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"></LinearLayout>
+
+        <TextView
+            android:id="@+id/show_detail_review_editor_name_tv"
+            android:layout_marginTop="28dp"
+            android:layout_marginLeft="65dp"
+            android:fontFamily="@font/kopubworlddotumbold"
+            android:textSize="12dp"
+            android:textColor="#000000"
+            android:text="제인"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_marginTop="30dp"
+            android:id="@+id/show_detail_review_editor_info_tv"
+            android:layout_toRightOf="@id/show_detail_review_editor_name_tv"
+            android:layout_marginLeft="15dp"
+            android:fontFamily="@font/kopubworlddotumlight"
+            android:textSize="10dp"
+            android:textColor="#bbbbbb"
+            android:text="20대 / 병아리"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:layout_marginTop="28dp"
+            android:layout_toRightOf="@+id/show_detail_review_editor_info_tv"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/icon_good"
+            android:layout_width="15dp"
+            android:layout_height="13dp"/>
+
+        <TextView
+            android:id="@+id/show_detail_review_comment_tv"
+            android:layout_marginRight="20dp"
+            android:layout_alignParentRight="true"
+            android:textColor="#ffffff"
+            android:fontFamily="@font/kopubworlddotumlight"
+            android:textSize="8dp"
+            android:text="35"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <ImageView
+            android:src="@drawable/icon_comment"
+            android:id="@+id/show_detail_review_comment_iv"
+            android:layout_marginRight="3dp"
+            android:layout_toLeftOf="@id/show_detail_review_comment_tv"
+            android:layout_width="9dp"
+            android:layout_height="9dp"/>
+        <TextView
+            android:id="@+id/show_detail_review_heart_tv"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@id/show_detail_review_comment_iv"
+            android:textColor="#ffffff"
+            android:fontFamily="@font/kopubworlddotumlight"
+            android:textSize="8dp"
+            android:text="128"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <ImageView
+            android:src="@drawable/icon_heart"
+            android:layout_marginRight="3dp"
+            android:layout_toLeftOf="@id/show_detail_review_heart_tv"
+            android:layout_width="9dp"
+            android:layout_height="9dp"/>
+
+        <TextView
+            android:layout_marginTop="60dp"
+            android:layout_marginLeft="13dp"
+            android:textSize="9dp"
+            android:fontFamily="@font/kopubworlddotumlight"
+            android:textColor="#000000"
+            android:text="좋은 점"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_marginTop="98dp"
+            android:layout_marginLeft="13dp"
+            android:textSize="9dp"
+            android:fontFamily="@font/kopubworlddotumlight"
+            android:textColor="#000000"
+            android:text="아쉬운 점"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_marginTop="60dp"
+            android:layout_marginLeft="65dp"
+            android:textSize="9dp"
+            android:fontFamily="@font/kopubworlddotumlight"
+            android:textColor="#000000"
+            android:text="줄거리가 좋고, 무대 꽤 화려함!\n박효신 노래 너무잘해요ㅠㅠ"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_marginTop="98dp"
+            android:layout_marginLeft="65dp"
+            android:textSize="9dp"
+            android:fontFamily="@font/kopubworlddotumlight"
+            android:textColor="#000000"
+            android:text="티켓가격 8만원.....? 박효신때문에 봤지...\n다른 캐스팅이면 못볼듯... 그래도 한번쯤은..."
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_marginBottom="15dp"
+            android:layout_marginRight="30dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:fontFamily="@font/kopubworlddotumlight"
+            android:textColor="#bbbbbb"
+            android:textSize="7dp"
+            android:text="3개월전"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

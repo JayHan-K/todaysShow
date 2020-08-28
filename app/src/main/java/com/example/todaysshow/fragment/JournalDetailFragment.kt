@@ -165,10 +165,9 @@ class JournalDetailFragment(parent: String) : Fragment(){
 
     fun getComments():ArrayList<Comment>{
         val comments: ArrayList<Comment> = ArrayList()
-        var comment : String = "너무너무 좋은글이고, 유익한 글인 것 같네요\n오페라의 유령 외에 다른 세계 4대 뮤지컬에 대한 소개도 얼른 보고싶어요!"
-        comments.add(Comment(R.drawable.editor_profile_1, "프로필1", comment))
-        comments.add(Comment(R.drawable.editor_profile_2, "프로필2", comment))
-        comments.add(Comment(R.drawable.editor_profile_3, "프로필3", comment))
+        comments.add(Comment(R.drawable.editor_profile_1, "프로필1", "워낙 유명해서 봤는데 저는 그저그랬어요. 그래도 한 번은 볼만해요!"))
+        comments.add(Comment(R.drawable.editor_profile_2, "프로필2", "부모님과 함께 보기 좋았어요! 누구와 봐도 좋을 공연이었습니다. 다른 글도 기다리고 있어요!"))
+        comments.add(Comment(R.drawable.editor_profile_3, "프로필3", "우와 정말 도움이 많이 됐어요! 관련있는 다른 공연도 추천해주세요~"))
 
         return comments
     }

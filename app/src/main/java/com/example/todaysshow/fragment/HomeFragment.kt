@@ -131,25 +131,26 @@ class HomeFragment : Fragment(){
         val journals = java.util.ArrayList<Journal>()
         journals.add(
             Journal(
-                "2020\n공연트렌드",
+                "2020년\n공연트렌드",
                 R.drawable.editors_sample1
             )
         )
         journals.add(
             Journal(
-                "디큐브아트센터,\n미로같은 ...",
+                "디큐브아트센터,\n미로같은 그곳",
                 R.drawable.family
             )
         )
         journals.add(
             Journal(
-                "모든 이야기의\n시작, 오이디...?",
+                "이야기의 시작,\n오이디푸스",
                 R.drawable.editors_sample2
             )
         )
+
         journals.add(
             Journal(
-                "세계 4대\n뮤지컬을 알...",
+                "4대 뮤지컬\n캣츠",
                 R.drawable.alone
             )
         )
