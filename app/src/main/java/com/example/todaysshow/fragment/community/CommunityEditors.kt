@@ -82,6 +82,12 @@ class CommunityEditors : Fragment() {
             parentFrag.communityChangeToEditorChallenges()
         })
 
+        var communityNoticeMoreButton : Button = viewGroup.findViewById(R.id.community_notice_more_bt)
+        communityNoticeMoreButton.setOnClickListener(View.OnClickListener {
+            var parentFrag: CommunityFragment =
+                this@CommunityEditors.parentFragment as CommunityFragment
+            parentFrag.communityChangeToNotice()
+        })
 
         return viewGroup
     }
