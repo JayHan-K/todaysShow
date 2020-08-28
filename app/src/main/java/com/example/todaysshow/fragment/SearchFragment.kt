@@ -136,7 +136,7 @@ class SearchFragment : Fragment() {
         searchMainFrameLayout!!.visibility = View.VISIBLE
         childFragmentManager.beginTransaction().replace(
             R.id.search_main_fl,
-            ShowDetailFragment("Search", show.getShowName())
+            ShowDetailFragment("Search", show.showName)
         ).commitAllowingStateLoss()
 
     }

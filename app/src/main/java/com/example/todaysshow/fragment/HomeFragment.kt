@@ -309,7 +309,7 @@ class HomeFragment : Fragment(){
 
         childFragmentManager.beginTransaction().replace(
             R.id.home_fragment_child_fragment,
-            ShowDetailFragment("Home",show.getShowName())
+            ShowDetailFragment("Home",show.showName)
         ).commitAllowingStateLoss()
     }
 
