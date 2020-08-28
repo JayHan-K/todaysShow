@@ -1,11 +1,13 @@
 package com.example.todaysshow.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.todaysshow.ImageDetailActivity
 import com.example.todaysshow.R
 import com.example.todaysshow.`object`.Show
 
@@ -38,6 +40,11 @@ class ShowDetailImageAdapter (imageResources: ArrayList<Int>, context: Context) 
         var imageResource: Int = imageResources.get(position)
         holder.showDetailImageView.setImageResource(imageResource)
         holder.showDetailImageView.scaleType = ImageView.ScaleType.FIT_XY
+        holder.itemView.setOnClickListener(View.OnClickListener {
+            var intent : Intent = Intent(context, ImageDetailActivity::class.java)
+            intent.putExtra("position", position)
+            context.startActivity(intent)
+        })
     }
 
 

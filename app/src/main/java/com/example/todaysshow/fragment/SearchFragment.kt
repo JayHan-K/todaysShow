@@ -15,6 +15,7 @@ import com.example.todaysshow.fragment.search.SearchResultFragment
 import com.example.todaysshow.TodayShowApplication
 import com.example.todaysshow.`object`.Show
 import com.example.todaysshow.adapter.SearchQueryAdapter
+import com.example.todaysshow.fragment.home.CategoryDetailFragment
 
 class SearchFragment : Fragment() {
 
@@ -156,5 +157,7 @@ class SearchFragment : Fragment() {
 
 
     }
+
+
 
 }

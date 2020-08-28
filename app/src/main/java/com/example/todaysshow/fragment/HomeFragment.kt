@@ -10,15 +10,13 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
-import com.example.todaysshow.CategoryActivity
-import com.example.todaysshow.CircleIndicator
-import com.example.todaysshow.ItemClickListener
+import com.example.todaysshow.*
 import com.example.todaysshow.`object`.Journal
-import com.example.todaysshow.R
 import com.example.todaysshow.`object`.Show
 import com.example.todaysshow.adapter.HomeAdPagerAdapter
 import com.example.todaysshow.adapter.HomeShowAdapter
 import com.example.todaysshow.adapter.JournalAdapter
+import com.example.todaysshow.fragment.home.CategoryDetailFragment
 
 class HomeFragment : Fragment(){
 
@@ -100,14 +98,7 @@ class HomeFragment : Fragment(){
 
                 var show :Show = item as Show
 
-                homeFragmentMainScrollView!!.visibility = View.INVISIBLE
-                homeFragmentChildFragment!!.visibility = View.VISIBLE
-                homeFragmentTopTitleLinearLayout!!.visibility = View.INVISIBLE
-
-                childFragmentManager.beginTransaction().replace(
-                    R.id.home_fragment_child_fragment,
-                    ShowDetailFragment("Home", show.getShowName())
-                ).commitAllowingStateLoss()
+                homeChangeToShowDetail(show)
 
             }
         }
@@ -130,7 +121,7 @@ class HomeFragment : Fragment(){
         var homeFragmentCategoryButton = viewGroup.findViewById<Button>(R.id.home_fragment_category_bt)
         homeFragmentCategoryButton.setOnClickListener(View.OnClickListener {
             var intent: Intent = Intent(context, CategoryActivity::class.java)
-            startActivity(intent)
+            startActivityForResult(intent, 0)
         })
 
         return viewGroup
@@ -307,6 +298,36 @@ class HomeFragment : Fragment(){
         childFragmentManager.beginTransaction().replace(
             R.id.home_fragment_child_fragment,
             JournalDetailFragment("Home")
+        ).commitAllowingStateLoss()
+    }
+
+    fun homeChangeToShowDetail(show: Show){
+        homeFragmentMainScrollView!!.visibility = View.INVISIBLE
+        homeFragmentChildFragment!!.visibility = View.VISIBLE
+        homeFragmentTopTitleLinearLayout!!.visibility = View.INVISIBLE
+
+        childFragmentManager.beginTransaction().replace(
+            R.id.home_fragment_child_fragment,
+            ShowDetailFragment("Home",show.getShowName())
+        ).commitAllowingStateLoss()
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if(requestCode == 0){
+            if(resultCode == 0) {
+                var category = data!!.getStringExtra("Category")
+                homeChangeToCategoryDetail(category)
+            }
+        }
+    }
+
+    fun homeChangeToCategoryDetail(category: String){
+        homeFragmentMainScrollView!!.visibility = View.INVISIBLE
+        homeFragmentChildFragment!!.visibility = View.VISIBLE
+        homeFragmentTopTitleLinearLayout!!.visibility = View.INVISIBLE
+        childFragmentManager.beginTransaction().replace(
+            R.id.home_fragment_child_fragment,
+            CategoryDetailFragment(category)
         ).commitAllowingStateLoss()
     }
 
