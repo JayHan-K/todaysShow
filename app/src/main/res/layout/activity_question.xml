@@ -38,7 +38,7 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginRight="30dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="30dp"
                 android:layout_weight="0.25"
                 android:ems="5"
                 android:hint="고민이 가장 잘 드러나는 한줄"
@@ -77,7 +77,7 @@
             <Spinner
                 android:layout_weight="0.25"
                 android:layout_marginLeft="35dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="30dp"
                 android:spinnerMode="dropdown"
                 android:id="@+id/spinner_field"
                 android:layout_width="wrap_content"
@@ -87,10 +87,10 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:background="#DEDEDE"
-            android:layout_weight="0.7">
+            android:layout_weight="1">
 
             <EditText
                 android:id="@+id/editTextTextPersonName3"
