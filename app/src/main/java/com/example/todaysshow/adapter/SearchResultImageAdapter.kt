@@ -43,7 +43,7 @@ class SearchResultImageAdapter(shows: ArrayList<Show>,context: Context, itemClic
         position: Int
     ) {
         var show:Show = shows.get(position)
-        holder.showListItem.setImageResource(show.getImageResource())
+        holder.showListItem.setImageResource(show.imageSource)
         setMarginsInDp(holder.showListItem, 0,0,0,2)
         setSizeInDP(holder.showListItem, 100, 135)
         holder.showListItem.scaleType = ImageView.ScaleType.FIT_XY

@@ -22,7 +22,7 @@ class HomeShowAdapter(homeShows: ArrayList<Show>, context : Context, itemClickLi
     }
     override fun onBindViewHolder(holder: HomeShowHolder, position: Int) {
         var homeShow : Show = homeShows.get(position)
-        holder.homeShowIV.setBackgroundResource(homeShow.getImageResource())
+        holder.homeShowIV.setBackgroundResource(homeShow.imageSource)
         setMarginsInDp(holder.homeShowIV, 0,0,25, 0)
         holder.homeShowIV.setOnClickListener(View.OnClickListener {
             itemClickListener.onItemClicked(holder, homeShow, position)

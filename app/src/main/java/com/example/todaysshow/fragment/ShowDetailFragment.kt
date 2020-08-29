@@ -64,7 +64,7 @@ class ShowDetailFragment(parent: String, title: String) : Fragment() {
             }else if(parent.equals("Search")){
                 var parentFrag: SearchFragment =
                     this@ShowDetailFragment.parentFragment as SearchFragment
-                parentFrag.changeShowDetailToSearchFrame()
+                parentFrag.backToSearchFrame()
             }
         })
 
@@ -97,5 +97,6 @@ class ShowDetailFragment(parent: String, title: String) : Fragment() {
     companion object{
         private const val VIDEO_ID = "a7AP-XrBKC0"
     }
+
 
 }

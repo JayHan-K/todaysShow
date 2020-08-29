@@ -15,6 +15,7 @@ import com.example.todaysshow.fragment.search.SearchResultFragment
 import com.example.todaysshow.TodayShowApplication
 import com.example.todaysshow.`object`.Show
 import com.example.todaysshow.adapter.SearchQueryAdapter
+import com.example.todaysshow.fragment.home.CategoryDetailFragment
 
 class SearchFragment : Fragment() {
 
@@ -135,16 +136,28 @@ class SearchFragment : Fragment() {
         searchMainFrameLayout!!.visibility = View.VISIBLE
         childFragmentManager.beginTransaction().replace(
             R.id.search_main_fl,
-            ShowDetailFragment("Search", show.getShowName())
+            ShowDetailFragment("Search", show.showName)
         ).commitAllowingStateLoss()
 
     }
 
-    fun changeShowDetailToSearchFrame(){
+    fun changeSearchFrameToJournalDetail(){
+        searchMainLinearLayout!!.visibility = View.INVISIBLE
+        searchMainFrameLayout!!.visibility = View.VISIBLE
+        childFragmentManager.beginTransaction().replace(
+            R.id.search_main_fl,
+            JournalDetailFragment("Search")
+        ).commitAllowingStateLoss()
+
+    }
+
+    fun backToSearchFrame(){
         searchMainFrameLayout!!.visibility = View.INVISIBLE
         searchMainLinearLayout!!.visibility = View.VISIBLE
 
 
     }
+
+
 
 }

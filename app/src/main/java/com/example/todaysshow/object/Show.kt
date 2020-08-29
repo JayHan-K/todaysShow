@@ -1,15 +1,9 @@
 package com.example.todaysshow.`object`
 
 class Show(imageSource: Int, showName: String) {
-    private var imageSource : Int = imageSource
-    private var showName : String = showName
+    var imageSource : Int = imageSource
+    var showName : String = showName
 
-    fun getImageResource() : Int{
-        return this.imageSource
-    }
 
-    fun getShowName(): String{
-        return this.showName
-    }
 
 }

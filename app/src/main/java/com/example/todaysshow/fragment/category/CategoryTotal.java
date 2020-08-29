@@ -1,5 +1,6 @@
 package com.example.todaysshow.fragment.category;
 
+import android.net.wifi.hotspot2.pps.HomeSp;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -12,7 +13,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.ListFragment;
 
+import com.example.todaysshow.CategoryActivity;
+import com.example.todaysshow.MainActivity;
 import com.example.todaysshow.R;
+import com.example.todaysshow.fragment.HomeFragment;
 
 public class CategoryTotal extends ListFragment {
 
@@ -36,8 +40,10 @@ public class CategoryTotal extends ListFragment {
     public void onListItemClick(ListView l, View v, int position, long id){
 
         String strText = (String) l.getItemAtPosition(position);
-        Log.d("Fragment: ", position + ": " +strText);
+        //Log.d("Fragment: ", position + ": " +strText);
         //Toast.makeText(this.getContext(), "클릭: " + position +" " + strText, Toast.LENGTH_SHORT).show();
+        String category = "전체 | " + strText;
+        ((CategoryActivity)getActivity()).closeAndChangeDeatil(category);
 
     }
 }

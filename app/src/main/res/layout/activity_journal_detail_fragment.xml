@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    android:id="@+id/journal_detail_cover_fl"
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<FrameLayout android:id="@+id/journal_detail_cover_fl"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ScrollView
         android:fillViewport="true"
@@ -55,11 +56,209 @@
 
 
             <LinearLayout
-                android:background="#ff00ff"
+                android:background="#ffffff"
+                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"/>
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="37dp"/>
+
+                <RelativeLayout
+                    android:layout_marginRight="27dp"
+                    android:layout_marginLeft="27dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp">
+
+                    <com.mikhaellopez.circularimageview.CircularImageView
+                        android:id="@+id/journal_detail_editor_profile_iv"
+                        android:layout_marginLeft="30dp"
+                        android:layout_alignParentLeft="true"
+                        android:src="@drawable/editor_profile_4"
+                        app:civ_border_width="0dp"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"/>
+                    <TextView
+                        android:id="@+id/journal_detail_editor_name_tv"
+                        android:textSize="15dp"
+                        android:fontFamily="@font/kopubworlddotumbold"
+                        android:textColor="#000000"
+                        android:layout_marginLeft="10dp"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/journal_detail_editor_profile_iv"
+                        android:text="제인 인턴 에디터"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:fontFamily="@font/kopubworlddotummedium"
+                        android:textSize="13dp"
+                        android:textColor="#434343"
+                        android:layout_marginRight="30dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:text="조회수 3만"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </RelativeLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="16dp"/>
+                <LinearLayout
+                    android:layout_marginRight="27dp"
+                    android:layout_marginLeft="27dp"
+                    android:background="#434343"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"/>
+                <TextView
+                    android:id="@+id/journal_detail_main_jorunal_tv"
+                    android:fontFamily="@font/kopubworlddotummedium"
+                    android:textSize="15dp"
+                    android:textColor="#000000"
+                    android:layout_marginRight="40dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"/>
+                <LinearLayout
+                    android:weightSum="1"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="27dp"
+                    android:layout_marginRight="27dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp">
+
+                    <LinearLayout
+                        android:background="@drawable/journal_detail_comment_rounded_border"
+                        android:layout_weight="0.7"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent">
+                        <EditText
+                            android:paddingLeft="10dp"
+                            android:background="@null"
+                            android:textColorHint="#8d8d8d"
+                            android:textSize="15dp"
+                            android:hint="댓글을 입력해주세요!"
+                            android:layout_weight="0.7"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
+
+
+
+                    <LinearLayout
+                        android:layout_weight="0.1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"/>
+                    <Button
+                        android:background="#00000000"
+                        android:textSize="15dp"
+                        android:textColor="#333333"
+                        android:fontFamily="@font/kopubworlddotumbold"
+                        android:text="등록"
+                        android:layout_weight="0.2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="27dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp">
+                    <ImageView
+                        android:src="@drawable/icon_comment"
+                        android:layout_gravity="center_vertical"
+                        android:layout_width="15dp"
+                        android:layout_height="14dp"/>
+                    <TextView
+                        android:textSize="10dp"
+                        android:fontFamily="@font/kopubworlddotummedium"
+                        android:textColor="#959595"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dp"
+                        android:text="15개의 댓글"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_marginRight="27dp"
+                    android:layout_marginLeft="27dp"
+                    android:background="#424242"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_marginRight="27dp"
+                    android:layout_marginLeft="27dp"
+                    android:id="@+id/journal_detail_comment_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <RelativeLayout
+                    android:layout_marginRight="27dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="75dp">
+                    <Button
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:textColor="#f7d104"
+                        android:fontFamily="@font/kopubworlddotumbold"
+                        android:text="15개의 댓글 더보기 >"
+                        android:background="#00000000"
+                        android:textSize="17dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+
+                </RelativeLayout>
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:paddingLeft="27dp"
+                android:paddingRight="27dp"
+                android:background="#000000"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp">
+                    <TextView
+                        android:layout_gravity="center_vertical"
+                        android:textSize="17dp"
+                        android:textColor="#ffffff"
+                        android:text="집순이도 볼수있어 다른글"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/journal_detail_other_journal_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"/>
+            </LinearLayout>
+
+            
+
 
         </LinearLayout>
+
     </ScrollView>
 
     <LinearLayout

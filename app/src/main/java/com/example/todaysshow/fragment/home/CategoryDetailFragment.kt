@@ -1,21 +1,17 @@
-package com.example.todaysshow.fragment.search
+package com.example.todaysshow.fragment.home
 
-import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.GridView
-import android.widget.Toast
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.todaysshow.ItemClickListener
 import com.example.todaysshow.R
-import com.example.todaysshow.ShowDetailActivity
 import com.example.todaysshow.`object`.Journal
 import com.example.todaysshow.`object`.Show
 import com.example.todaysshow.adapter.JournalAdapter
@@ -23,17 +19,15 @@ import com.example.todaysshow.adapter.SearchResultImageAdapter
 import com.example.todaysshow.adapter.SearchResultRelationAdapter
 import com.example.todaysshow.fragment.HomeFragment
 import com.example.todaysshow.fragment.SearchFragment
-import com.example.todaysshow.fragment.ShowDetailFragment
-import kotlinx.android.synthetic.main.search_list_item.*
 
-class SearchResultFragment(resultStr : String) : Fragment() {
-    var searchResultStr = resultStr
-    var journalList : ArrayList<Journal>? = null
-    var relationList : ArrayList<String>? = null
-    var searchResultImageRecyclerView : RecyclerView? = null
+class CategoryDetailFragment(category: String ) : Fragment() {
+    var category = category
+    var categoryDetailFragmentJournalRecyclerView : RecyclerView? = null
+    var categoryDetailFragmentImageRecyclerView : RecyclerView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
     }
 
     override fun onCreateView(
@@ -41,62 +35,50 @@ class SearchResultFragment(resultStr : String) : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val viewGroup: ViewGroup = inflater.inflate(R.layout.search_result_layout, null) as ViewGroup
+        val viewGroup: ViewGroup = inflater.inflate(R.layout.categoty_detail_fragment, null) as ViewGroup
 
-
-        searchResultImageRecyclerView = viewGroup.findViewById(R.id.search_result_image_rv)
+        categoryDetailFragmentImageRecyclerView = viewGroup.findViewById(R.id.category_detail_fragment_image_rv)
         val myListener : ItemClickListener = object : ItemClickListener {
             override fun onItemClicked(vh: RecyclerView.ViewHolder, item: Any, pos: Int) {
                 var show :Show = item as Show
-                var parentFrag: SearchFragment =
-                    this@SearchResultFragment.parentFragment as SearchFragment
-                parentFrag.changeSearchFrameToShowDetail(show)
+                var parentFrag: HomeFragment =
+                    this@CategoryDetailFragment.parentFragment as HomeFragment
+                parentFrag.homeChangeToShowDetail(show)
 
             }
         }
-        searchResultImageRecyclerView!!.adapter = SearchResultImageAdapter(getImageList(), context!!,myListener)
+        categoryDetailFragmentImageRecyclerView!!.adapter = SearchResultImageAdapter(getImageList(), context!!,myListener)
         var gridLayoutManager : GridLayoutManager = GridLayoutManager(context!!, 3)
-        searchResultImageRecyclerView!!.layoutManager = gridLayoutManager
+        categoryDetailFragmentImageRecyclerView!!.layoutManager = gridLayoutManager
 
 
 
 
         val journalLayoutManager : LinearLayoutManager = LinearLayoutManager(context)
         journalLayoutManager.orientation = LinearLayoutManager.HORIZONTAL
-        val relationLayoutManager : LinearLayoutManager = LinearLayoutManager(context)
 
         val listener : ItemClickListener = object : ItemClickListener {
             override fun onItemClicked(vh: RecyclerView.ViewHolder, item: Any, pos: Int) {
-                var parentFrag: SearchFragment =
-                    this@SearchResultFragment.parentFragment as SearchFragment
-                parentFrag.changeSearchFrameToJournalDetail()
+                var parentFrag: HomeFragment =
+                    this@CategoryDetailFragment.parentFragment as HomeFragment
+                parentFrag.homeChangeToJournalDetail()
             }
         }
-        journalList = getJournals()
-        val searchResultJournalRV = viewGroup.findViewById<RecyclerView>(R.id.search_result_journal_rv) as RecyclerView
+        categoryDetailFragmentJournalRecyclerView = viewGroup.findViewById(R.id.category_detail_fragment_journal_rv) as RecyclerView
         val journalAdapter =
-            JournalAdapter(journalList!!, context!!, listener)
-        searchResultJournalRV.layoutManager = journalLayoutManager
-        searchResultJournalRV.adapter = journalAdapter
+            JournalAdapter(getJournals(), context!!, listener)
+        categoryDetailFragmentJournalRecyclerView!!.layoutManager = journalLayoutManager
+        categoryDetailFragmentJournalRecyclerView!!.adapter = journalAdapter
 
-        relationList = getRelation()
-        val mListener : ItemClickListener = object : ItemClickListener {
-            override fun onItemClicked(vh: RecyclerView.ViewHolder, item: Any, pos: Int) {
-                var parentFrag : SearchFragment = this@SearchResultFragment.parentFragment as SearchFragment
-                parentFrag.setSearchQuery(item.toString())
+        var categoryDetailFragmentCloseButton : Button = viewGroup.findViewById(R.id.category_detail_fragment_close_bt)
+        categoryDetailFragmentCloseButton.setOnClickListener(View.OnClickListener {
+            var parentFrag: HomeFragment =
+                this@CategoryDetailFragment.parentFragment as HomeFragment
+            parentFrag.BackToHome()
+        })
 
-            }
-        }
-        val relationListRV = viewGroup.findViewById<RecyclerView>(R.id.search_result_relation_rv)
-        val relationAdapter =
-            SearchResultRelationAdapter(
-                relationList!!,
-                context!!,
-                mListener
-            )
-        relationListRV.layoutManager = relationLayoutManager
-        relationListRV.adapter = relationAdapter
-
+        var categoryDetailCategoryTextView : TextView = viewGroup.findViewById(R.id.category_detail_category_tv)
+        categoryDetailCategoryTextView.setText(category)
 
         return viewGroup
     }
@@ -129,21 +111,10 @@ class SearchResultFragment(resultStr : String) : Fragment() {
             )
         )
 
+
+
         return journals
     }
-
-    fun getRelation() : ArrayList<String>{
-        val relationList = ArrayList<String>()
-        relationList.add("오백에 삼십")
-        relationList.add("쉬어 매드니스")
-        relationList.add("캣츠")
-        relationList.add("오페라의 유령")
-        relationList.add("파우스트")
-
-        return relationList
-
-    }
-
 
     fun getImageList(): ArrayList<Show>{
         var shows : ArrayList<Show> = ArrayList()
@@ -205,5 +176,4 @@ class SearchResultFragment(resultStr : String) : Fragment() {
 
         return shows
     }
-
 }

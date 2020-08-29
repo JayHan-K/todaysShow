@@ -38,8 +38,14 @@ class CommunityEditors : Fragment() {
         val viewGroup: ViewGroup = inflater.inflate(R.layout.activity_community_editors_fragment, null) as ViewGroup
 
         communityEditorsEditorRecyclerView = viewGroup.findViewById(R.id.community_editors_editor_rv)
-
-        communityEditorsEditorRecyclerView!!.adapter = CommunityEditorsJournalAdapter(getJournals(), context!!)
+        val mListener : ItemClickListener = object : ItemClickListener {
+            override fun onItemClicked(vh: RecyclerView.ViewHolder, item: Any, pos: Int) {
+                var parentFrag: CommunityFragment =
+                    this@CommunityEditors.parentFragment as CommunityFragment
+                parentFrag.communityChangeToJournalDetail()
+            }
+        }
+        communityEditorsEditorRecyclerView!!.adapter = CommunityEditorsJournalAdapter(getJournals(), context!!,mListener)
         var gridLayoutManager : GridLayoutManager = GridLayoutManager(context!!, 2)
         gridLayoutManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup(){
             override fun getSpanSize(position: Int): Int {
@@ -50,6 +56,7 @@ class CommunityEditors : Fragment() {
             }
         }
         communityEditorsEditorRecyclerView!!.layoutManager = gridLayoutManager
+
 
         val journalLayoutManager : LinearLayoutManager = LinearLayoutManager(context)
         journalLayoutManager.orientation = LinearLayoutManager.HORIZONTAL
@@ -75,6 +82,12 @@ class CommunityEditors : Fragment() {
             parentFrag.communityChangeToEditorChallenges()
         })
 
+        var communityNoticeMoreButton : Button = viewGroup.findViewById(R.id.community_notice_more_bt)
+        communityNoticeMoreButton.setOnClickListener(View.OnClickListener {
+            var parentFrag: CommunityFragment =
+                this@CommunityEditors.parentFragment as CommunityFragment
+            parentFrag.communityChangeToNotice()
+        })
 
         return viewGroup
     }
