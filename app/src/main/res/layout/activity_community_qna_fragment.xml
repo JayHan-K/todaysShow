@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:Android="http://schemas.android.com/tools">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -19,12 +19,16 @@
             android:id="@+id/qna_search_bar"
             android:layout_width="match_parent"
             android:layout_height="100px"/>
-        
+
         <Spinner
-            android:entries="@array/spinner"
+            android:spinnerMode="dropdown"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp" />
+            android:textColor="#ffffff"
+            android:id="@+id/spinner_field"
+            android:layout_marginLeft="20dp" />
 
         <LinearLayout
             android:background="#9b9b9b"
@@ -36,13 +40,20 @@
             android:layout_height="match_parent"
             android:id="@+id/qna_rv"
             android:scrollbars="vertical"/>
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/floatingActionButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:clickable="true"
-            app:srcCompat="@android:drawable/ic_menu_edit" />
     </LinearLayout>
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        Android:theme="@style/MyMaterialTheme"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="bottom|right"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/round_btn"
+        android:clickable="true"
+        android:text="Q"
+        android:textColor="#ffffff"
+        android:textSize="40sp"
+        android:textStyle="bold" />
 </FrameLayout>

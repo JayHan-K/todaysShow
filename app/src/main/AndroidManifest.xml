@@ -15,9 +15,10 @@
             android:name=".CategoryActivity"
             android:theme="@style/Transparent" />
         <activity android:name=".fragment.ProfileFragment" />
-        <activity android:name=".fragment.CommunityFragment" />
+        <activity android:name=".fragment.CommunityFragment"/>
         <activity android:name=".fragment.SearchFragment" />
         <activity android:name=".fragment.HomeFragment" />
+        <activity android:name=".QuestionActivity" />
         <activity android:name=".LaunchActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
