@@ -35,7 +35,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:fontFamily="@font/kopubworlddotumbold"
+                    android:fontFamily="@font/kopubworlddotummedium"
                     android:text="오늘의 공연"
                     android:textAlignment="center"
                     android:textColor="#ffffff"
@@ -78,14 +78,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="재우"
                         android:layout_marginRight="10dp"
+                        android:fontFamily="@font/kopubworlddotummedium"
+                        android:text="재우"
                         android:textColor="#ffffff"
                         android:textSize="16sp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
 
                     <ImageView
                         android:layout_width="15dp"
@@ -93,13 +95,15 @@
                         android:layout_gravity="center_vertical"
                         app:srcCompat="@drawable/icon_alarm" />
                 </LinearLayout>
+
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="18dp"
                     android:background="#000000"
+                    android:fontFamily="@font/kopubworlddotummedium"
+                    android:text="프로필수정"
                     android:textColor="#9b9b9b"
-                    android:textSize="14sp"
-                    android:text="프로필수정"/>
+                    android:textSize="14sp" />
             </LinearLayout>
         </LinearLayout>
 
@@ -140,6 +144,7 @@
                         android:layout_marginTop="5dp"
                         android:layout_marginBottom="5dp"
                         android:layout_weight="1"
+                        android:fontFamily="@font/kopubworlddotummedium"
                         android:text="출석체크"
                         android:textColor="#000000"
                         android:textSize="14sp"
@@ -158,17 +163,19 @@
                         android:layout_gravity="center_horizontal"
                         android:layout_weight="1"
                         android:background="@drawable/icon_point" />
+
                     <TextView
-                        android:textSize="14sp"
-                        android:textColor="#000000"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
                         android:layout_marginTop="5dp"
                         android:layout_marginBottom="5dp"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_width="wrap_content"
                         android:layout_weight="1"
-                        android:textStyle="bold"
-                        android:layout_height="wrap_content"
-                        android:text="포인트적립"/>
+                        android:fontFamily="@font/kopubworlddotummedium"
+                        android:text="포인트적립"
+                        android:textColor="#000000"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -183,17 +190,19 @@
                         android:layout_gravity="center_horizontal"
                         android:layout_weight="1"
                         android:background="@drawable/icon_today_shop" />
+
                     <TextView
-                        android:textSize="14sp"
-                        android:textColor="#000000"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
                         android:layout_marginTop="5dp"
                         android:layout_marginBottom="5dp"
                         android:layout_weight="1"
-                        android:textStyle="bold"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="오늘의 SHOP"/>
+                        android:fontFamily="@font/kopubworlddotummedium"
+                        android:text="오늘의 SHOP"
+                        android:textColor="#000000"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
             </LinearLayout>
             <LinearLayout
@@ -203,33 +212,121 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
                 android:layout_marginBottom="30dp"
+                android:gravity="center_horizontal"
                 android:layout_weight="1">
-                <Button
+                <RelativeLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center_vertical"
+                    android:layout_height="wrap_content"
                     android:layout_marginRight="10dp"
-                    android:layout_weight="1"
-                    android:textStyle="bold"
-                    android:background="@drawable/rounded_corner_btn"
-                    android:text="내 리뷰"/>
-                <Button
+                    android:layout_gravity="right">
+
+                    <Button
+                        android:id="@+id/review_btn"
+                        android:background="@drawable/rounded_corner_btn"
+                        android:layout_width="100dp"
+                        android:layout_height="200dp"
+                        android:layout_alignParentTop="true"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/reviews"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="20dp"
+                        android:layout_marginLeft="39dp"
+                        android:fontFamily="@font/kopubworlddotummedium"
+                        android:text="2"
+                        android:textColor="#FFFF00"
+                        android:textSize="50sp"
+                        android:textStyle="bold"
+                        android:translationZ="5dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="42dp"
+                        android:layout_marginTop="95dp"
+                        android:fontFamily="@font/kopubworlddotummedium"
+                        android:text="내 리뷰"
+                        android:textColor="#000000"
+                        android:textSize="8sp"
+                        android:translationZ="5dp" />
+                </RelativeLayout>
+                <RelativeLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
                     android:layout_marginRight="10dp"
-                    android:textStyle="bold"
-                    android:background="@drawable/rounded_corner_btn"
-                    android:text="스트랩"/>
-                <Button
+                    android:layout_gravity="right">
+
+                    <Button
+                        android:id="@+id/scrap_btn"
+                        android:background="@drawable/rounded_corner_btn"
+                        android:layout_width="100dp"
+                        android:layout_height="200dp"
+                        android:layout_alignParentTop="true"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/scrap"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="19dp"
+                        android:layout_marginLeft="39dp"
+                        android:fontFamily="@font/kopubworlddotummedium"
+                        android:text="3"
+                        android:textColor="#FFFF00"
+                        android:textSize="50sp"
+                        android:textStyle="bold"
+                        android:translationZ="5dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="41dp"
+                        android:layout_marginTop="95dp"
+                        android:fontFamily="@font/kopubworlddotummedium"
+                        android:text="스크랩"
+                        android:textColor="#000000"
+                        android:textSize="9sp"
+                        android:translationZ="5dp" />
+                </RelativeLayout>
+                <RelativeLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center_vertical"
-                    android:background="@drawable/rounded_corner_btn"
-                    android:layout_weight="1"
-                    android:textStyle="bold"
-                    android:text="@string/q_a"/>
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right">
+
+                    <Button
+                        android:id="@+id/qna_btn"
+                        android:background="@drawable/rounded_corner_btn"
+                        android:layout_width="100dp"
+                        android:layout_height="200dp"
+                        android:layout_alignParentTop="true"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/qna"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="20dp"
+                        android:layout_marginLeft="39dp"
+                        android:fontFamily="@font/kopubworlddotummedium"
+                        android:text="2"
+                        android:textColor="#FFFF00"
+                        android:textSize="50sp"
+                        android:textStyle="bold"
+                        android:translationZ="5dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="43dp"
+                        android:layout_marginTop="95dp"
+                        android:fontFamily="@font/kopubworlddotummedium"
+                        android:text="@string/q_a"
+                        android:textColor="#000000"
+                        android:textSize="9sp"
+                        android:translationZ="5dp" />
+                </RelativeLayout>
             </LinearLayout>
 
         </LinearLayout>
@@ -244,14 +341,15 @@
             android:paddingRight="27dp">
 
             <TextView
-                android:textColor="#000000"
-                android:layout_marginTop="30dp"
-                android:layout_marginBottom="10dp"
-                android:textSize="16sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:text="찜한 작품"/>
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/kopubworlddotummedium"
+                android:text="찜한 작품"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/search_result_image_rv"
