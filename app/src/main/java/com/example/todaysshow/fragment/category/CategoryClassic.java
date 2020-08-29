@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.ListFragment;
 
+import com.example.todaysshow.CategoryActivity;
 import com.example.todaysshow.R;
 
 public class CategoryClassic extends ListFragment {
@@ -36,7 +37,10 @@ public class CategoryClassic extends ListFragment {
     @Override
     public void onListItemClick(ListView l, View v, int position, long id){
         String strText = (String) l.getItemAtPosition(position);
-        Log.d("Fragment: ", position + ": " +strText);
-        Toast.makeText(this.getContext(), "클릭: " + position +" " + strText, Toast.LENGTH_SHORT).show();
+        //Log.d("Fragment: ", position + ": " +strText);
+        //Toast.makeText(this.getContext(), "클릭: " + position +" " + strText, Toast.LENGTH_SHORT).show();
+        String category = "클래식 | " + strText;
+        ((CategoryActivity)getActivity()).closeAndChangeDeatil(category);
+
     }
 }

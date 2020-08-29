@@ -138,7 +138,7 @@
                                 android:layout_width="25dp"
                                 android:layout_height="34dp">
                                 <Button
-                                    android:background="@drawable/icon_heart"
+                                    android:background="@drawable/icon_heart_unmine"
                                     android:layout_width="23dp"
                                     android:layout_height="23dp"></Button>
                                 <TextView

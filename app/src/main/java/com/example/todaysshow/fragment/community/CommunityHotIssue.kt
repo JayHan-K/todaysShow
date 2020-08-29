@@ -8,9 +8,11 @@ import android.widget.GridView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.todaysshow.ItemClickListener
 import com.example.todaysshow.R
 import com.example.todaysshow.`object`.Journal
 import com.example.todaysshow.adapter.CommunityHotIssueJournalAdapter
+import com.example.todaysshow.fragment.CommunityFragment
 
 class CommunityHotIssue : Fragment() {
 
@@ -24,10 +26,17 @@ class CommunityHotIssue : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val viewGroup: ViewGroup = inflater.inflate(R.layout.activity_community_hot_issue_fragment, null) as ViewGroup
+        val mListener : ItemClickListener = object : ItemClickListener {
+            override fun onItemClicked(vh: RecyclerView.ViewHolder, item: Any, pos: Int) {
+                var parentFrag: CommunityFragment =
+                    this@CommunityHotIssue.parentFragment as CommunityFragment
+                parentFrag.communityChangeToJournalDetail()
+            }
+        }
 
         var communityHotIssueRecyclerView : RecyclerView = viewGroup.findViewById(R.id.community_hot_issue_rv)
         communityHotIssueRecyclerView.layoutManager = LinearLayoutManager(context)
-        communityHotIssueRecyclerView.adapter = CommunityHotIssueJournalAdapter(getJournals(), context!!)
+        communityHotIssueRecyclerView.adapter = CommunityHotIssueJournalAdapter(getJournals(), context!!, mListener)
 
         return viewGroup
     }
@@ -36,50 +45,56 @@ class CommunityHotIssue : Fragment() {
         val journals = java.util.ArrayList<Journal>()
         journals.add(
             Journal(
-                "2020\n공연트렌트",
-                R.drawable.journal_image_sample1
+                "명동에 극장이 있다고!",
+                R.drawable.hot_issue_sample1
             )
         )
         journals.add(
             Journal(
-                "샤롯데 씨어\n첫! 방문기",
-                R.drawable.journal_image_sample2
+                "모든 이야기의 시작,\n오이디푸스",
+                R.drawable.hot_issue_sample2
             )
         )
         journals.add(
             Journal(
-                "나는\n도대체 어디...?",
-                R.drawable.journal_image_sample1
+                "세계 4대 뮤지컬을 알려줄게 1편, 캣츠",
+                R.drawable.hot_issue_sample3
             )
         )
         journals.add(
             Journal(
-                "4대 뮤지컬\n오페라의 유령",
-                R.drawable.journal_image_sample2
+                "정신없이 웃고 싶어",
+                R.drawable.hot_issue_sample4
             )
         )
         journals.add(
             Journal(
-                "2020\n공연트렌트",
-                R.drawable.journal_image_sample1
+                "혼자가 딱 좋아!\n혼공 라이프",
+                R.drawable.hot_issue_sample5
             )
         )
         journals.add(
             Journal(
-                "샤롯데 씨어\n첫! 방문기",
-                R.drawable.journal_image_sample2
+                "명동에 극장이 있다고!",
+                R.drawable.hot_issue_sample1
             )
         )
         journals.add(
             Journal(
-                "나는\n도대체 어디...?",
-                R.drawable.journal_image_sample1
+                "모든 이야기의 시작,\n오이디푸스",
+                R.drawable.hot_issue_sample2
             )
         )
         journals.add(
             Journal(
-                "4대 뮤지컬\n오페라의 유령",
-                R.drawable.journal_image_sample2
+                "세계 4대 뮤지컬을 알려줄게 1편, 캣츠",
+                R.drawable.hot_issue_sample3
+            )
+        )
+        journals.add(
+            Journal(
+                "정신없이 웃고 싶어",
+                R.drawable.hot_issue_sample4
             )
         )
         return journals

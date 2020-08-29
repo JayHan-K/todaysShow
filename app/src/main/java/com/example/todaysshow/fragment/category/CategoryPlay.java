@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.ListFragment;
 
+import com.example.todaysshow.CategoryActivity;
 import com.example.todaysshow.R;
 
 public class CategoryPlay extends ListFragment {
@@ -33,8 +34,11 @@ public class CategoryPlay extends ListFragment {
     @Override
     public void onListItemClick(ListView l, View v, int position, long id){
         String strText = (String) l.getItemAtPosition(position);
-        Log.d("Fragment: ", position + ": " +strText);
-        Toast.makeText(this.getContext(), "클릭: " + position +" " + strText, Toast.LENGTH_SHORT).show();
+        //Log.d("Fragment: ", position + ": " +strText);
+        //Toast.makeText(this.getContext(), "클릭: " + position +" " + strText, Toast.LENGTH_SHORT).show();
+        String category = "연극 | " + strText;
+        ((CategoryActivity)getActivity()).closeAndChangeDeatil(category);
+
     }
 }
 

@@ -3,6 +3,7 @@ package com.example.todaysshow;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -61,5 +62,13 @@ public class CategoryActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    public void closeAndChangeDeatil(String category){
+        Intent intent = new Intent();
+        intent.putExtra("Category", category);
+        setResult(0, intent);
+        finish();
+
     }
 }

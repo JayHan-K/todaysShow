@@ -2,7 +2,6 @@ package com.example.todaysshow.fragment
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,15 +10,13 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
-import com.example.todaysshow.CategoryActivity
-import com.example.todaysshow.CircleIndicator
-import com.example.todaysshow.ItemClickListener
+import com.example.todaysshow.*
 import com.example.todaysshow.`object`.Journal
-import com.example.todaysshow.R
 import com.example.todaysshow.`object`.Show
 import com.example.todaysshow.adapter.HomeAdPagerAdapter
 import com.example.todaysshow.adapter.HomeShowAdapter
 import com.example.todaysshow.adapter.JournalAdapter
+import com.example.todaysshow.fragment.home.CategoryDetailFragment
 
 class HomeFragment : Fragment(){
 
@@ -86,7 +83,7 @@ class HomeFragment : Fragment(){
         val homeJournalRV = viewGroup.findViewById<RecyclerView>(R.id.home_journal_rv) as RecyclerView
         val listener : ItemClickListener = object : ItemClickListener {
             override fun onItemClicked(vh: RecyclerView.ViewHolder, item: Any, pos: Int) {
-                Toast.makeText(context, "Home Fragment", Toast.LENGTH_SHORT).show()
+                homeChangeToJournalDetail()
             }
         }
         val journalAdapter = JournalAdapter(journalList!!, context!!, listener )
@@ -100,16 +97,8 @@ class HomeFragment : Fragment(){
             override fun onItemClicked(vh: RecyclerView.ViewHolder, item: Any, pos: Int) {
 
                 var show :Show = item as Show
-                Log.i("HomeFragment", show.getShowName())
 
-                homeFragmentMainScrollView!!.visibility = View.INVISIBLE
-                homeFragmentChildFragment!!.visibility = View.VISIBLE
-                homeFragmentTopTitleLinearLayout!!.visibility = View.INVISIBLE
-
-                childFragmentManager.beginTransaction().replace(
-                    R.id.home_fragment_child_fragment,
-                    ShowDetailFragment("Home", show.getShowName())
-                ).commitAllowingStateLoss()
+                homeChangeToShowDetail(show)
 
             }
         }
@@ -132,7 +121,7 @@ class HomeFragment : Fragment(){
         var homeFragmentCategoryButton = viewGroup.findViewById<Button>(R.id.home_fragment_category_bt)
         homeFragmentCategoryButton.setOnClickListener(View.OnClickListener {
             var intent: Intent = Intent(context, CategoryActivity::class.java)
-            startActivity(intent)
+            startActivityForResult(intent, 0)
         })
 
         return viewGroup
@@ -142,25 +131,26 @@ class HomeFragment : Fragment(){
         val journals = java.util.ArrayList<Journal>()
         journals.add(
             Journal(
-                "2020\n공연트렌드",
+                "2020년\n공연트렌드",
                 R.drawable.editors_sample1
             )
         )
         journals.add(
             Journal(
-                "디큐브아트센터,\n미로같은 ...",
+                "디큐브아트센터,\n미로같은 그곳",
                 R.drawable.family
             )
         )
         journals.add(
             Journal(
-                "모든 이야기의\n시작, 오이디...?",
+                "이야기의 시작,\n오이디푸스",
                 R.drawable.editors_sample2
             )
         )
+
         journals.add(
             Journal(
-                "세계 4대\n뮤지컬을 알...",
+                "4대 뮤지컬\n캣츠",
                 R.drawable.alone
             )
         )
@@ -301,5 +291,46 @@ class HomeFragment : Fragment(){
         homeFragmentChildFragment!!.visibility = View.INVISIBLE
         homeFragmentTopTitleLinearLayout!!.visibility = View.VISIBLE
     }
+    fun homeChangeToJournalDetail(){
+        homeFragmentMainScrollView!!.visibility = View.INVISIBLE
+        homeFragmentChildFragment!!.visibility = View.VISIBLE
+        homeFragmentTopTitleLinearLayout!!.visibility = View.INVISIBLE
+
+        childFragmentManager.beginTransaction().replace(
+            R.id.home_fragment_child_fragment,
+            JournalDetailFragment("Home")
+        ).commitAllowingStateLoss()
+    }
+
+    fun homeChangeToShowDetail(show: Show){
+        homeFragmentMainScrollView!!.visibility = View.INVISIBLE
+        homeFragmentChildFragment!!.visibility = View.VISIBLE
+        homeFragmentTopTitleLinearLayout!!.visibility = View.INVISIBLE
+
+        childFragmentManager.beginTransaction().replace(
+            R.id.home_fragment_child_fragment,
+            ShowDetailFragment("Home",show.showName)
+        ).commitAllowingStateLoss()
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if(requestCode == 0){
+            if(resultCode == 0) {
+                var category = data!!.getStringExtra("Category")
+                homeChangeToCategoryDetail(category)
+            }
+        }
+    }
+
+    fun homeChangeToCategoryDetail(category: String){
+        homeFragmentMainScrollView!!.visibility = View.INVISIBLE
+        homeFragmentChildFragment!!.visibility = View.VISIBLE
+        homeFragmentTopTitleLinearLayout!!.visibility = View.INVISIBLE
+        childFragmentManager.beginTransaction().replace(
+            R.id.home_fragment_child_fragment,
+            CategoryDetailFragment(category)
+        ).commitAllowingStateLoss()
+    }
+
 
 }
