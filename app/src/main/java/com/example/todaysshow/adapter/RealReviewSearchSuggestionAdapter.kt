@@ -3,6 +3,7 @@ package com.example.todaysshow.adapter
 import android.content.Context
 import android.database.AbstractCursor
 import android.database.Cursor
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -21,8 +22,22 @@ class RealReviewSearchSuggestionAdapter(context: Context, visibleColumnNamesArra
     var context = context
     var layoutInflater : LayoutInflater? = null
 
+    var tempTitleArray : ArrayList<String> = ArrayList()
+    var tempTagArray : ArrayList<String> = ArrayList()
+    var tempDateArray : ArrayList<String> = ArrayList()
+    var tempImageResourceArray : ArrayList<Int> = ArrayList()
+
     init {
         layoutInflater = LayoutInflater.from(context)
+
+        tempTitleArray.add("뮤지컬 <오페라의 유령>")
+        tempTitleArray.add("뮤지컬 <마술피리>")
+        tempTagArray.add("로맨스, 스릴러")
+        tempTagArray.add("판타지, 고전극, 로맨스")
+        tempDateArray.add("2020.05.10~08.15")
+        tempDateArray.add("2020.09.26~10.28")
+        tempImageResourceArray.add(R.drawable.poster_sample11)
+        tempImageResourceArray.add(R.drawable.poster_sample18)
     }
 
     override fun runQueryOnBackgroundThread(constraint: CharSequence?): Cursor {
@@ -44,10 +59,11 @@ class RealReviewSearchSuggestionAdapter(context: Context, visibleColumnNamesArra
         var viewHolder : ViewHolder = view!!.tag as ViewHolder
         //var url = cursor!!.getString(2)
         //var name = cursor!!.getString(3)
-        viewHolder.realReviewSuggestionTitleTextView.setText("titleText")
-        viewHolder.realReviewSuggestionTagTextView.setText("tagText")
-        viewHolder.realReviewSuggestionDateTextView.setText("2010")
-        viewHolder.realReviewSuggestionImageView.setImageResource(R.drawable.poster_sample15)
+        var pos = cursor!!.position
+        viewHolder.realReviewSuggestionTitleTextView.setText(tempTitleArray.get(pos))
+        viewHolder.realReviewSuggestionTagTextView.setText(tempTagArray.get(pos))
+        viewHolder.realReviewSuggestionDateTextView.setText(tempDateArray.get(pos))
+        viewHolder.realReviewSuggestionImageView.setImageResource(tempImageResourceArray.get(pos))
         //Glide.with(context).load(referenceUrl).into(viewHolder.categoryImageView)
     }
 
