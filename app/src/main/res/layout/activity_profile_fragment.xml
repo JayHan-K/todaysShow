@@ -61,14 +61,16 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <ImageView
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:id="@+id/real_review_comment_editor_profile_iv"
+                android:layout_width="73dp"
+                android:layout_height="70dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="30dp"
-                android:layout_marginBottom="30dp"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                app:srcCompat="@drawable/icon_mypage" />
+                android:layout_marginBottom="45dp"
+                android:src="@drawable/editor_profile_3"
+                app:civ_border_width="0dp"></com.mikhaellopez.circularimageview.CircularImageView>
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

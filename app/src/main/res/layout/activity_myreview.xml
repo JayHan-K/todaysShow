@@ -62,11 +62,10 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
             android:orientation="vertical">
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/myreview_rv"
                 android:layout_marginTop="30dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" >
@@ -77,6 +76,8 @@
                 android:id="@+id/review_plus_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/kopubworlddotummedium"
                 android:background="@drawable/mypage_rounded_corner_btn"
