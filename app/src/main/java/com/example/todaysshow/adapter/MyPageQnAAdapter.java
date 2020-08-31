@@ -91,6 +91,7 @@ public class MyPageQnAAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                         }
                     }
                 });
+
                 break;
             case ANSWER:
                 final ListAnswerViewHolder itemController1 = (ListAnswerViewHolder) holder;
@@ -100,6 +101,7 @@ public class MyPageQnAAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 
                 break;
         }
+
 
     }
 
@@ -208,7 +210,6 @@ public class MyPageQnAAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             this.hits = hits;
             this.comments = comments;
         }
-
-
     }
+
 }

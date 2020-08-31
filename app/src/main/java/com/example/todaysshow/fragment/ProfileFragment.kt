@@ -1,14 +1,16 @@
 package com.example.todaysshow.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.RelativeLayout
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.todaysshow.ItemClickListener
-import com.example.todaysshow.R
+import com.example.todaysshow.*
 import com.example.todaysshow.`object`.Show
 import com.example.todaysshow.adapter.HomeShowAdapter
 import com.example.todaysshow.adapter.RealReviewSearchSuggestionAdapter
@@ -45,6 +47,22 @@ class  ProfileFragment : Fragment() {
             }
         }
         profileMyShowRecyclerView.adapter = HomeShowAdapter(getShow(),context!!, listener)
+
+        var profileMyReviewRelativeLayout: RelativeLayout = viewGroup.findViewById(R.id.profile_my_review_rl)
+        profileMyReviewRelativeLayout.setOnClickListener(View.OnClickListener {
+            var intent: Intent = Intent(context, MyReviewActivity::class.java)
+            startActivity(intent)
+        })
+        var profileScrapRelativeLayout: RelativeLayout = viewGroup.findViewById(R.id.profile_scrap_rl)
+        profileScrapRelativeLayout.setOnClickListener(View.OnClickListener {
+            var intent: Intent = Intent(context, MyScrapActivity::class.java)
+            startActivity(intent)
+        })
+        var profileMyQnARelativeLayout: RelativeLayout = viewGroup.findViewById(R.id.profile_qna_rl)
+        profileMyQnARelativeLayout.setOnClickListener(View.OnClickListener {
+            var intent: Intent = Intent(context, MyQnAActivity::class.java)
+            startActivity(intent)
+        })
 
         return viewGroup
     }

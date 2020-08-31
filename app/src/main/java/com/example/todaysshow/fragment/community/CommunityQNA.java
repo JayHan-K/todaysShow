@@ -44,7 +44,7 @@ public class CommunityQNA extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.activity_community_qna_fragment, container, false);
         final Spinner spinner_field = (Spinner) rootView.findViewById(R.id.spinner_field);
-        RecyclerView recyclerView = (RecyclerView)rootView.findViewById(R.id.qna_rv);
+        final RecyclerView recyclerView = (RecyclerView)rootView.findViewById(R.id.qna_rv);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL,false));
         List<CommunityQnAAdapter.Item> data = new ArrayList<>();
         String[] str = getResources().getStringArray(R.array.spinner);
@@ -100,7 +100,6 @@ public class CommunityQNA extends Fragment {
         data.add(new CommunityQnAAdapter.Item(CommunityQnAAdapter.ANSWER,"7뮤지컬을 선호하신다면 ~~~을 추천드리고, 연극을 보고싶으시다면, ~~~~~을 추천드립니다! 이외에 장르별로도 다양하게 있어서 참고해 공연을 선택해주시면....","2020.07.09"));
         recyclerView.setAdapter(new CommunityQnAAdapter(data));
 
-
         SearchView qnaSearchBar = (SearchView) rootView.findViewById(R.id.qna_search_bar);
         qnaSearchBar.setIconifiedByDefault(false);
 
@@ -123,6 +122,11 @@ public class CommunityQNA extends Fragment {
         };
 
         qnaSearchBar.setSuggestionsAdapter(new QnASearchSuggestionAdapter(this.getContext(), a, b, mListener));
+
+
+
+
+
 
         return rootView;
 

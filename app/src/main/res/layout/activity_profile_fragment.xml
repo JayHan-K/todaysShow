@@ -211,6 +211,7 @@
                     android:layout_height="wrap_content"/>
             </RelativeLayout>
             <RelativeLayout
+                android:id="@+id/profile_my_review_rl"
                 android:layout_toLeftOf="@+id/profile_scrap_rl"
                 android:layout_marginTop="140dp"
                 android:layout_marginRight="15dp"
@@ -239,6 +240,7 @@
                     android:layout_height="wrap_content"/>
             </RelativeLayout>
             <RelativeLayout
+                android:id="@+id/profile_qna_rl"
                 android:layout_marginLeft="15dp"
                 android:layout_toRightOf="@+id/profile_scrap_rl"
                 android:layout_marginTop="140dp"
