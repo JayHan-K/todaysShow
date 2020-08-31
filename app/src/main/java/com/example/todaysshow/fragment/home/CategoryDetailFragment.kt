@@ -15,6 +15,7 @@ import com.example.todaysshow.R
 import com.example.todaysshow.`object`.Journal
 import com.example.todaysshow.`object`.Show
 import com.example.todaysshow.adapter.JournalAdapter
+import com.example.todaysshow.adapter.RealReviewSearchSuggestionAdapter
 import com.example.todaysshow.adapter.SearchResultImageAdapter
 import com.example.todaysshow.adapter.SearchResultRelationAdapter
 import com.example.todaysshow.fragment.HomeFragment
@@ -46,6 +47,14 @@ class CategoryDetailFragment(category: String ) : Fragment() {
                 parentFrag.homeChangeToShowDetail(show)
 
             }
+
+            override fun onItemClicked(
+                v: RealReviewSearchSuggestionAdapter.ViewHolder,
+                item: Any,
+                pos: Int
+            ) {
+
+            }
         }
         categoryDetailFragmentImageRecyclerView!!.adapter = SearchResultImageAdapter(getImageList(), context!!,myListener)
         var gridLayoutManager : GridLayoutManager = GridLayoutManager(context!!, 3)
@@ -62,6 +71,14 @@ class CategoryDetailFragment(category: String ) : Fragment() {
                 var parentFrag: HomeFragment =
                     this@CategoryDetailFragment.parentFragment as HomeFragment
                 parentFrag.homeChangeToJournalDetail()
+            }
+
+            override fun onItemClicked(
+                v: RealReviewSearchSuggestionAdapter.ViewHolder,
+                item: Any,
+                pos: Int
+            ) {
+
             }
         }
         categoryDetailFragmentJournalRecyclerView = viewGroup.findViewById(R.id.category_detail_fragment_journal_rv) as RecyclerView

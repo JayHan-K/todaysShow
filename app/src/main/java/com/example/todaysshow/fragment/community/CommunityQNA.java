@@ -9,10 +9,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toolbar;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -20,8 +22,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.todaysshow.QuestionActivity;
 import com.example.todaysshow.R;
 import com.example.todaysshow.adapter.CommunityQnAAdapter;
-import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,10 +40,10 @@ public class CommunityQNA extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL,false));
         List<CommunityQnAAdapter.Item> data = new ArrayList<>();
         String[] str = getResources().getStringArray(R.array.spinner);
-        FloatingActionButton floatingActionButton = (FloatingActionButton) rootView.findViewById(R.id.fab);
+        Button floatingActionButton = (Button) rootView.findViewById(R.id.fab);
 
 
-        floatingActionButton.setAlpha(0.15f);
+        //floatingActionButton.setAlpha(0.15f);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -91,6 +91,10 @@ public class CommunityQNA extends Fragment {
         data.add(new CommunityQnAAdapter.Item(CommunityQnAAdapter.QUESTION,"디큐브 근처 괜찮은 카페 추천해주세요~~", "2020.07.09","공연 추천","관리자님 도와줘요","마스터",5,47));
         data.add(new CommunityQnAAdapter.Item(CommunityQnAAdapter.ANSWER,"7뮤지컬을 선호하신다면 ~~~을 추천드리고, 연극을 보고싶으시다면, ~~~~~을 추천드립니다! 이외에 장르별로도 다양하게 있어서 참고해 공연을 선택해주시면....","2020.07.09"));
         recyclerView.setAdapter(new CommunityQnAAdapter(data));
+
+
+        SearchView qnaSearchBar = (SearchView) rootView.findViewById(R.id.qna_search_bar);
+        qnaSearchBar.setIconifiedByDefault(false);
 
         return rootView;
 

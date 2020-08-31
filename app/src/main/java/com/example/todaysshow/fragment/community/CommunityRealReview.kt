@@ -4,6 +4,7 @@ import android.app.SearchManager
 import android.content.Context
 import android.database.Cursor
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,10 +12,12 @@ import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.todaysshow.ItemClickListener
 import com.example.todaysshow.R
 import com.example.todaysshow.`object`.DetailComment
 import com.example.todaysshow.adapter.RealReviewCommentAdapter
 import com.example.todaysshow.adapter.RealReviewSearchSuggestionAdapter
+import com.example.todaysshow.fragment.CommunityFragment
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -43,7 +46,22 @@ class CommunityRealReview : Fragment() {
         a = arrayOf("showName")
         var b : IntArray
         b = intArrayOf(R.id.real_review_suggestion_iv,R.id.real_review_suggestion_title_tv, R.id.real_review_suggestion_tag_tv, R.id.real_review_suggestion_date_tv)
-        communityRealReviceSearchBar!!.suggestionsAdapter = RealReviewSearchSuggestionAdapter(context!!,a, b)
+        val mListener : ItemClickListener = object : ItemClickListener {
+            override fun onItemClicked(vh: RecyclerView.ViewHolder, item: Any, pos: Int) {
+            }
+            override fun onItemClicked(
+                v: RealReviewSearchSuggestionAdapter.ViewHolder,
+                item: Any,
+                pos: Int
+            ) {
+                var parentFrag: CommunityFragment =
+                    this@CommunityRealReview.parentFragment as CommunityFragment
+                parentFrag.communityChangeToRealReviewCollection()
+            }
+        }
+
+        communityRealReviceSearchBar!!.suggestionsAdapter = RealReviewSearchSuggestionAdapter(context!!,a, b, mListener)
+
 
         communityRealReviewCommentRecyclerView = viewGroup.findViewById(R.id.community_real_review_comment_rv)
         communityRealReviewCommentRecyclerView!!.layoutManager = LinearLayoutManager(context)
@@ -137,4 +155,5 @@ class CommunityRealReview : Fragment() {
         return comments
 
     }
+
 }

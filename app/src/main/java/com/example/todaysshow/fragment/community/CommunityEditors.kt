@@ -14,10 +14,7 @@ import com.example.todaysshow.ItemClickListener
 import com.example.todaysshow.R
 import com.example.todaysshow.`object`.Journal
 import com.example.todaysshow.`object`.Show
-import com.example.todaysshow.adapter.CommunityEditorsJournalAdapter
-import com.example.todaysshow.adapter.JournalAdapter
-import com.example.todaysshow.adapter.SearchResultImageAdapter
-import com.example.todaysshow.adapter.SearchResultRelationAdapter
+import com.example.todaysshow.adapter.*
 import com.example.todaysshow.fragment.CommunityFragment
 import com.example.todaysshow.fragment.SearchFragment
 
@@ -44,6 +41,13 @@ class CommunityEditors : Fragment() {
                     this@CommunityEditors.parentFragment as CommunityFragment
                 parentFrag.communityChangeToJournalDetail()
             }
+
+            override fun onItemClicked(
+                v: RealReviewSearchSuggestionAdapter.ViewHolder,
+                item: Any,
+                pos: Int
+            ) {
+            }
         }
         communityEditorsEditorRecyclerView!!.adapter = CommunityEditorsJournalAdapter(getJournals(), context!!,mListener)
         var gridLayoutManager : GridLayoutManager = GridLayoutManager(context!!, 2)
@@ -66,6 +70,14 @@ class CommunityEditors : Fragment() {
                 var parentFrag: CommunityFragment =
                     this@CommunityEditors.parentFragment as CommunityFragment
                 parentFrag.communityChangeToJournalDetail()
+            }
+
+            override fun onItemClicked(
+                v: RealReviewSearchSuggestionAdapter.ViewHolder,
+                item: Any,
+                pos: Int
+            ) {
+
             }
         }
         journalList = getJournals()

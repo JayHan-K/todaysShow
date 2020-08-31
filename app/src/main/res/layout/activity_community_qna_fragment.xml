@@ -12,6 +12,7 @@
         android:orientation="vertical">
 
         <androidx.appcompat.widget.SearchView
+            app:queryHint="검색어를 입력하세요."
             android:theme="@style/SearchViewStyle"
             android:background="#353535"
             android:layout_marginTop="30dp"
@@ -42,18 +43,14 @@
             android:scrollbars="vertical"/>
     </LinearLayout>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
+
+    <Button
         android:id="@+id/fab"
-        Android:theme="@style/MyMaterialTheme"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_gravity="bottom|right"
         android:layout_marginRight="40dp"
         android:layout_marginBottom="40dp"
-        android:background="@drawable/round_btn"
-        android:clickable="true"
-        android:text="Q"
-        android:textColor="#ffffff"
-        android:textSize="40sp"
-        android:textStyle="bold" />
+        android:layout_gravity="bottom|right"
+        android:background="@drawable/icon_qna"
+        android:layout_width="80dp"
+        android:layout_height="80dp"/>
+
 </FrameLayout>

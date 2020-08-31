@@ -16,6 +16,7 @@ import com.example.todaysshow.`object`.Comment
 import com.example.todaysshow.`object`.Journal
 import com.example.todaysshow.adapter.CommentAdapter
 import com.example.todaysshow.adapter.CommunityEditorsJournalAdapter
+import com.example.todaysshow.adapter.RealReviewSearchSuggestionAdapter
 
 class JournalDetailFragment(parent: String) : Fragment(){
     var parent = parent
@@ -63,6 +64,14 @@ class JournalDetailFragment(parent: String) : Fragment(){
                         this@JournalDetailFragment.parentFragment as CommunityFragment
                     parentFrag.communityChangeToJournalDetail()
                 }
+            }
+
+            override fun onItemClicked(
+                v: RealReviewSearchSuggestionAdapter.ViewHolder,
+                item: Any,
+                pos: Int
+            ) {
+
             }
         }
 

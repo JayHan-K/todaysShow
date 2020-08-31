@@ -12,6 +12,7 @@ import com.example.todaysshow.ItemClickListener
 import com.example.todaysshow.R
 import com.example.todaysshow.`object`.Journal
 import com.example.todaysshow.adapter.CommunityHotIssueJournalAdapter
+import com.example.todaysshow.adapter.RealReviewSearchSuggestionAdapter
 import com.example.todaysshow.fragment.CommunityFragment
 
 class CommunityHotIssue : Fragment() {
@@ -31,6 +32,13 @@ class CommunityHotIssue : Fragment() {
                 var parentFrag: CommunityFragment =
                     this@CommunityHotIssue.parentFragment as CommunityFragment
                 parentFrag.communityChangeToJournalDetail()
+            }
+
+            override fun onItemClicked(
+                v: RealReviewSearchSuggestionAdapter.ViewHolder,
+                item: Any,
+                pos: Int
+            ) {
             }
         }
 

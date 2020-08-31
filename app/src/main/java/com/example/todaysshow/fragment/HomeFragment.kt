@@ -16,6 +16,7 @@ import com.example.todaysshow.`object`.Show
 import com.example.todaysshow.adapter.HomeAdPagerAdapter
 import com.example.todaysshow.adapter.HomeShowAdapter
 import com.example.todaysshow.adapter.JournalAdapter
+import com.example.todaysshow.adapter.RealReviewSearchSuggestionAdapter
 import com.example.todaysshow.fragment.home.CategoryDetailFragment
 
 class HomeFragment : Fragment(){
@@ -85,6 +86,14 @@ class HomeFragment : Fragment(){
             override fun onItemClicked(vh: RecyclerView.ViewHolder, item: Any, pos: Int) {
                 homeChangeToJournalDetail()
             }
+
+            override fun onItemClicked(
+                v: RealReviewSearchSuggestionAdapter.ViewHolder,
+                item: Any,
+                pos: Int
+            ) {
+
+            }
         }
         val journalAdapter = JournalAdapter(journalList!!, context!!, listener )
         homeJournalRV.layoutManager = journalLayoutManager
@@ -99,6 +108,14 @@ class HomeFragment : Fragment(){
                 var show :Show = item as Show
 
                 homeChangeToShowDetail(show)
+
+            }
+
+            override fun onItemClicked(
+                v: RealReviewSearchSuggestionAdapter.ViewHolder,
+                item: Any,
+                pos: Int
+            ) {
 
             }
         }

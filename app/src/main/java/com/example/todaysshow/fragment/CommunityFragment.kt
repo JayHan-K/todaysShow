@@ -13,6 +13,7 @@ import com.example.todaysshow.adapter.CommunityPagerAdapter
 import com.example.todaysshow.fragment.community.CommunityEditorChallenges
 import com.example.todaysshow.fragment.community.CommunityEditors
 import com.example.todaysshow.fragment.community.CommunityEditorsNotice
+import com.example.todaysshow.fragment.community.CommunityRealReviewCollection
 import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.activity_community_fragment.*
 
@@ -78,4 +79,13 @@ class CommunityFragment(initIndex: Int) : Fragment() {
         ).commitAllowingStateLoss()
     }
 
+    fun communityChangeToRealReviewCollection(){
+        communityMainLinearLayout!!.visibility = View.INVISIBLE
+        communityMainFrameLayout!!.visibility = View.VISIBLE
+
+        childFragmentManager.beginTransaction().replace(
+            R.id.community_main_fl,
+            CommunityRealReviewCollection()
+        ).commitAllowingStateLoss()
+    }
 }

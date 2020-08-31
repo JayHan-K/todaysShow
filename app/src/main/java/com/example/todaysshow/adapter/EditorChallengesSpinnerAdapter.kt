@@ -31,7 +31,7 @@ class EditorChallengesSpinnerAdapter(items: ArrayList<String>, context: Context)
 
         var itemView : View = inflater!!.inflate(R.layout.adapter_editor_chanllenges_spinner, parent, false)
         var textView : TextView = itemView.findViewById(R.id.spinner_list_item_tv)
-        if (position<=10){
+        if (position>=10){
             textView.setText("소분류 선택")
         }else{
             textView.setText(items.get(position))

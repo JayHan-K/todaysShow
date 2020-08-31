@@ -10,17 +10,19 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.cursoradapter.widget.SimpleCursorAdapter
+import com.example.todaysshow.ItemClickListener
 import com.example.todaysshow.R
 import com.example.todaysshow.`object`.Show
 
 
-class RealReviewSearchSuggestionAdapter(context: Context, visibleColumnNamesArray : Array<out String>, idsArray: IntArray ) : SimpleCursorAdapter(context, R.layout.real_review_suggestion_item, null, visibleColumnNamesArray, idsArray, 0){
+class RealReviewSearchSuggestionAdapter(context: Context, visibleColumnNamesArray : Array<out String>, idsArray: IntArray, itemClickListener: ItemClickListener) : SimpleCursorAdapter(context, R.layout.real_review_suggestion_item, null, visibleColumnNamesArray, idsArray, 0){
     private val columnNamesArray =
         arrayOf("_id", "showName", "imageSource")
     private val visibleColumnNamesArray =
         arrayOf<String>("showName")
     var context = context
     var layoutInflater : LayoutInflater? = null
+    var itemClickListener = itemClickListener
 
     var tempTitleArray : ArrayList<String> = ArrayList()
     var tempTagArray : ArrayList<String> = ArrayList()
@@ -64,6 +66,9 @@ class RealReviewSearchSuggestionAdapter(context: Context, visibleColumnNamesArra
         viewHolder.realReviewSuggestionTagTextView.setText(tempTagArray.get(pos))
         viewHolder.realReviewSuggestionDateTextView.setText(tempDateArray.get(pos))
         viewHolder.realReviewSuggestionImageView.setImageResource(tempImageResourceArray.get(pos))
+        view.setOnClickListener(View.OnClickListener {
+            itemClickListener.onItemClicked(viewHolder, "", pos)
+        })
         //Glide.with(context).load(referenceUrl).into(viewHolder.categoryImageView)
     }
 

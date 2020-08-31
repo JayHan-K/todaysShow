@@ -23,7 +23,12 @@
             android:layout_height="30dp"/>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="20dp"></LinearLayout>
+            android:layout_height="20dp">
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"/>
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/community_real_review_comment_rv"
             android:layout_width="match_parent"
