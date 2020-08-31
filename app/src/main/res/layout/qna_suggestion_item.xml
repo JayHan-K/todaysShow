@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:background="#232323"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="85dp">
+        <TextView
+            android:id="@+id/qna_suggestion_title_tv"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/kopubworlddotumbold"
+            android:textSize="15dp"
+            android:textColor="#ffffff"
+            android:text="디큐브에서 길을 잃었어요ㅠㅠ 도와주세요ㅜ"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:fontFamily="@font/kopubworlddotummedium"
+            android:id="@+id/qna_suggestion_date_tv"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="15dp"
+            android:textColor="#a3a3a3"
+            android:textSize="13dp"
+            android:text="2020.00.00"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        
+        <ImageView
+            android:id="@+id/qna_suggestion_comment_iv"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="55dp"
+            android:layout_toRightOf="@+id/qna_suggestion_date_tv"
+            android:src="@drawable/icon_comment"
+            android:layout_width="13dp"
+            android:layout_height="12dp"/>
+        <TextView
+            android:id="@+id/qna_suggestion_comment_tv"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@+id/qna_suggestion_comment_iv"
+            android:fontFamily="@font/kopubworlddotummedium"
+            android:textSize="13dp"
+            android:textColor="#a3a3a3"
+            android:text="5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <ImageView
+            android:id="@+id/qna_suggestion_view_iv"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="55dp"
+            android:layout_toRightOf="@+id/qna_suggestion_comment_tv"
+            android:src="@drawable/icon_view"
+            android:layout_width="13dp"
+            android:layout_height="12dp"/>
+        <TextView
+            android:id="@+id/qna_suggestion_view_tv"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@+id/qna_suggestion_view_iv"
+            android:fontFamily="@font/kopubworlddotummedium"
+            android:textSize="13dp"
+            android:textColor="#a3a3a3"
+            android:text="5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,6 +1,8 @@
 package com.example.todaysshow.fragment.community;
 
 
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,10 +21,16 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.todaysshow.ItemClickListener;
 import com.example.todaysshow.QuestionActivity;
 import com.example.todaysshow.R;
 import com.example.todaysshow.adapter.CommunityQnAAdapter;
+import com.example.todaysshow.adapter.QnASearchSuggestionAdapter;
+import com.example.todaysshow.adapter.RealReviewSearchSuggestionAdapter;
 
+import org.jetbrains.annotations.NotNull;
+
+import java.sql.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -95,6 +103,26 @@ public class CommunityQNA extends Fragment {
 
         SearchView qnaSearchBar = (SearchView) rootView.findViewById(R.id.qna_search_bar);
         qnaSearchBar.setIconifiedByDefault(false);
+
+        SearchManager searchManager = (SearchManager) this.getContext().getSystemService(Context.SEARCH_SERVICE);
+        qnaSearchBar.setSearchableInfo(searchManager.getSearchableInfo(getActivity().getComponentName()));
+        String[] a = {"qnaTitle"};
+
+        int[] b = {R.id.qna_suggestion_title_tv, R.id.qna_suggestion_date_tv, R.id.qna_suggestion_comment_tv, R.id.qna_suggestion_view_tv};
+
+        ItemClickListener mListener = new ItemClickListener() {
+            @Override
+            public void onItemClicked(@NotNull RecyclerView.ViewHolder vh, @NotNull Object item, int pos) {
+
+            }
+
+            @Override
+            public void onItemClicked(@NotNull RealReviewSearchSuggestionAdapter.ViewHolder v, @NotNull Object item, int pos) {
+
+            }
+        };
+
+        qnaSearchBar.setSuggestionsAdapter(new QnASearchSuggestionAdapter(this.getContext(), a, b, mListener));
 
         return rootView;
 

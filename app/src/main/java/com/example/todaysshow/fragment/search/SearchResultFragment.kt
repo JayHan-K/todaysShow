@@ -19,6 +19,7 @@ import com.example.todaysshow.ShowDetailActivity
 import com.example.todaysshow.`object`.Journal
 import com.example.todaysshow.`object`.Show
 import com.example.todaysshow.adapter.JournalAdapter
+import com.example.todaysshow.adapter.RealReviewSearchSuggestionAdapter
 import com.example.todaysshow.adapter.SearchResultImageAdapter
 import com.example.todaysshow.adapter.SearchResultRelationAdapter
 import com.example.todaysshow.fragment.HomeFragment
@@ -53,6 +54,14 @@ class SearchResultFragment(resultStr : String) : Fragment() {
                 parentFrag.changeSearchFrameToShowDetail(show)
 
             }
+
+            override fun onItemClicked(
+                v: RealReviewSearchSuggestionAdapter.ViewHolder,
+                item: Any,
+                pos: Int
+            ) {
+
+            }
         }
         searchResultImageRecyclerView!!.adapter = SearchResultImageAdapter(getImageList(), context!!,myListener)
         var gridLayoutManager : GridLayoutManager = GridLayoutManager(context!!, 3)
@@ -71,6 +80,14 @@ class SearchResultFragment(resultStr : String) : Fragment() {
                     this@SearchResultFragment.parentFragment as SearchFragment
                 parentFrag.changeSearchFrameToJournalDetail()
             }
+
+            override fun onItemClicked(
+                v: RealReviewSearchSuggestionAdapter.ViewHolder,
+                item: Any,
+                pos: Int
+            ) {
+
+            }
         }
         journalList = getJournals()
         val searchResultJournalRV = viewGroup.findViewById<RecyclerView>(R.id.search_result_journal_rv) as RecyclerView
@@ -84,6 +101,14 @@ class SearchResultFragment(resultStr : String) : Fragment() {
             override fun onItemClicked(vh: RecyclerView.ViewHolder, item: Any, pos: Int) {
                 var parentFrag : SearchFragment = this@SearchResultFragment.parentFragment as SearchFragment
                 parentFrag.setSearchQuery(item.toString())
+
+            }
+
+            override fun onItemClicked(
+                v: RealReviewSearchSuggestionAdapter.ViewHolder,
+                item: Any,
+                pos: Int
+            ) {
 
             }
         }
