@@ -22,6 +22,7 @@ class ShowDetailFragment(parent: String, title: String) : Fragment() {
     var showDetailRelativeLayout : RelativeLayout? = null
     var showDetailTopLinearLayout : LinearLayout? = null
     var showDetailImageRecyclerView : RecyclerView? = null
+    var isHeart : Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -84,6 +85,17 @@ class ShowDetailFragment(parent: String, title: String) : Fragment() {
         var youTubePlayer = viewGroup.findViewById<YouTubePlayerView>(R.id.show_detail_fragment_youtube)
 
         youTubePlayer.play(ShowDetailFragment.VIDEO_ID)
+
+        var showDetailHeartButton: Button = viewGroup.findViewById(R.id.show_detail_heart_bt)
+        showDetailHeartButton.setOnClickListener(View.OnClickListener {
+            if(isHeart){
+                showDetailHeartButton.setBackgroundResource(R.drawable.icon_heart_unmine)
+                isHeart = false
+            }else{
+                showDetailHeartButton.setBackgroundResource(R.drawable.icon_heart_mine)
+                isHeart = true
+            }
+        })
 
         return viewGroup
     }

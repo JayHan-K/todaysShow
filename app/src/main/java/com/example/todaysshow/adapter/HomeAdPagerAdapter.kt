@@ -11,11 +11,11 @@ class HomeAdPagerAdapter (fm: FragmentManager): FragmentStatePagerAdapter(fm){
 
         var fragment : Fragment = Fragment()
         when(position){
-            0 -> fragment = HomeAdPagerFragment(R.drawable.home_main_image_sample1)
-            1 -> fragment = HomeAdPagerFragment(R.drawable.home_main_image_sample2)
-            2 -> fragment = HomeAdPagerFragment(R.drawable.home_main_image_sample1)
-            3 -> fragment = HomeAdPagerFragment(R.drawable.home_main_image_sample2)
-            4 -> fragment = HomeAdPagerFragment(R.drawable.home_main_image_sample1)
+            0 -> fragment = HomeAdPagerFragment(R.drawable.ad_sample1)
+            1 -> fragment = HomeAdPagerFragment(R.drawable.ad_sample2)
+            2 -> fragment = HomeAdPagerFragment(R.drawable.ad_sample3)
+            3 -> fragment = HomeAdPagerFragment(R.drawable.ad_sample4)
+            4 -> fragment = HomeAdPagerFragment(R.drawable.ad_sample5)
         }
         return fragment
     }

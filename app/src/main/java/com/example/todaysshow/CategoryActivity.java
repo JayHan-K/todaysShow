@@ -67,7 +67,7 @@ public class CategoryActivity extends AppCompatActivity {
     public void closeAndChangeDeatil(String category){
         Intent intent = new Intent();
         intent.putExtra("Category", category);
-        setResult(0, intent);
+        setResult(10, intent);
         finish();
 
     }

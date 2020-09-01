@@ -83,26 +83,32 @@ class CommunityHotIssue : Fragment() {
         )
         journals.add(
             Journal(
-                "명동에 극장이 있다고!",
-                R.drawable.hot_issue_sample1
+                "안톤체홈 그는 누구인가!",
+                R.drawable.hot_issue_sample6
             )
         )
         journals.add(
             Journal(
-                "모든 이야기의 시작,\n오이디푸스",
-                R.drawable.hot_issue_sample2
+                "커피 한 잔의 여유 칸타타",
+                R.drawable.hot_issue_sample7
             )
         )
         journals.add(
             Journal(
-                "세계 4대 뮤지컬을 알려줄게 1편, 캣츠",
-                R.drawable.hot_issue_sample3
+                "디큐브 아트센터-미로같은 그 곳",
+                R.drawable.hot_issue_sample8
             )
         )
         journals.add(
             Journal(
-                "정신없이 웃고 싶어",
-                R.drawable.hot_issue_sample4
+                "대학로의 지붕 낙산공원",
+                R.drawable.hot_issue_sample9
+            )
+        )
+        journals.add(
+            Journal(
+                "뮤지컬 펀홈",
+                R.drawable.hot_issue_sample10
             )
         )
         return journals

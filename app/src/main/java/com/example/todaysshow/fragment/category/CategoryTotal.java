@@ -30,7 +30,7 @@ public class CategoryTotal extends ListFragment {
         View rootView = inflater.inflate(R.layout.categroy_listview,container,false);
 
         String[] LIST_MENU = {"로맨스","코미디","드라마", "역사","스릴러","추리","공포","판타지","블랙 코미디","실화 바탕","러브 코미디","소설 원작"};
-        ArrayAdapter<String> listViewAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1,LIST_MENU);
+        ArrayAdapter<String> listViewAdapter = new ArrayAdapter<String>(getActivity(), R.layout.category_tab_list_text ,LIST_MENU);
         setListAdapter(listViewAdapter);
 
         return rootView;

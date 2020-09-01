@@ -46,7 +46,8 @@ class CommunityHotIssueJournalAdapter (journals: ArrayList<Journal>, context: Co
 
         val journal: Journal = journals.get(position)
         holder.communityHotIssueCardViewImageView.setImageResource(journal.getImageResource())
-        holder.communityHotIssueCardViewIndexTextView.setText("0" + (position+1).toString())
+        var str = "%02d".format(position+1)
+        holder.communityHotIssueCardViewIndexTextView.setText(str)
         holder.communityHotIssueCardViewTitleTextView.setText(journal.getJournalStr())
         holder.itemView.setOnClickListener {
             itemClickListener.onItemClicked(holder, journal, position)

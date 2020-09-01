@@ -2,6 +2,7 @@ package com.example.todaysshow.fragment
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -332,9 +333,13 @@ class HomeFragment : Fragment(){
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if(requestCode == 0){
-            if(resultCode == 0) {
+            if(resultCode == 10) {
+
                 var category = data!!.getStringExtra("Category")
-                homeChangeToCategoryDetail(category)
+                if(category!=null){
+
+                    homeChangeToCategoryDetail(category)
+                }
             }
         }
     }

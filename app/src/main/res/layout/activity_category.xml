@@ -57,6 +57,7 @@
         android:orientation="vertical">
 
         <com.google.android.material.tabs.TabLayout
+            app:tabTextAppearance="@style/tab_text"
             app:tabIndicatorFullWidth="false"
             app:tabIndicatorColor="#fed700"
             app:tabGravity="fill"

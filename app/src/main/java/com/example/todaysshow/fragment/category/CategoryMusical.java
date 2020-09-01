@@ -26,7 +26,7 @@ public class CategoryMusical extends ListFragment {
         View rootView = inflater.inflate(R.layout.categroy_listview,container,false);
 
         String[] LIST_MENU = {"인기작","주크박스/댄스 뮤지컬","대극장 뮤지컬", "중,소극장 뮤지컬","소설 원작","창작 뮤지컬","토니 어워즈 수상작","역사","로맨스","공포/스릴러","드라마/감동","어린이 뮤지컬"};
-        ArrayAdapter<String> listViewAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1,LIST_MENU);
+        ArrayAdapter<String> listViewAdapter = new ArrayAdapter<String>(getActivity(), R.layout.category_tab_list_text,LIST_MENU);
         setListAdapter(listViewAdapter);
 
         return rootView;

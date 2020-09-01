@@ -30,10 +30,12 @@
     </style>
 
     <style name="SearchViewStyle" parent="Widget.AppCompat.SearchView">
+        <item name="android:textSize">15dp</item>
         <item name="android:textColor">#9b9b9b</item>
         <item name="android:editTextColor">#9b9b9b</item>
         <item name="android:textColorHint">#9b9b9b</item>
         <item name="android:tint">#9b9b9b</item>
+        <item name="fontFamily">@font/kopubworlddotummedium</item>
     </style>
 
     <style name="Transparent" parent="@style/Theme.AppCompat">
@@ -70,4 +72,9 @@
         <item name="android:background">@drawable/white_rounded_corner</item>
     </style>
 
+    <style name="tab_text" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">15dp</item>
+        <item name="android:fontFamily">@font/kopubworlddotummedium</item>
+        <item name="android:textColor">#ffffff</item>
+    </style>
 </resources>

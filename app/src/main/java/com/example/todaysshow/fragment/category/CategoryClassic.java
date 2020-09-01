@@ -28,7 +28,7 @@ public class CategoryClassic extends ListFragment {
         View rootView = inflater.inflate(R.layout.categroy_listview,container,false);
 
         String[] LIST_MENU = {"인기작","오페라","오케스트라", "현악중주","관악중주","합창","콩쿨","바로크 시대","고전 시대","낭만 시대","르네상스 시대","현대 시대"};
-        ArrayAdapter<String> listViewAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1,LIST_MENU);
+        ArrayAdapter<String> listViewAdapter = new ArrayAdapter<String>(getActivity(), R.layout.category_tab_list_text,LIST_MENU);
         setListAdapter(listViewAdapter);
 
         return rootView;
