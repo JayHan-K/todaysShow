@@ -3,6 +3,8 @@ package com.example.todaysshow.fragment
 import android.content.Context
 import android.graphics.Point
 import android.os.Bundle
+import android.text.Html
+import android.text.SpannableString
 import android.util.DisplayMetrics
 import android.view.*
 import android.widget.*
@@ -90,7 +92,11 @@ class JournalDetailFragment(parent: String) : Fragment(){
 
         var journalDetailMainJournalTextView : TextView = viewGroup.findViewById(R.id.journal_detail_main_jorunal_tv)
         var journalStr : String = "천리도 못 가서 발병난다. 내가 그의 이름을 불러 주었을 때 그는 돌같이 하라 뭉치면 살고 흩어지면 죽는다. 이 몸이 죽고 죽어 일백번 고쳐 죽어도 임 향한 일편단심 가실 줄이 있으랴.\n\n관용은 미덕이다. 가서 발병난다. 주었을 때 이 몸이 죽고 죽어 일백번 고쳐 죽어 백골이 진토되어 넑이라도 있고 었고 관용은\n\n그는 나에게로 와서 꽃이 되었다. 황금 보기를 돌같이 죽는다. 미덕이다. 왜 사냐건 웃지요. 나를 버리고 가시는 님은 십리도 못가서 발병난다. 나에게로 와서 꽃이 되었다.\n\n황금 보기들 백골이 진토되어 넋이라고 있고 없이 하라 뭉치면 살고 흝어지면 ...."
-        journalDetailMainJournalTextView.setText(journalStr)
+        //journalDetailMainJournalTextView.setText(journalStr)
+
+        var underlineTextView : TextView = viewGroup.findViewById(R.id.opera_editor_journal_underline)
+        underlineTextView.setText(Html.fromHtml(resources.getString(R.string.underline_string)))
+
 
         var journalDetailCloseButton: Button = viewGroup.findViewById(R.id.journal_detail_fragment_close_bt)
         journalDetailCloseButton.setOnClickListener(View.OnClickListener {

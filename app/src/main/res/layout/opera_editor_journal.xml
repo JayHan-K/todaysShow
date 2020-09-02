@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_marginRight="20dp"
+    android:layout_marginLeft="20dp"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:fontFamily="@font/kopubworlddotummedium"
+        android:textColor="#000000"
+        android:textSize="14dp"
+        android:text="[세계 4대 뮤지컬]을 알려줄게!! #2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:fontFamily="@font/kopubworlddotumbold"
+            android:textSize="20dp"
+            android:textColor="#000000"
+            android:text="\u003C뮤알못\u003E"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:fontFamily="@font/kopubworlddotummedium"
+            android:textColor="#000000"
+            android:textSize="14dp"
+            android:text="도 알아야 하는 "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/opera_editor_journal_underline"
+            android:fontFamily="@font/kopubworlddotummedium"
+            android:textColor="#000000"
+            android:textSize="14dp"
+            android:text="@string/underline_string"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <TextView
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/kopubworlddotummedium"
+        android:textColor="#000000"
+        android:textSize="14dp"
+        android:text="[세계 4대 뮤지컬]을 알려줄게! 두번째 (빠밤!)"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/kopubworlddotummedium"
+        android:textColor="#000000"
+        android:textSize="14dp"
+        android:text="지난번 [캣츠]에 이어 오늘 소개할 작품은~~바로바로!!"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+    <ImageView
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/editor_journal_img01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/kopubworlddotummedium"
+        android:textColor="#000000"
+        android:textSize="14dp"
+        android:text="[오페라의 유령]이에요!ㅎㅎ"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/kopubworlddotummedium"
+        android:textColor="#000000"
+        android:textSize="14dp"
+        android:text=" "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/kopubworlddotummedium"
+        android:textColor="#000000"
+        android:textSize="14dp"
+        android:text="이 작품 또한 [캣츠]와 동일하게 작곡가 '앤드류 로이드 웨버'가 작곡한 작품으로, 프랑스 작가 '가스통 르두'의 동명의 소설이 원작이랍니다~"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/editor_journal_img02"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/kopubworlddotummedium"
+        android:textColor="#000000"
+        android:textSize="14dp"
+        android:text="‘가스통 르두’의 “오페라의 유령”은 수차례 영화화되고 여러 뮤지컬로도 등장했지만! ‘앤드류 로이드 웨버’의 [오페라의 유령]이 현재까지 남아있는 가장 유명한 작품이죠!ㅎㅎ"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/kopubworlddotummedium"
+        android:textColor="#000000"
+        android:textSize="14dp"
+        android:text=" "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/kopubworlddotummedium"
+        android:textColor="#000000"
+        android:textSize="14dp"
+        android:text=" "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/kopubworlddotummedium"
+        android:textColor="#000000"
+        android:textSize="14dp"
+        android:text="파리 오페라극장을 배경으로 하는 이작품은 "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/kopubworlddotummedium"
+        android:textColor="#000000"
+        android:textSize="14dp"
+        android:text=" "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:fontFamily="@font/kopubworlddotummedium"
+        android:textColor="#000000"
+        android:textSize="14dp"
+        android:text="1. 팬텀: 음악적 천재성을 가졌지만 흉측한 외모로 가면을 쓰고 살아가는 인물\n*본명: 에릭"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:fontFamily="@font/kopubworlddotummedium"
+        android:textColor="#000000"
+        android:textSize="14dp"
+        android:text="2. 크리스틴: 천상의 목소리를 가진 아름다운 여인"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:fontFamily="@font/kopubworlddotummedium"
+        android:textColor="#000000"
+        android:textSize="14dp"
+        android:text="3. 라울: 크리스틴을 사랑하는 남자"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/kopubworlddotummedium"
+        android:textColor="#000000"
+        android:textSize="14dp"
+        android:text=" "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/kopubworlddotummedium"
+        android:textColor="#000000"
+        android:textSize="14dp"
+        android:text="이 세사람을 중심으로 펼쳐지는 이야기에요! 무명 무용수였던 ‘크리스틴’이 ‘팬텀’의 도움으로 최고의 프리마돈나가 되지만 크리스틴은 팬텀의 집착을 점점 두려워했고, 결국 소꿉친구였던 자상한 라울과 사랑에 빠지게 됩니다. 이에 배신감을 느낀 팬텀은 크리스틴을 지하세계로 결국 납치까지,,,!! ㅎㄷㄷ;; 라울은 납치된 크리스틴을 구하기 위해 직접 지하세계로 내려가 팬텀과 결투를 펼쳐요. (심쿵) 이 이야기의 끝이 어디로 향할지 궁금하시다면 ~~"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/editor_journal_img03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/kopubworlddotummedium"
+        android:textColor="#000000"
+        android:textSize="14dp"
+        android:text="7년 만에 오리지널 내한 공연이 서울의 블루스퀘어 공연장에서 진행 됐답니다!"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <ImageView
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/editor_journal_img04"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/kopubworlddotummedium"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        android:text="어머..! ㅂ..보고싶어!!"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <ImageView
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/editor_journal_img05"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/kopubworlddotummedium"
+        android:textColor="#000000"
+        android:textSize="14dp"
+        android:text="아쉽게도 공연 기간은\n(2020년 03월 14일 ~ 2020년 08월 07일) 까지였어요 ㅜㅜ"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <ImageView
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/editor_journal_img06"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/kopubworlddotummedium"
+        android:textColor="#000000"
+        android:textSize="14dp"
+        android:text="하지만 이 작품은\n공연 이외에도 수많은 자료들을\n손 쉽게 찾아볼 수 있답니다!"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/kopubworlddotummedium"
+        android:textColor="#000000"
+        android:textSize="14dp"
+        android:text=" "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/kopubworlddotummedium"
+        android:textColor="#000000"
+        android:textSize="14dp"
+        android:text="그만큼 ‘앤드류 로이드 웨버’가 작곡한 \n갓 띵곡! 들이 \n매우매우 많답니다~~"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/kopubworlddotummedium"
+        android:textColor="#000000"
+        android:textSize="14dp"
+        android:text=" "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/kopubworlddotummedium"
+        android:textColor="#000000"
+        android:textSize="14dp"
+        android:text="대표적으로는 ‘크리스틴’이 프리마돈나로 급부상할 수 있게 만들어준\n\u003CThink of me\u003E"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <ImageView
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/editor_journal_img07"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/kopubworlddotummedium"
+        android:textColor="#000000"
+        android:textSize="14dp"
+        android:text="‘팬텀’이 ‘크리스틴’을 지하세계로 데려가며 함께 부르는 [오페라의 유령]의 대표넘버!\n\u003CThe Phantom of the Opera\u003E "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <ImageView
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/editor_journal_img08"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/kopubworlddotummedium"
+        android:textColor="#000000"
+        android:textSize="14dp"
+        android:text="‘라울’ 과 ‘크리스틴’이 서로의 사랑을 확인하며 속삭이는\n\u003CAll I ask of you\u003E"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <ImageView
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/editor_journal_img09"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/kopubworlddotummedium"
+        android:textColor="#000000"
+        android:textSize="14dp"
+        android:text="이 3곡들은 모두 1막에 나오는 넘버들이에요!\n2막에도 너무나도 좋은 넘버들이 많이 있으니까 \n꼭꼭!\n찾아서 한번 씩 들어보세요!! "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <ImageView
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/editor_journal_img10"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/kopubworlddotummedium"
+        android:textColor="#000000"
+        android:textSize="14dp"
+        android:text="마무리 하기 전 또 하나 ! 2004년에 개봉한 영화 [오페라의 유령]은 뮤지컬을 스크린에 옮겨 담아 공연을 보러 가기 전! 영화로 먼저 관람하고 가는 것도 추천 드려요! ㅎㅎ"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <ImageView
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/editor_journal_img11"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/kopubworlddotummedium"
+        android:textColor="#000000"
+        android:textSize="14dp"
+        android:text="[세계 4대 뮤지컬]을 알아보자 두번째! [오페라의 유령] 편이 재미있으셨다면\n추천! 꾹 누르기 잊지 말고! 다음편도 기대해주세요~~ 안녕~~"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+</LinearLayout>

@@ -91,7 +91,7 @@ public class CommunityQnAAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                             notifyItemRangeInserted(pos+1,index-pos-1);
                             item.invisibleAnswer = null;
                         }
-                        FrameLayout layout = (FrameLayout)v.findViewById(R.id.hide_layout);
+                        FrameLayout layout = v.findViewById(R.id.hide_layout);
                         ViewGroup.LayoutParams params = layout.getLayoutParams();
                         params.height = 100;
                     }
