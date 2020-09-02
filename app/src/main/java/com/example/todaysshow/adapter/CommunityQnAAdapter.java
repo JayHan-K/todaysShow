@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
 import android.widget.Filterable;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -19,19 +20,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class CommunityQnAAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> implements Filterable {
+public class CommunityQnAAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     public static final int QUESTION = 0;
     public static final int ANSWER = 1;
-
+    LayoutInflater inflater;
     List<Item> data;
-    List<Item> unFilteredData;
-    List<Item> filteredData;
 
     public CommunityQnAAdapter(List<Item> data){
         super();
         this.data = data;
-        this.unFilteredData = data;
-        this.filteredData = data;
     }
 
     @NonNull
@@ -48,6 +45,10 @@ public class CommunityQnAAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                 LayoutInflater inflater2 = (LayoutInflater) parent.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 view = inflater2.inflate(R.layout.community_ans_item, parent, false);
                 ListAnswerViewHolder a_holder = new ListAnswerViewHolder(view);
+                FrameLayout layout = (FrameLayout)view.findViewById(R.id.hide_layout);
+                ViewGroup.LayoutParams params = layout.getLayoutParams();
+                params.height = 0;
+                layout.setLayoutParams(params);
                 return a_holder;
 
         }
@@ -90,6 +91,9 @@ public class CommunityQnAAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                             notifyItemRangeInserted(pos+1,index-pos-1);
                             item.invisibleAnswer = null;
                         }
+                        FrameLayout layout = (FrameLayout)v.findViewById(R.id.hide_layout);
+                        ViewGroup.LayoutParams params = layout.getLayoutParams();
+                        params.height = 100;
                     }
                 });
                 break;
@@ -112,39 +116,6 @@ public class CommunityQnAAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     @Override
     public int getItemViewType(int position) {
         return data.get(position).type;
-    }
-
-    @Override
-    public Filter getFilter() {
-        return new Filter(){
-
-            @Override
-            protected FilterResults performFiltering(CharSequence constraint) {
-                String charString = constraint.toString();
-                if(charString.isEmpty()){
-                    filteredData = unFilteredData;
-                }else{
-                    List<Item> filteringData = new ArrayList<>();
-
-                    for(Item title : unFilteredData){
-                        String name = title.toString();
-                        if(name.toLowerCase().contains(charString.toLowerCase())){
-                            filteringData.add(title);
-                        }
-                    }
-                    filteredData = filteringData;
-                }
-                FilterResults filterResults = new FilterResults();
-                filterResults.values = filteredData;
-                return filterResults;
-            }
-
-            @Override
-            protected void publishResults(CharSequence constraint, FilterResults results) {
-                filteredData = (List<Item>)results.values;
-                notifyDataSetChanged();
-            }
-        };
     }
 
     public static class ListQuestionViewHolder extends RecyclerView.ViewHolder{
