@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="130dp"
-    android:weightSum="1"
-    android:background="#353535"
-    android:orientation="vertical">
-
-
+    android:id="@+id/hide_layout"
+    android:layout_height="130dp">
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="1"
+        android:background="#353535"
+        android:orientation="vertical">
+
+        <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -21,7 +24,7 @@
         <ImageView
             android:id="@+id/ad_icon"
             android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_height="wrap_content"
             android:layout_weight="0.1"
             app:srcCompat="@android:drawable/ic_dialog_info" />
 
@@ -55,7 +58,7 @@
 
     </LinearLayout>
 
-    <TextView
+        <TextView
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
         android:layout_marginTop="5dp"
@@ -67,8 +70,9 @@
         android:text="TextView"
         android:textColor="#FFFFFF"
         android:textSize="12sp" />
-    <LinearLayout
+         <LinearLayout
         android:background="#9b9b9b"
         android:layout_width="match_parent"
         android:layout_height="3px"></LinearLayout>
-</LinearLayout>
+    </LinearLayout>
+</FrameLayout>

@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
 import android.widget.Filterable;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -47,6 +48,10 @@ public class MyPageQnAAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                 LayoutInflater inflater2 = (LayoutInflater) parent.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 view = inflater2.inflate(R.layout.mypage_ans_item, parent, false);
                 ListAnswerViewHolder a_holder = new ListAnswerViewHolder(view);
+                FrameLayout layout = (FrameLayout)view.findViewById(R.id.hide_layout);
+                ViewGroup.LayoutParams params = layout.getLayoutParams();
+                params.height = 0;
+                layout.setLayoutParams(params);
                 return a_holder;
 
         }
