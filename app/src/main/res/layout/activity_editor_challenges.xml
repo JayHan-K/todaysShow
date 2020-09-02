@@ -178,7 +178,7 @@
             android:layout_marginRight="50dp"
             android:layout_marginLeft="50dp"
             android:layout_width="match_parent"
-            android:layout_height="230dp">
+            android:layout_height="200dp">
             <EditText
                 android:id="@+id/editor_challenges_journal_et"
                 android:textSize="15dp"

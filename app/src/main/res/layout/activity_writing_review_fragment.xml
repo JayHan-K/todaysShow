@@ -107,7 +107,7 @@
                     android:id="@+id/writing_review_good_thing_et"
                     android:textAlignment="viewStart"
                     android:scrollbars="vertical"
-                    android:textSize="10dp"
+                    android:textSize="12dp"
                     android:hint="* 공연을 관람하시면서, 인상 깊언던 점이나 작품의 스토리, 공연의 전박적인 분위기 등에 대해 작성해주세요."
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
@@ -145,7 +145,7 @@
                     android:id="@+id/writing_review_bad_thing_et"
                     android:textAlignment="viewStart"
                     android:scrollbars="vertical"
-                    android:textSize="10dp"
+                    android:textSize="12dp"
                     android:hint="* 공연을 관람하시면서, 인상 깊언던 점이나 작품의 스토리, 공연의 전박적인 분위기 등에 대해 작성해주세요."
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
@@ -182,7 +182,7 @@
                     android:id="@+id/writing_review_tip_et"
                     android:textAlignment="viewStart"
                     android:scrollbars="vertical"
-                    android:textSize="10dp"
+                    android:textSize="12dp"
                     android:hint="* 공연을 관람하시면서, 인상 깊언던 점이나 작품의 스토리, 공연의 전박적인 분위기 등에 대해 작성해주세요."
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
@@ -227,8 +227,8 @@
                         android:layout_marginRight="5dp"
                         android:layout_toLeftOf="@+id/writing_review_camera1_tv"
                         android:src="@drawable/icon_camera"
-                        android:layout_width="25dp"
-                        android:layout_height="20dp"/>
+                        android:layout_width="15dp"
+                        android:layout_height="10dp"/>
                     <TextView
                         android:id="@+id/writing_review_camera1_tv"
                         android:fontFamily="@font/kopubworlddotummedium"
@@ -247,7 +247,7 @@
                 <TextView
                     android:fontFamily="@font/kopubworlddotummedium"
                     android:textColor="#777777"
-                    android:textSize="10dp"
+                    android:textSize="12dp"
                     android:text="* 실제 공연장에서 촬영한 공연장 사진, 공연 관련사진, \n인증샷 등을 올려주세요."
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"></TextView>
@@ -264,8 +264,8 @@
                         android:layout_marginRight="5dp"
                         android:layout_toLeftOf="@+id/writing_review_camera2_tv"
                         android:src="@drawable/icon_camera"
-                        android:layout_width="25dp"
-                        android:layout_height="20dp"/>
+                        android:layout_width="15dp"
+                        android:layout_height="10dp"/>
                     <TextView
                         android:id="@+id/writing_review_camera2_tv"
                         android:fontFamily="@font/kopubworlddotummedium"

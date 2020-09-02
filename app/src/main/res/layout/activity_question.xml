@@ -41,8 +41,7 @@
 
                     <TextView
                         android:fontFamily="@font/kopubworlddotumbold"
-                        android:textSize="16dp"
-                        android:textStyle="bold"
+                        android:textSize="20dp"
                         android:textColor="#ffffff"
                         android:layout_centerInParent="true"
                         android:text="질문하기"

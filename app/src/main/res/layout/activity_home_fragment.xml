@@ -67,12 +67,12 @@
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="20dp">
+                android:layout_height="23dp">
                 <TextView
                     android:fontFamily="@font/kopubworlddotumbold"
                     android:paddingLeft="25dp"
                     android:textColor="#ffffff"
-                    android:textSize="15dp"
+                    android:textSize="18dp"
                     android:text="제우님 맞춤공연"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"></TextView>
@@ -104,12 +104,12 @@
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="20dp">
+                android:layout_height="23dp">
                 <TextView
                     android:fontFamily="@font/kopubworlddotumbold"
                     android:paddingLeft="25dp"
                     android:textColor="#ffffff"
-                    android:textSize="15dp"
+                    android:textSize="18dp"
                     android:text="에디터's Choice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"></TextView>
@@ -178,7 +178,7 @@
                     android:fontFamily="@font/kopubworlddotumbold"
                     android:text="오늘의 공연"
                     android:textColor="#ffffff"
-                    android:textSize="16dp">
+                    android:textSize="20dp">
 
                 </TextView>
             </RelativeLayout>

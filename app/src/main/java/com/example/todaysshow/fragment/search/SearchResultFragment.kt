@@ -1,31 +1,22 @@
 package com.example.todaysshow.fragment.search
 
-import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.GridView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.todaysshow.ItemClickListener
 import com.example.todaysshow.R
-import com.example.todaysshow.ShowDetailActivity
 import com.example.todaysshow.`object`.Journal
 import com.example.todaysshow.`object`.Show
 import com.example.todaysshow.adapter.JournalAdapter
 import com.example.todaysshow.adapter.RealReviewSearchSuggestionAdapter
 import com.example.todaysshow.adapter.SearchResultImageAdapter
 import com.example.todaysshow.adapter.SearchResultRelationAdapter
-import com.example.todaysshow.fragment.HomeFragment
 import com.example.todaysshow.fragment.SearchFragment
-import com.example.todaysshow.fragment.ShowDetailFragment
-import kotlinx.android.synthetic.main.search_list_item.*
 
 class SearchResultFragment(resultStr : String) : Fragment() {
     var searchResultStr = resultStr

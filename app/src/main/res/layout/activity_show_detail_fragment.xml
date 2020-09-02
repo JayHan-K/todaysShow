@@ -54,14 +54,14 @@
                             android:layout_alignParentLeft="true"
                             android:layout_alignParentTop="true"
                             android:id="@+id/show_detail_title_tv"
-                            android:textSize="15dp"
+                            android:textSize="16dp"
                             android:textColor="#ffffff"
                             android:text="뮤지컬 오페라의 유령"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"></TextView>
 
                         <TextView
-                            android:textSize="9dp"
+                            android:textSize="12dp"
                             android:fontFamily="@font/kopubworlddotumlight"
                             android:textColor="#ffffff"
                             android:layout_below="@+id/show_detail_title_tv"
@@ -156,7 +156,7 @@
                         </LinearLayout>
                         <TextView
                             android:fontFamily="@font/kopubworlddotummedium"
-                            android:textSize="10dp"
+                            android:textSize="12dp"
                             android:textColor="#ffffff"
                             android:layout_above="@+id/show_detail_tag_ll"
                             android:text="흉측하게 일그러진 얼굴을 가면으로 가린 오페라의 유령이 아름다운 프리마돈나 크리스틴을 짝사랑하는 이야기."
@@ -180,7 +180,7 @@
                     <TextView
                         android:fontFamily="@font/kopubworlddotumbold"
                         android:paddingLeft="27dp"
-                        android:textSize="13dp"
+                        android:textSize="14dp"
                         android:textColor="#ffffff"
                         android:text="에디터's"
                         android:layout_width="wrap_content"
@@ -191,25 +191,25 @@
                     android:layout_marginTop="5dp"
                     android:background="@drawable/journal"
                     android:layout_width="match_parent"
-                    android:layout_height="180dp">
+                    android:layout_height="200dp">
                     <TextView
-                        android:layout_marginTop="86dp"
+                        android:layout_marginTop="60dp"
                         android:layout_marginLeft="27dp"
                         android:textColor="#ffffff"
-                        android:textSize="10dp"
+                        android:textSize="14dp"
                         android:text="세계 4대 뮤지컬을 알려줄게"
                         android:background="#000000"
                         android:layout_width="wrap_content"
-                        android:layout_height="12dp"></TextView>
+                        android:layout_height="wrap_content"></TextView>
                     <TextView
-                        android:layout_marginTop="100dp"
+                        android:layout_marginTop="84dp"
                         android:layout_marginLeft="27dp"
                         android:textColor="#ffffff"
-                        android:textSize="10dp"
+                        android:textSize="14dp"
                         android:text="#2. 오페라의 유령"
                         android:background="#000000"
                         android:layout_width="wrap_content"
-                        android:layout_height="12dp"></TextView>
+                        android:layout_height="wrap_content"></TextView>
 
                     <TextView
                         android:layout_marginTop="120dp"
@@ -217,12 +217,13 @@
                         android:fontFamily="@font/kopubworlddotumlight"
                         android:text="유알못도 알아야 하는 필수 상식!! 시계 4대 뮤지컬을 알려줄게!\n두번째(빠밤!!) 지난번 '캣츠'에 이어 오늘 소개할 작품은\n'오페라의 유령'
 '이에요! 이 작품 또한 [캣츠]와 동일한 작곡가 ..."
-                        android:textSize="8dp"
+                        android:textSize="12dp"
                         android:textColor="#ffffff"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"></TextView>
                     
                     <Button
+                        android:id="@+id/show_detail_journal_bt"
                         android:layout_alignParentRight="true"
                         android:layout_marginTop="140dp"
                         android:layout_marginRight="30dp"
@@ -233,13 +234,13 @@
                 </RelativeLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"></LinearLayout>
+                    android:layout_height="30dp"></LinearLayout>
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="18dp">
                     <TextView
-                        android:textSize="13dp"
+                        android:textSize="14dp"
                         android:layout_alignParentLeft="true"
                         android:textColor="#ffffff"
                         android:paddingLeft="27dp"

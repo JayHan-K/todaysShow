@@ -9,8 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.todaysshow.R
-import com.example.todaysshow.ShowDetailActivity
-import com.example.todaysshow.adapter.SearchResultImageAdapter
 import com.example.todaysshow.adapter.ShowDetailImageAdapter
 import kr.co.prnd.YouTubePlayerView
 
@@ -96,6 +94,21 @@ class ShowDetailFragment(parent: String, title: String) : Fragment() {
                 isHeart = true
             }
         })
+
+        var showDetailJournalButton : Button = viewGroup.findViewById(R.id.show_detail_journal_bt)
+        showDetailJournalButton.setOnClickListener(View.OnClickListener {
+            if (parent.equals("Home")) {
+                var parentFrag: HomeFragment =
+                    this@ShowDetailFragment.parentFragment as HomeFragment
+                parentFrag.homeChangeToJournalDetail()
+            }else if(parent.equals("Search")){
+                var parentFrag: SearchFragment =
+                    this@ShowDetailFragment.parentFragment as SearchFragment
+                parentFrag.changeSearchFrameToJournalDetail()
+            }
+
+        })
+
 
         return viewGroup
     }

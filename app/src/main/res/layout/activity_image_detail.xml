@@ -10,7 +10,7 @@
     <TextView
         android:fontFamily="@font/kopubworlddotumbold"
         android:textColor="#ffffff"
-        android:textSize="15dp"
+        android:textSize="20dp"
         android:layout_marginTop="30dp"
         android:layout_centerHorizontal="true"
         android:id="@+id/image_detail_title"
@@ -22,7 +22,7 @@
         android:id="@+id/image_detail_image_num_tv"
         android:text="1 of 3"
         android:fontFamily="@font/kopubworlddotummedium"
-        android:textSize="12dp"
+        android:textSize="15dp"
         android:textColor="#ffffff"
         android:layout_marginTop="5dp"
         android:layout_centerHorizontal="true"

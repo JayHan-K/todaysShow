@@ -36,7 +36,7 @@
                         <TextView
                             android:layout_marginLeft="57dp"
                             android:fontFamily="@font/kopubworlddotummedium"
-                            android:textSize="12dp"
+                            android:textSize="14dp"
                             android:layout_centerVertical="true"
                             android:textColor="#2d2d2d"
                             android:text="2020 공연 문화 에티켓지키기"
@@ -45,7 +45,7 @@
                         <Button
                             android:id="@+id/community_notice_more_bt"
                             android:fontFamily="@font/kopubworlddotumbold"
-                            android:textSize="10dp"
+                            android:textSize="14dp"
                             android:layout_centerVertical="true"
                             android:layout_alignParentRight="true"
                             android:textColor="#2d2d2d"
