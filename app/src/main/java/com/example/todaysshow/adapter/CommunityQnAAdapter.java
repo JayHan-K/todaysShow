@@ -25,6 +25,8 @@ public class CommunityQnAAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     public static final int ANSWER = 1;
     LayoutInflater inflater;
     List<Item> data;
+    public ArrayList<ListQuestionViewHolder> qne_itemController = new ArrayList<>();
+    public ArrayList<ListAnswerViewHolder> ans_itemController = new ArrayList<>();
 
     public CommunityQnAAdapter(List<Item> data){
         super();
@@ -40,6 +42,7 @@ public class CommunityQnAAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                 LayoutInflater inflater1 = (LayoutInflater) parent.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 view = inflater1.inflate(R.layout.community_qna_item, parent, false);
                 ListQuestionViewHolder q_holder = new ListQuestionViewHolder(view);
+                qne_itemController.add(q_holder);
                 return q_holder;
             case ANSWER:
                 LayoutInflater inflater2 = (LayoutInflater) parent.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -49,13 +52,14 @@ public class CommunityQnAAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                 ViewGroup.LayoutParams params = layout.getLayoutParams();
                 params.height = 0;
                 layout.setLayoutParams(params);
+                ans_itemController.add(a_holder);
                 return a_holder;
 
         }
         return null;
     }
 
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position){
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position){
         final Item item = data.get(position);
         switch (item.type){
             case QUESTION:
@@ -91,9 +95,9 @@ public class CommunityQnAAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                             notifyItemRangeInserted(pos+1,index-pos-1);
                             item.invisibleAnswer = null;
                         }
-                        FrameLayout layout = v.findViewById(R.id.hide_layout);
-                        ViewGroup.LayoutParams params = layout.getLayoutParams();
-                        params.height = 100;
+                        ListAnswerViewHolder tempHolder = ans_itemController.get(position/2);
+                        ViewGroup.LayoutParams params = tempHolder.itemView.getLayoutParams();
+                        params.height = 550;
                     }
                 });
                 break;
